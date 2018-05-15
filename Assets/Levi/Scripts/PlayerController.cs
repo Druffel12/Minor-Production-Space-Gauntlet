@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
 
-    PlayerIndex playerIndex;
+    public PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
 
