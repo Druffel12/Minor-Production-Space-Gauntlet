@@ -1,37 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
     public float Speed;
-    private Transform Player;
+    public Transform Player;
+    public Transform MyTransform;
+    public float Range;
     Vector3 Dir;
-    
+
+    //set transform
     private void Awake()
     {
         MyTransform = transform;
     }
     // Use this for initialization
-    void Start ()
+    //finding the player as to attack
+    void Start()
     {
         if (Player == null)
         {
             Player = GameObject.FindGameObjectWithTag("Player").transform;
         }
+    }
 
-
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    //going after said player while looking at them and attacking 
+    void Update()
     {
 
-        // Vector3 lookat = Player.position;
-        //transform.LookAt(lookat);
+        GetComponent<NavMeshAgent>().destination = Player.position;
 
-        Dir = MyTransform.position - Player.transform.position;
-        MyTransform.position -= Dir.normalized * Speed; 
-		
-	}
+        Attack();
+    }
+
+    private void Attack()
+    {
+        if(Vector3.Distance(transform.position, Player.position) < Range)
+        {
+            //T set up damage application 
+        }
+    }
 }
