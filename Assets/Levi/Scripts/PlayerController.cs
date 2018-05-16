@@ -7,12 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
 
-    public bool canMoveLeft;
-    public bool canMoveRight;
-    public bool canMoveUp;
-    public bool canMoveDown;
-
-
     public PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
@@ -36,42 +30,7 @@ public class PlayerController : MonoBehaviour
 
         movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
-
-        if(canMoveLeft == false)
-        {
-            if(moveHorizontal > 0)
-            {
-                transform.Translate(movement * speed * Time.deltaTime, Space.World);
-            }
-        }
-        else if (canMoveRight == false)
-        {
-            if (moveHorizontal < 0)
-            {
-                transform.Translate(movement * speed * Time.deltaTime, Space.World);
-            }
-        }
-        else if (canMoveUp == false)
-        {
-            if(moveVertical < 0)
-            {
-                transform.Translate(movement * speed * Time.deltaTime, Space.World);
-            }
-        }
-        else if (canMoveDown == false)
-        {
-            if (moveVertical > 0)
-            {
-                transform.Translate(movement * speed * Time.deltaTime, Space.World);
-            }
-        }
-        else
-        {
-            transform.Translate(movement * speed * Time.deltaTime, Space.World);
-        }
-
-        //Debug.Log("X = " + state.ThumbSticks.Left.X.ToString());
-        //Debug.Log("Y = " + state.ThumbSticks.Left.Y.ToString());
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
     
 	void Update ()

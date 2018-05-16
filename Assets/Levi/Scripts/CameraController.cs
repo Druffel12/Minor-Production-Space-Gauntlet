@@ -18,9 +18,7 @@ public class CameraController : MonoBehaviour
     public float minOffset;
     float offset = 10;
     public float maxOffset;
-
-    public Vector3 playerBounds;
-    Camera mainCamera;
+    
     Vector3 center;
     Vector3 centroid;
     float count;
@@ -45,7 +43,6 @@ public class CameraController : MonoBehaviour
 
     void Start ()
     {
-        mainCamera = GetComponent<Camera>();
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
         StartCoroutine("CameraPosition");
     }
@@ -68,7 +65,7 @@ public class CameraController : MonoBehaviour
             Vector3 centerVector = new Vector3(centroid.x, cameraDistance, centroid.z - offset);
            for(int i = 0; i < players.Count; i++)
             {
-                float distanceFromCenter = Vector3.Distance(players[i].transform.position, centerVector);
+                float distanceFromCenter = Vector3.Distance(players[i].transform.position, centroid);
                 if (distanceFromCenter >= maxDistance)
                 {
                     if(cameraDistance < maxCameraDistance)
@@ -76,7 +73,7 @@ public class CameraController : MonoBehaviour
                         CameraZoomOut();
                     }
                 }
-                Debug.Log(distanceFromCenter + " " + i);
+                //Debug.Log(distanceFromCenter + " " + i);
 
                 if(distanceFromCenter < maxDistance)
                 {
@@ -86,7 +83,7 @@ public class CameraController : MonoBehaviour
                     }
                 }
                 Color test = distanceFromCenter < maxDistance ? Color.red : Color.blue;
-                Debug.DrawLine(centerVector, players[i].transform.position, test);
+                Debug.DrawLine(centroid, players[i].transform.position, test);
             }
             // moves the camera to the center between the players
             transform.position = centerVector;
