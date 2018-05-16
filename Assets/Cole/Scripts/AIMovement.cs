@@ -5,9 +5,8 @@ using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
-    public float Speed;
-    public Transform Player;
-    public Transform MyTransform;
+    private Transform Player;
+    private Transform MyTransform;
     public float Range;
     Vector3 Dir;
 
