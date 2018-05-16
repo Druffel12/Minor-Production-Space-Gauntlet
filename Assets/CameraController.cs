@@ -9,17 +9,41 @@ public class CameraController : MonoBehaviour
     public float cameraSpeed;
 
     public float minCameraDistance;
-    float cameraDistance = 20;
+    [SerializeField]
+    float cameraDistance = 25;
     public float maxCameraDistance;
 
-    public float offset;
+    public float maxDistance;
 
+    public float minOffset;
+    float offset = 10;
+    public float maxOffset;
+
+    public Vector3 playerBounds;
     Camera mainCamera;
     Vector3 center;
     Vector3 centroid;
     float count;
 
-	void Start ()
+    void CameraZoomin()
+    {
+        cameraDistance -= Time.deltaTime * cameraSpeed;
+        if (offset > minOffset)
+        {
+            offset -= Time.deltaTime * cameraSpeed / 2;
+        }
+    }
+
+    void CameraZoomOut()
+    {
+        cameraDistance += Time.deltaTime * cameraSpeed;
+        if (offset < maxOffset)
+        {
+            offset += Time.deltaTime * cameraSpeed/2;
+        }
+    }
+
+    void Start ()
     {
         mainCamera = GetComponent<Camera>();
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
@@ -30,33 +54,49 @@ public class CameraController : MonoBehaviour
     {
         while (true)
         {
+            
             center = Vector3.zero;
             count = 0;
+            //finds the center between all the players
             foreach (GameObject player in players)
             {
                 center += player.transform.position;
                 count++;
-                Vector3 viewPos = mainCamera.WorldToViewportPoint(player.transform.position);
-
-                //zooms the camera out
-                if(viewPos.x < 0.1f || viewPos.x > 0.9f)
-                {
-                    if(cameraDistance < maxCameraDistance)
-                    {
-                        cameraDistance += Time.deltaTime;
-                        offset += Time.deltaTime * cameraSpeed;
-                    }
-                }
-
             }
 
             centroid = center / players.Count;
             Vector3 centerVector = new Vector3(centroid.x, cameraDistance, centroid.z - offset);
+           for(int i = 0; i < players.Count; i++)
+            {
+                float distanceFromCenter = Vector3.Distance(players[i].transform.position, centerVector);
+                if (distanceFromCenter >= maxDistance)
+                {
+                    if(cameraDistance < maxCameraDistance)
+                    {
+                        CameraZoomOut();
+                    }
+                }
+                Debug.Log(distanceFromCenter + " " + i);
 
-
+                if(distanceFromCenter < maxDistance)
+                {
+                    if(cameraDistance > minCameraDistance)
+                    {
+                        CameraZoomin();
+                    }
+                }
+                Color test = distanceFromCenter < maxDistance ? Color.red : Color.blue;
+                Debug.DrawLine(centerVector, players[i].transform.position, test);
+            }
+            // moves the camera to the center between the players
             transform.position = centerVector;
 
             yield return null;
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(new Vector3(centroid.x, centroid.y, centroid.z), playerBounds);
     }
 }

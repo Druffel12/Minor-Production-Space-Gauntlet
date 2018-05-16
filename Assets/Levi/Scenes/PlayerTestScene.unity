@@ -566,13 +566,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336567968}
-  m_LocalRotation: {x: 0.29834428, y: -0, z: -0, w: 0.95445836}
-  m_LocalPosition: {x: 0, y: 20, z: -11.05}
+  m_LocalRotation: {x: 0.58032393, y: -0, z: -0, w: 0.8143858}
+  m_LocalPosition: {x: -0.16, y: 27.49, z: -3}
   m_LocalScale: {x: 1, y: 2.7750819, z: 2.7750819}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 34.716003, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70.94701, y: 0, z: 0}
 --- !u!114 &336567973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,9 +586,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   cameraSpeed: 4
-  minCameraDistance: 20
-  maxCameraDistance: 30
-  offset: 17.65
+  minCameraDistance: 25
+  cameraDistance: 25
+  maxCameraDistance: 40
+  maxDistance: 30
+  minOffset: 10
+  maxOffset: 20
+  playerBounds: {x: 20, y: 2, z: 20}
 --- !u!1 &407414892
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +710,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &670116550
 MonoBehaviour:
@@ -720,6 +724,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  canMoveLeft: 1
+  canMoveRight: 1
+  canMoveUp: 1
+  canMoveDown: 1
   playerIndex: 1
 --- !u!23 &670116551
 MeshRenderer:
@@ -973,6 +981,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  canMoveLeft: 1
+  canMoveRight: 1
+  canMoveUp: 1
+  canMoveDown: 1
   playerIndex: 0
 --- !u!54 &947392644
 Rigidbody:
@@ -987,7 +999,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1056157979
 GameObject:
