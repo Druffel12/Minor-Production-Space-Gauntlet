@@ -9,19 +9,25 @@ public class AIMovement : MonoBehaviour
     private Transform MyTransform;
     public float Range;
     Vector3 Dir;
+    private GameObject Target;
 
     //set transform
     private void Awake()
     {
         MyTransform = transform;
     }
-    // Use this for initialization
-    //finding the player as to attack
-    void Start()
+
+    //trigger zone for finding player tags
+    void OnTriggerEnter(Collider other)
     {
-        if (Player == null)
+        if (other.tag == "Player")
         {
-            Player = GameObject.FindGameObjectWithTag("Player").transform;
+            Player = other.transform;
+            
+        }
+        else
+        {
+            Debug.Log("shits broken");
         }
     }
 
@@ -29,12 +35,14 @@ public class AIMovement : MonoBehaviour
     //going after said player while looking at them and attacking 
     void Update()
     {
+        if (Player != null)
+        {
+            GetComponent<NavMeshAgent>().destination = Player.position;
 
-        GetComponent<NavMeshAgent>().destination = Player.position;
-
-        Attack();
+            Attack();
+        }
     }
-
+    //Seeking and Attacking function
     private void Attack()
     {
         if(Vector3.Distance(transform.position, Player.position) < Range)
@@ -42,5 +50,6 @@ public class AIMovement : MonoBehaviour
             //T set up damage application 
         }
     }
+   
 }
 

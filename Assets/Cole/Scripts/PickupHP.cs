@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PickupHP : MonoBehaviour, IDamageable {
 
-    
-
     public float health;
     //Damage to pickupHP
     public void Damage(float Amnt)
