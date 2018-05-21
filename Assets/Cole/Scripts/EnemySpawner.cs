@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     public static float PlayerHealth = 100;
     public GameObject enemy;
-    private float spawnTime;
+    private float SpawnTime;
     public int SpawnCount;
     public Transform[] SpawnPoint;
     public float Spawner;
@@ -25,15 +26,15 @@ public class EnemySpawner : MonoBehaviour
     //enemy spawning loop 
     void Update()
     {
-        spawnTime -= Time.deltaTime;
-        if (spawnTime <= 0.0f)
+        SpawnTime -= Time.deltaTime;
+        if (SpawnTime <= 0.0f)
         {
             if (SpawnCount > 0)
             {
                 GameObject SpawnedBug = ObjectPooler.SharedInstance.GetPooledObject();
 
                 SpawnedBug.SetActive(true);
-                SpawnedBug.transform.position = transform.position;
+                SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
 
 
                 if (SpawnCount > 0)
@@ -49,6 +50,6 @@ public class EnemySpawner : MonoBehaviour
     //resets enemy spawn timer funcion
     void ResetTimer()
     {
-        spawnTime = Spawner;
+        SpawnTime = Spawner;
     }
 }
