@@ -16,11 +16,13 @@ public class EnemySpawner : MonoBehaviour
 
 
     // Use this for initialization
+    //resets spawn timer
     void Start()
     {
         ResetTimer();
     }
 
+    //enemy spawning loop 
     void Update()
     {
         spawnTime -= Time.deltaTime;
@@ -28,16 +30,11 @@ public class EnemySpawner : MonoBehaviour
         {
             if (SpawnCount > 0)
             {
-                // (enemy, transform.position, Quaternion.identity);
-                GameObject SpawnedDeer = ObjectPooler.SharedInstance.GetPooledObject();
+                GameObject SpawnedBug = ObjectPooler.SharedInstance.GetPooledObject();
 
-                SpawnedDeer.SetActive(true);
-                SpawnedDeer.transform.position = transform.position;
+                SpawnedBug.SetActive(true);
+                SpawnedBug.transform.position = transform.position;
 
-
-
-
-                //implement wave system
 
                 if (SpawnCount > 0)
                 {
@@ -46,13 +43,10 @@ public class EnemySpawner : MonoBehaviour
                 ResetTimer();
             }
         }
-        //player days 
-        if (PlayerHealth == 0)
-        {
-            Application.Quit();
-        }
+        
     }
 
+    //resets enemy spawn timer funcion
     void ResetTimer()
     {
         spawnTime = Spawner;
