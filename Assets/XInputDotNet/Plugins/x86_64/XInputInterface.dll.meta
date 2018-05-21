@@ -8,7 +8,6 @@ PluginImporter:
   isPreloaded: 0
   isOverridable: 0
   platformData:
-<<<<<<< HEAD
   - first:
       '': OSXIntel
     second:
@@ -81,92 +80,6 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: AnyCPU
-=======
-    data:
-      first:
-        Any: 
-      second:
-        enabled: 1
-        settings: {}
-    data:
-      first:
-        Editor: Editor
-      second:
-        enabled: 0
-        settings:
-          CPU: x86_64
-          DefaultValueInitialized: true
-    data:
-      first:
-        Facebook: Win
-      second:
-        enabled: 0
-        settings:
-          CPU: None
-    data:
-      first:
-        Facebook: Win64
-      second:
-        enabled: 1
-        settings:
-          CPU: AnyCPU
-    data:
-      first:
-        Standalone: Linux
-      second:
-        enabled: 0
-        settings:
-          CPU: None
-    data:
-      first:
-        Standalone: Linux64
-      second:
-        enabled: 1
-        settings:
-          CPU: x86_64
-    data:
-      first:
-        Standalone: LinuxUniversal
-      second:
-        enabled: 1
-        settings:
-          CPU: x86_64
-    data:
-      first:
-        Standalone: OSXIntel
-      second:
-        enabled: 0
-        settings:
-          CPU: None
-    data:
-      first:
-        Standalone: OSXIntel64
-      second:
-        enabled: 1
-        settings:
-          CPU: AnyCPU
-    data:
-      first:
-        Standalone: OSXUniversal
-      second:
-        enabled: 0
-        settings:
-          CPU: x86_64
-    data:
-      first:
-        Standalone: Win
-      second:
-        enabled: 0
-        settings:
-          CPU: None
-    data:
-      first:
-        Standalone: Win64
-      second:
-        enabled: 1
-        settings:
-          CPU: AnyCPU
->>>>>>> 327d7ded584d3c489bdd7a2f179a54a25bc397db
   userData: 
   assetBundleName: 
   assetBundleVariant: 
