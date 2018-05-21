@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     float moveVertical;
     float moveHorizontal;
+    public float speed;
     Vector3 movement;
 
     Rigidbody rb;
@@ -34,10 +35,8 @@ public class PlayerController : MonoBehaviour
         moveVertical = state.ThumbSticks.Left.Y;
 
         movement = new Vector3(moveHorizontal, 0f, moveVertical);
-
-        rb.MovePosition(rb.position + movement * 0.5f);
-
-        //transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        Vector3 desiredVelocity = movement * speed;
+        rb.AddForce(desiredVelocity - rb.velocity, ForceMode.Impulse);
     }
     
 	void Update ()

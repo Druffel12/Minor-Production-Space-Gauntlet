@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public List<GameObject> players;
+    public List<InvisibleWallController> walls;
 
     public float cameraSpeed;
 
@@ -34,6 +35,11 @@ public class CameraController : MonoBehaviour
         {
             offset -= Time.deltaTime * cameraSpeed / 2;
         }
+
+        foreach (InvisibleWallController wall in walls)
+        {
+            wall.offset -= Time.deltaTime * cameraSpeed;
+        }
     }
 
     void CameraZoomOut()
@@ -42,6 +48,11 @@ public class CameraController : MonoBehaviour
         if (offset < maxOffset)
         {
             offset += Time.deltaTime * cameraSpeed/2;
+        }
+
+        foreach(InvisibleWallController wall in walls)
+        {
+            wall.offset += Time.deltaTime * cameraSpeed;
         }
     }
 
@@ -78,7 +89,7 @@ public class CameraController : MonoBehaviour
                         CameraZoomOut();
                     }
                 }
-                Debug.Log(distanceFromCenter + " " + i);
+                //Debug.Log(distanceFromCenter + " " + i);
 
                 if(distanceFromCenter < maxDistance)
                 {
