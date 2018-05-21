@@ -7,25 +7,6 @@ PluginImporter:
   isPreloaded: 0
   isOverridable: 0
   platformData:
-<<<<<<< HEAD
-  - first:
-      Any: 
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      Editor: Editor
-    second:
-      enabled: 0
-      settings:
-        DefaultValueInitialized: true
-  - first:
-      Windows Store Apps: WindowsStoreApps
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-=======
     data:
       first:
         Any: 
@@ -46,7 +27,6 @@ PluginImporter:
         enabled: 0
         settings:
           CPU: AnyCPU
->>>>>>> cole
   userData: 
   assetBundleName: 
   assetBundleVariant: 
