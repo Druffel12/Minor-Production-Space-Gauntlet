@@ -5,8 +5,6 @@ using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
-
     public PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
@@ -14,6 +12,13 @@ public class PlayerController : MonoBehaviour
     float moveVertical;
     float moveHorizontal;
     Vector3 movement;
+
+    Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
 
     void Move()
@@ -30,7 +35,9 @@ public class PlayerController : MonoBehaviour
 
         movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        rb.MovePosition(rb.position + movement * 0.5f);
+
+        //transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
     
 	void Update ()

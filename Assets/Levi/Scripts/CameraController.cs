@@ -15,6 +15,8 @@ public class CameraController : MonoBehaviour
 
     public float maxDistance;
 
+    bool canZoomOut = false;
+
     public float minOffset;
     float offset = 10;
     public float maxOffset;
@@ -22,6 +24,8 @@ public class CameraController : MonoBehaviour
     Vector3 center;
     Vector3 centroid;
     float count;
+    int zoomCounter;
+
 
     void CameraZoomin()
     {
@@ -68,16 +72,22 @@ public class CameraController : MonoBehaviour
                 float distanceFromCenter = Vector3.Distance(players[i].transform.position, centroid);
                 if (distanceFromCenter >= maxDistance)
                 {
+                    canZoomOut = true;
                     if(cameraDistance < maxCameraDistance)
                     {
                         CameraZoomOut();
                     }
                 }
-                //Debug.Log(distanceFromCenter + " " + i);
+                Debug.Log(distanceFromCenter + " " + i);
 
                 if(distanceFromCenter < maxDistance)
                 {
-                    if(cameraDistance > minCameraDistance)
+                    zoomCounter++;
+                    if(zoomCounter >= players.Count)
+                    {
+                        canZoomOut = false;
+                    }
+                    if(cameraDistance > minCameraDistance && canZoomOut == false)
                     {
                         CameraZoomin();
                     }
@@ -85,15 +95,12 @@ public class CameraController : MonoBehaviour
                 Color test = distanceFromCenter < maxDistance ? Color.red : Color.blue;
                 Debug.DrawLine(centroid, players[i].transform.position, test);
             }
+
+
             // moves the camera to the center between the players
             transform.position = centerVector;
 
             yield return null;
         }
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireCube(new Vector3(centroid.x, centroid.y, centroid.z), playerBounds);
     }
 }
