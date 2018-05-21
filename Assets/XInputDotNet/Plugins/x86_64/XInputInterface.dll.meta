@@ -42,19 +42,13 @@ PluginImporter:
           CPU: ARMv7
     data:
       first:
-        Any: 
-      second:
-        enabled: 1
-        settings: {}
-    data:
-      first:
         Editor: Editor
       second:
         enabled: 1
         settings:
           CPU: x86_64
           DefaultValueInitialized: true
-          OS: Windows
+          OS: AnyOS
     data:
       first:
         Facebook: Win
