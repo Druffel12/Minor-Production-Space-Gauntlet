@@ -9,14 +9,6 @@ public class InvisibleWallController : MonoBehaviour
 
     public float offset;
 
-    Vector3 viewPos;
-
-	
-	void Start ()
-    {
-        viewPos = (cam.WorldToViewportPoint(transform.position));
-    }
-
     private void Update()
     {
         //controls each walls positions

@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class HP : MonoBehaviour, IDamageable
 {
     public float health;
-    public float maxHP;
+    //public float maxHP;
     //public GameObject test;
     public Text healthText;
-
+    public PlayerStatsObj stats;
 
     //damage function for harming creatures
     public void Damage(float Amt)
@@ -32,7 +32,8 @@ public class HP : MonoBehaviour, IDamageable
     //attempts damage to hit object by looking for idamageable 
 	void Start ()
     {
-        maxHP = health;
+        health = stats.maxHealth;
+        //maxHP = health;
         //IDamageable Attempt = test.GetComponent<IDamageable>();
         //if (Attempt != null)
         //{

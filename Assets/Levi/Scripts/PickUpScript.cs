@@ -15,10 +15,10 @@ public class PickUpScript : MonoBehaviour
             if(playerHP != null)
             {
                 playerHP.health += healthIncrease;
-                if (playerHP.health >= playerHP.maxHP)
-                {
-                    playerHP.health = playerHP.maxHP;
-                }
+                //if (playerHP.health >= playerHP.maxHP)
+                //{
+                //    playerHP.health = playerHP.maxHP;
+                //}
                 Destroy(gameObject);
             }
         }
