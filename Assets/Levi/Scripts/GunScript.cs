@@ -7,7 +7,6 @@ public class GunScript : MonoBehaviour
 {
     public float range;
     public float damage;
-
     public PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
