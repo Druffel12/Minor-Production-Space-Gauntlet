@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class PickUpScript : MonoBehaviour
 {
+    public float healthIncrease;
 
-	
-	void Start ()
+    private void OnTriggerEnter(Collider other)
     {
-		
-	}
-	
+     if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            HP playerHP = other.GetComponent<HP>();
 
-	void Update ()
-    {
-		
-	}
+            if(playerHP != null)
+            {
+                playerHP.health += healthIncrease;
+                if (playerHP.health >= playerHP.maxHP)
+                {
+                    playerHP.health = playerHP.maxHP;
+                }
+                Destroy(gameObject);
+            }
+        }
+    }
 }

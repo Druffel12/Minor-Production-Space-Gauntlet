@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HP : MonoBehaviour, IDamageable
 {
     public float health;
-    public GameObject test;
+    public float maxHP;
+    //public GameObject test;
+    public Text healthText;
+
 
     //damage function for harming creatures
     public void Damage(float Amt)
     {
         health -= Amt;
-        Debug.Log("This was the default health version of Idamageable");
+        //Debug.Log("This was the default health version of Idamageable");
         if (health <= 0)
         {
             Death();
@@ -28,11 +32,23 @@ public class HP : MonoBehaviour, IDamageable
     //attempts damage to hit object by looking for idamageable 
 	void Start ()
     {
-        IDamageable Attempt = test.GetComponent<IDamageable>();
-        if (Attempt != null)
+        maxHP = health;
+        //IDamageable Attempt = test.GetComponent<IDamageable>();
+        //if (Attempt != null)
+        //{
+        //    //T setup damage to hit creature
+        //    //Attempt.Damage();
+        //}
+        StartCoroutine("HealthTick");
+    }
+
+    IEnumerator HealthTick()
+    {
+        while (health > 0)
         {
-            //T setup damage to hit creature
-            //Attempt.Damage();
+            yield return new WaitForSeconds(1);
+            healthText.text = health.ToString();
+            health--;
         }
     }
 }
