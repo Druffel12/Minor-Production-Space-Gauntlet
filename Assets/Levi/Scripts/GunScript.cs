@@ -43,10 +43,14 @@ public class GunScript : MonoBehaviour
             endPosition = hit.point;
 
             //checks if the raycast hits an enemy
-            if(hit.transform.tag == "Enemy")
+            if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Shootable"))
             {
                 //calls the damage function
-                hit.transform.GetComponent<IDamageable>().Damage(damage);
+                IDamageable damageable = hit.transform.GetComponent<IDamageable>();
+                if(damageable != null)
+                {
+                    damageable.Damage(damage);
+                }
             }
         }
 
