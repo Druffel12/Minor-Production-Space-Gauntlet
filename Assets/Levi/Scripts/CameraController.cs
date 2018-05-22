@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
         {
             offset -= Time.deltaTime * cameraSpeed / 2;
         }
-
+        //tells the walls to spread out
         foreach (InvisibleWallController wall in walls)
         {
             wall.offset -= Time.deltaTime * cameraSpeed;
@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour
         {
             offset += Time.deltaTime * cameraSpeed/2;
         }
-
+        //tells the wells to come closer to the players
         foreach(InvisibleWallController wall in walls)
         {
             wall.offset += Time.deltaTime * cameraSpeed;
@@ -58,6 +58,7 @@ public class CameraController : MonoBehaviour
 
     void Start ()
     {
+        //logs all the players currently playing
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
         StartCoroutine("CameraPosition");
     }
@@ -66,7 +67,7 @@ public class CameraController : MonoBehaviour
     {
         while (true)
         {
-            
+            //resets the values
             center = Vector3.zero;
             count = 0;
             //finds the center between all the players
@@ -78,6 +79,8 @@ public class CameraController : MonoBehaviour
 
             centroid = center / players.Count;
             Vector3 centerVector = new Vector3(centroid.x, cameraDistance, centroid.z - offset);
+
+            //checks through all the players to see if the camera should zoom out
            for(int i = 0; i < players.Count; i++)
             {
                 float distanceFromCenter = Vector3.Distance(players[i].transform.position, centroid);
@@ -89,7 +92,6 @@ public class CameraController : MonoBehaviour
                         CameraZoomOut();
                     }
                 }
-                //Debug.Log(distanceFromCenter + " " + i);
 
                 if(distanceFromCenter < maxDistance)
                 {
