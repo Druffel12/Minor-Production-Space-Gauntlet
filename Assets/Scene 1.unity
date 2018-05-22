@@ -215,6 +215,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114823082099253654, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
+    - target: {fileID: 114557991790558894, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114844804603679212, guid: e18d48efec0a66c48bca4afea1f5d3f4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e18d48efec0a66c48bca4afea1f5d3f4, type: 2}
@@ -236,8 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 700
-  maxHP: 0
   healthText: {fileID: 747144125}
+  stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
 --- !u!1001 &230548335
 Prefab:
   m_ObjectHideFlags: 0
@@ -300,9 +312,40 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114823082099253654, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
+    - target: {fileID: 114557991790558894, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e18d48efec0a66c48bca4afea1f5d3f4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &230548336 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1854722393540870, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 230548335}
+--- !u!114 &230548337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230548336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e78db29fe2fab04c86d64927c4ecae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  healthText: {fileID: 102349788}
+  stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
 --- !u!1 &252128760
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +987,18 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114823082099253654, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
+    - target: {fileID: 114557991790558894, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114844804603679212, guid: e18d48efec0a66c48bca4afea1f5d3f4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e18d48efec0a66c48bca4afea1f5d3f4, type: 2}
@@ -965,8 +1020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 700
-  maxHP: 0
   healthText: {fileID: 1240569781}
+  stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
 --- !u!1001 &1408414828
 Prefab:
   m_ObjectHideFlags: 0
@@ -1039,6 +1094,18 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114823082099253654, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
+    - target: {fileID: 114557991790558894, guid: e18d48efec0a66c48bca4afea1f5d3f4,
+        type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114844804603679212, guid: e18d48efec0a66c48bca4afea1f5d3f4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e18d48efec0a66c48bca4afea1f5d3f4, type: 2}
@@ -1060,8 +1127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 700
-  maxHP: 0
   healthText: {fileID: 40179778}
+  stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
 --- !u!1 &1422321280
 GameObject:
   m_ObjectHideFlags: 0

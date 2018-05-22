@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23452310360471608}
   - component: {fileID: 114823082099253654}
   - component: {fileID: 54528219573937506}
-  - component: {fileID: 114844804603679212}
+  - component: {fileID: 114826085675202800}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -195,12 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb1395768342964397bdbad33e3a8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
-  range: 20
-  damage: 15
-  playerIndex: 1
->>>>>>> cole
   line: {fileID: 120242725644835266}
   stats: {fileID: 0}
 --- !u!114 &114823082099253654
@@ -214,13 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b89b74840ac99842960992237e0047b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   playerIndex: 0
-  stats: {fileID: 0}
-=======
-  playerIndex: 1
-  speed: 25
---- !u!114 &114844804603679212
+  stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
+--- !u!114 &114826085675202800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -231,10 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e78db29fe2fab04c86d64927c4ecae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 700
-  maxHP: 0
+  health: 0
   healthText: {fileID: 0}
->>>>>>> cole
+  stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
 --- !u!120 &120242725644835266
 LineRenderer:
   m_ObjectHideFlags: 1
