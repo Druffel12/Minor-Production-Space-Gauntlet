@@ -6,7 +6,7 @@ public class PickupHP : MonoBehaviour, IDamageable {
 
     public float health;
     //Damage to pickupHP
-    public void Damage(int Amnt)
+    public void Damage(float Amnt)
     {
         health -= Amnt;
         Debug.Log("This was the pickups version of Idamageable");

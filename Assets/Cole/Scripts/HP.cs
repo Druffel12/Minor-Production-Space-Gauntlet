@@ -8,7 +8,7 @@ public class HP : MonoBehaviour, IDamageable
     public GameObject test;
 
     //damage function for harming creatures
-    public void Damage(int Amt)
+    public void Damage(float Amt)
     {
         health -= Amt;
         Debug.Log("This was the default health version of Idamageable");
@@ -28,20 +28,20 @@ public class HP : MonoBehaviour, IDamageable
     //attempts damage to hit object by looking for idamageable 
 	void Start ()
     {
-       IDamageable Attempt = test.GetComponent<IDamageable>();
-        if(Attempt != null)
+        IDamageable Attempt = test.GetComponent<IDamageable>();
+        if (Attempt != null)
         {
             //T setup damage to hit creature
             //Attempt.Damage();
         }
-	}
+    }
 }
 
 // system for damaging and destroying gameobjects
 class OtherHp: MonoBehaviour , IDamageable
 {
     float health;
-    public void Damage(int Amt)
+    public void Damage(float Amt)
     {
         health += Amt;
         if (health >+ 50)

@@ -6,7 +6,7 @@ public class AIHP : MonoBehaviour {
 
     public void Damage(int Amt)
     {
-        EnemyHP -= Amt;
+      //  EnemyHP -= Amt;
     }
     public void Death()
     {

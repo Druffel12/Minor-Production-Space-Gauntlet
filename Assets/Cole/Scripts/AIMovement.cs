@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIMovement : MonoBehaviour, IDamageable
+public class AIMovement : MonoBehaviour
 {
     private Transform Player;
     private Transform MyTransform;

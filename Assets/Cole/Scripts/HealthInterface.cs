@@ -5,7 +5,7 @@ using UnityEngine;
 //damage/death Idamageables
 interface IDamageable
 {
-    void Damage(int Amt);
+    void Damage(float Amt);
     void Death();
 
 }

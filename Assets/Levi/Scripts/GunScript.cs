@@ -6,12 +6,9 @@ using XInputDotNetPure;
 public class GunScript : MonoBehaviour
 {
     public float range;
-<<<<<<< HEAD
-    public int damage;
 
-=======
     public float damage;
->>>>>>> cole
+
     public PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
