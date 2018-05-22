@@ -44,10 +44,5 @@ public class ObjectPooler : MonoBehaviour {
             PooledObjects.Add(obj);
         }
     }
-    //T pool logic with delay timer
-    void Start()
-    {
-
-    }
 
 }

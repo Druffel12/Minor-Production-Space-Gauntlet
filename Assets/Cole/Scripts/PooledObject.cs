@@ -11,9 +11,4 @@ public class PooledObject : MonoBehaviour {
         myPool.PooledObjects.Add(gameObject);
         gameObject.SetActive(false);
     }
-
-    public void ReturnWithDelay(float Delay)
-    {
-        Invoke("ReturnToPool", Delay);
-    }
 }
