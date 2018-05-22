@@ -1572,6 +1572,14 @@ Prefab:
       propertyPath: thoughtDelay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1568100630635354, guid: ad8bd57e32956c742a897c4b2afb172c, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867554873519940, guid: ad8bd57e32956c742a897c4b2afb172c, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad8bd57e32956c742a897c4b2afb172c, type: 2}
   m_IsPrefabParent: 0
@@ -1642,6 +1650,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: 50aae66b1dcde6840b4373d23c611c50, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7a402cf0b84c21489773ba3eb86a774, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50aae66b1dcde6840b4373d23c611c50, type: 3}
   m_IsPrefabParent: 0
