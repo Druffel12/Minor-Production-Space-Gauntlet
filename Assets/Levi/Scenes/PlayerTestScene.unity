@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 20
-  damage: 0
+  damage: 15
   playerIndex: 1
   line: {fileID: 30924366}
 --- !u!23 &30924368
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 20
-  damage: 0
+  damage: 15
   playerIndex: 0
   line: {fileID: 53552152}
 --- !u!23 &53552154
@@ -1256,23 +1256,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 2
---- !u!1 &948708286 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1867554873519940, guid: ad8bd57e32956c742a897c4b2afb172c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1230131413}
---- !u!135 &948708294
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 948708286}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &967299395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1555,21 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4654195427510560, guid: ad8bd57e32956c742a897c4b2afb172c, type: 2}
       propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114712475133327286, guid: ad8bd57e32956c742a897c4b2afb172c,
+        type: 2}
+      propertyPath: EnemyHP
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114712475133327286, guid: ad8bd57e32956c742a897c4b2afb172c,
+        type: 2}
+      propertyPath: searchRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114712475133327286, guid: ad8bd57e32956c742a897c4b2afb172c,
+        type: 2}
+      propertyPath: thoughtDelay
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
