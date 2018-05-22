@@ -5,24 +5,34 @@ using XInputDotNetPure;
 
 public class GunScript : MonoBehaviour
 {
-    public float range;
+    float range;
+    float timeBetweenShots;
+    float damage;
 
-    public float damage;
-
-    public PlayerIndex playerIndex;
+    PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
 
     public LineRenderer line;
+    public PlayerStatsObj stats;
+
+    private void Start()
+    {
+        playerIndex = GetComponentInParent<PlayerController>().playerIndex;
+        range = stats.range;
+        damage = stats.damage;
+    }
 
     void Update()
     {
         prevState = state;
         state = GamePad.GetState(playerIndex);
-
-        // checks if the Triggers are pressed
-        if (prevState.Triggers.Right <= 0.4 && state.Triggers.Right >= 0.4 )
+        timeBetweenShots += Time.deltaTime;
+        // checks if the Triggers or the X button is pressed
+        if (state.Triggers.Right >= 0.4 && timeBetweenShots >= stats.timeBetweenShots ||
+            state.Buttons.X == ButtonState.Pressed && timeBetweenShots >= stats.timeBetweenShots)
         {
+            timeBetweenShots = 0;
             Shoot(transform.position,transform.forward,range);
             line.enabled = true;
         }
