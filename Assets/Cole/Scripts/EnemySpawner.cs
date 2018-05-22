@@ -6,14 +6,13 @@ using UnityEngine.AI;
 public class EnemySpawner : MonoBehaviour
 {
 
-
-    public static float PlayerHealth = 100;
-    public GameObject enemy;
     private float SpawnTime;
     public int SpawnCount;
-    public Transform[] SpawnPoint;
     public float Spawner;
-    public int Wave;
+    public float OffSetUp;
+    public float OffSetRight;
+    public float OffSetDown;
+    public float OffSetLeft;
 
 
     // Use this for initialization
@@ -33,9 +32,9 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject SpawnedBug = ObjectPooler.SharedInstance.GetPooledObject();
 
+                SpawnedBug.GetComponent<AIHP>().Spawner = this;
                 SpawnedBug.SetActive(true);
                 SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
-
 
                 if (SpawnCount > 0)
                 {
