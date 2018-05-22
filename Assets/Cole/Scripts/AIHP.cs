@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIHP : MonoBehaviour {
+public class AIHP : MonoBehaviour, IDamageable
+{
 
-    public void Damage(int Amt)
+    public void Damage(float Amt)
     {
       //  EnemyHP -= Amt;
     }
