@@ -10,14 +10,15 @@ public class AIMovement : MonoBehaviour
     public float Range;
     public float searchRange;
     Vector3 Dir;
-    //private GameObject Target;
-    public int EnemyHP;
     public float thoughtDelay;
     float thoughtTimer;
+    public GameObject AttackCube;
+    public bool isAttacking;
     //set transform
     private void Awake()
     {
         MyTransform = transform;
+        AttackCube.SetActive(false);
     }
 
     void OnDrawGizmos()
@@ -40,7 +41,6 @@ public class AIMovement : MonoBehaviour
                 retval = guy.transform;
             }
         }
-        //Debug.Log(retval.gameObject.name);
         return retval;
     }
 
@@ -65,11 +65,16 @@ public class AIMovement : MonoBehaviour
     //Seeking and Attacking function
     private void Attack()
     {
-        if(Vector3.Distance(transform.position, Player.position) < Range)
+        if(Vector3.Distance(transform.position, Player.position) < Range && !isAttacking)
         {
-            //T
+            AttackCube.SetActive(true);
+            isAttacking = true;
+            Debug.Log("Attack Cube on");
+           //GameObject spawnedAttackCube = Instantiate(AttackCube);
+            //spawnedAttackCube.transform.position = transform.position + transform.forward;
         }
     }
+
    
 }
 

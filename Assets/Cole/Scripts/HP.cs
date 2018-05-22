@@ -20,38 +20,8 @@ public class HP : MonoBehaviour, IDamageable
 
     public void Death()
     {
-        //T need to add animation 
-        Destroy(gameObject);
-    }
-
-	// Use this for initialization
-    //attempts damage to hit object by looking for idamageable 
-	void Start ()
-    {
-        IDamageable Attempt = test.GetComponent<IDamageable>();
-        if (Attempt != null)
-        {
-            //T setup damage to hit creature
-            //Attempt.Damage();
-        }
-    }
-}
-
-// system for damaging and destroying gameobjects
-class OtherHp: MonoBehaviour , IDamageable
-{
-    float health;
-    public void Damage(float Amt)
-    {
-        health += Amt;
-        if (health >+ 50)
-        {
-            Death();
-        }
-    }
-
-    public void Death()
-    {
+        //T need to add animation also possible UI element 
         Destroy(gameObject);
     }
 }
+
