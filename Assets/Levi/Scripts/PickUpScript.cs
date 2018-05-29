@@ -15,6 +15,8 @@ public class PickUpScript : MonoBehaviour
             if(playerHP != null)
             {
                 playerHP.health += healthIncrease;
+                playerHP.healthText.text = playerHP.health.ToString();
+
                 //if (playerHP.health >= playerHP.maxHP)
                 //{
                 //    playerHP.health = playerHP.maxHP;
