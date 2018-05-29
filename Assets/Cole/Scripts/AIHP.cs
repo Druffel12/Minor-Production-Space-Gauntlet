@@ -8,11 +8,14 @@ public class AIHP : MonoBehaviour, IDamageable
     public ObjectPooler MyPool;
     public float MaxHP;
     public EnemySpawner Spawner;
+    Animator anim;
 
     private void Start()
     {
         MyPool = ObjectPooler.SharedInstance;
         MaxHP = EnemyHP;
+        anim = GetComponent<Animator>();
+        
     }
     public void Damage(float Amt)
     {
@@ -25,7 +28,7 @@ public class AIHP : MonoBehaviour, IDamageable
     public void Death()
     {
         ReturnToPool();
-
+        anim.SetBool("isDead", true);
         EnemyHP = MaxHP;
     }
     public void ReturnToPool()

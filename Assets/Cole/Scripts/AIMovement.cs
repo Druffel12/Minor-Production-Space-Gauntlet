@@ -79,11 +79,8 @@ public class AIMovement : MonoBehaviour
         if(Vector3.Distance(transform.position, Player.position) < Range && !isAttacking)
         {
             anim.SetTrigger("isAttacking");
-            //AttackCube.SetActive(true);
             isAttacking = true;
             Debug.Log("Attack Cube on");
-           //GameObject spawnedAttackCube = Instantiate(AttackCube);
-            //spawnedAttackCube.transform.position = transform.position + transform.forward;
         }
     }
 

@@ -21,6 +21,13 @@ public class PickupHP : MonoBehaviour, IDamageable {
     {
         //T add sound clip for shooting HP pick up
         Destroy(gameObject);
+
+    }
+
+    public void ExplosionDamage(Vector3 Center, float radius)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(Center, radius);
+       // int
     }
 
 }
