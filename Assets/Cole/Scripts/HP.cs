@@ -15,6 +15,7 @@ public class HP : MonoBehaviour, IDamageable
     public void Damage(float Amt)
     {
         health -= Amt;
+        healthText.text = health.ToString();
         //Debug.Log("This was the default health version of Idamageable");
         if (health <= 0)
         {
