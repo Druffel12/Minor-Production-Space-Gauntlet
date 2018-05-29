@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour, IDamageable
 {
 
     private float SpawnTime;
     public int SpawnCount;
     public float Spawner;
+    public float SpawnerHP;
     public float OffSetUp;
     public float OffSetRight;
-    public float OffSetDown;
-    public float OffSetLeft;
-
+    private float[] SpawnSides;
 
     // Use this for initialization
     //resets spawn timer
@@ -50,5 +49,18 @@ public class EnemySpawner : MonoBehaviour
     void ResetTimer()
     {
         SpawnTime = Spawner;
+    }
+
+    public void Damage(float Amt)
+    {
+        SpawnerHP -= Amt;
+        if (SpawnerHP <= 0)
+        {
+            Death();
+        }
+    }
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }

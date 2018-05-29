@@ -211,6 +211,7 @@ MonoBehaviour:
   EnemyHP: 30
   MyPool: {fileID: 0}
   MaxHP: 0
+  Spawner: {fileID: 0}
 --- !u!114 &114827875238110116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubeLifetime: 0.2
   ourAI: {fileID: 114232144395124912}
+  Damage: 20
 --- !u!136 &136243077461159046
 CapsuleCollider:
   m_ObjectHideFlags: 1

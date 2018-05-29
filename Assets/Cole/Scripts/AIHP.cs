@@ -32,6 +32,9 @@ public class AIHP : MonoBehaviour, IDamageable
     {
         MyPool.PooledObjects.Add(gameObject);
         gameObject.SetActive(false);
-       Spawner.SpawnCount++ ;
+        if(Spawner != null)
+        {
+            Spawner.SpawnCount++;
+        }
     }
 }

@@ -27,7 +27,7 @@ PluginImporter:
           Exclude iOS: 1
     data:
       first:
-        '': first
+        '': data
       second:
         enabled: 0
         settings: {}

@@ -14,11 +14,20 @@ public class AIMovement : MonoBehaviour
     float thoughtTimer;
     public GameObject AttackCube;
     public bool isAttacking;
+    Animator anim;
+    NavMeshAgent agent;
     //set transform
     private void Awake()
     {
         MyTransform = transform;
         AttackCube.SetActive(false);
+    }
+
+    private void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+
     }
 
     void OnDrawGizmos()
@@ -49,7 +58,7 @@ public class AIMovement : MonoBehaviour
     void Update()
     {
         thoughtTimer -= Time.deltaTime;
-        if(thoughtTimer <= 0 && Player == null)
+        if(thoughtTimer <= 0 )
         {
             Player = findNearestPlayer();
             thoughtTimer = thoughtDelay;
@@ -57,7 +66,9 @@ public class AIMovement : MonoBehaviour
         
         if (Player != null)
         {
-            GetComponent<NavMeshAgent>().destination = Player.position;
+            agent.destination = Player.position;
+            anim.SetBool("isRunning", true);
+            
             Debug.DrawLine(transform.position, Player.transform.position);
             Attack();
         }
@@ -67,7 +78,8 @@ public class AIMovement : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, Player.position) < Range && !isAttacking)
         {
-            AttackCube.SetActive(true);
+            anim.SetTrigger("isAttacking");
+            //AttackCube.SetActive(true);
             isAttacking = true;
             Debug.Log("Attack Cube on");
            //GameObject spawnedAttackCube = Instantiate(AttackCube);
@@ -75,6 +87,16 @@ public class AIMovement : MonoBehaviour
         }
     }
 
+    public void enableCube()
+    {
+        AttackCube.SetActive(true);
+    }
+
+    public void disableCube()
+    {
+        isAttacking = false;
+        AttackCube.SetActive(false);
+    }
    
 }
 
