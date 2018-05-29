@@ -35,13 +35,7 @@ public class HP : MonoBehaviour, IDamageable
 	void Start ()
     {
         health = stats.maxHealth;
-        //maxHP = health;
-        //IDamageable Attempt = test.GetComponent<IDamageable>();
-        //if (Attempt != null)
-        //{
-        //    //T setup damage to hit creature
-        //    //Attempt.Damage();
-        //}
+        healthText.text = health.ToString();
         StartCoroutine("HealthTick");
     }
 

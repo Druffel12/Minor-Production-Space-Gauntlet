@@ -19,7 +19,8 @@ public class CameraController : MonoBehaviour
     bool canZoomOut = false;
 
     public float minOffset;
-    float offset = 10;
+    [SerializeField]
+    float offset;
     public float maxOffset;
     
     Vector3 center;
@@ -60,6 +61,7 @@ public class CameraController : MonoBehaviour
     {
         //logs all the players currently playing
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
+        offset = minOffset;
         StartCoroutine("CameraPosition");
     }
 
