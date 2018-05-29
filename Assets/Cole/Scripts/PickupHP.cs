@@ -20,7 +20,7 @@ public class PickupHP : MonoBehaviour, IDamageable {
     public void Death()
     {
         //T add sound clip for shooting HP pick up
-        //Destroy(gameobject);
+        Destroy(gameObject);
     }
 
 }
