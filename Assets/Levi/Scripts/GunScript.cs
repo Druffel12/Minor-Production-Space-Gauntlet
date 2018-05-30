@@ -9,6 +9,8 @@ public class GunScript : MonoBehaviour
     float timeBetweenShots;
     float damage;
 
+    Animator anim;
+
     PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
@@ -18,6 +20,7 @@ public class GunScript : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponentInParent<Animator>();
         playerIndex = GetComponentInParent<PlayerController>().playerIndex;
         range = stats.range;
         damage = stats.damage;
@@ -35,9 +38,11 @@ public class GunScript : MonoBehaviour
             timeBetweenShots = 0;
             Shoot(transform.position,transform.forward,range);
             line.enabled = true;
+            anim.SetBool("isAttacking", true);
         }
         else
         {
+            anim.SetBool("isAttacking", false);
             line.enabled = false;
         }
     }
