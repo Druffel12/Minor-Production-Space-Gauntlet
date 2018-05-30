@@ -14,8 +14,10 @@ public class AIMovement : MonoBehaviour
     float thoughtTimer;
     public GameObject AttackCube;
     public bool isAttacking;
+    public bool isRunning;
     Animator anim;
     NavMeshAgent agent;
+
     //set transform
     private void Awake()
     {
@@ -61,16 +63,30 @@ public class AIMovement : MonoBehaviour
         if(thoughtTimer <= 0 )
         {
             Player = findNearestPlayer();
+            if(Player != null)
+            {
+                agent.isStopped = false;
+            }
             thoughtTimer = thoughtDelay;
         }
         
         if (Player != null)
         {
-            agent.destination = Player.position;
-            anim.SetBool("isRunning", true);
-            
-            Debug.DrawLine(transform.position, Player.transform.position);
-            Attack();
+            if (Player.gameObject.activeInHierarchy)
+            {
+                agent.destination = Player.position;
+                anim.SetBool("isRunning", true);
+
+                Debug.DrawLine(transform.position, Player.transform.position);
+                Attack();
+            }
+            else
+            {
+                Player = null;
+                anim.SetBool("isRunning", false);
+                agent.isStopped = true;
+                anim.SetTrigger("isIdle");
+            }
         }
     }
     //Seeking and Attacking function

@@ -23,11 +23,4 @@ public class PickupHP : MonoBehaviour, IDamageable {
         Destroy(gameObject);
 
     }
-
-    public void ExplosionDamage(Vector3 Center, float radius)
-    {
-        Collider[] hitColliders = Physics.OverlapSphere(Center, radius);
-       // int
-    }
-
 }
