@@ -9,13 +9,15 @@ public class AIHP : MonoBehaviour, IDamageable
     public float MaxHP;
     public EnemySpawner Spawner;
     Animator anim;
+    TreasureDrop drop;
 
     private void Start()
     {
         MyPool = ObjectPooler.SharedInstance;
         MaxHP = EnemyHP;
         anim = GetComponent<Animator>();
-        
+
+        drop = GetComponent<TreasureDrop>();
     }
     public void Damage(float Amt)
     {
@@ -28,6 +30,7 @@ public class AIHP : MonoBehaviour, IDamageable
     public void Death()
     {
         ReturnToPool();
+        drop.SpawnTreasure();
         anim.SetBool("isDead", true);
         EnemyHP = MaxHP;
     }

@@ -17,12 +17,14 @@ public class PlayerController : MonoBehaviour
     bool canMove;
 
     Rigidbody rb;
-    
+
+    Animator anim;
+
     public PlayerStatsObj stats;
 
     private void Start()
     {
-
+        anim = GetComponent<Animator>();
         speed = stats.speed;
         rb = GetComponent<Rigidbody>();
         canMove = true;
@@ -69,12 +71,17 @@ public class PlayerController : MonoBehaviour
         if(state.Triggers.Left >= 0.4)
         {
             canMove = false;
+            anim.SetBool("isCrouched", true);
         }
         else
         {
             canMove = true;
+            anim.SetBool("isCrouched", false);    
         }
-
+        
         Move();
+        float runValue = Mathf.Clamp(Mathf.Abs(rb.velocity.magnitude), 0, 1);
+        anim.SetFloat("isRunning", rb.velocity.magnitude);
+       // Debug.Log(rb.velocity.magnitude);
 	}
 }

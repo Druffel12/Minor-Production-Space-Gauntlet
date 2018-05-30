@@ -8,12 +8,21 @@ public class PickUpScript : MonoBehaviour
     float healthIncrease;
     int score;
     public PickUpStatsObj stats;
+    public ObjectPooler pool;
 
     private void Start()
     {
         healthIncrease = stats.healthIncrease;
         score = stats.scoreIncrease;
+        pool = GetComponent<ObjectPooler>();
     }
+
+    void ReturnToPool()
+    {
+        pool.PooledObjects.Add(gameObject);
+        gameObject.SetActive(false);
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,8 +45,16 @@ public class PickUpScript : MonoBehaviour
                 ScoreCounter playerScore = other.GetComponent<ScoreCounter>();
                 if (playerScore != null)
                 {
-                    playerScore.ScoreIncrease(score);
-                    Destroy(gameObject);
+                    if (pool != null)
+                    {
+                        playerScore.ScoreIncrease(score);
+                        ReturnToPool();
+                    }
+                    else
+                    {
+                        playerScore.ScoreIncrease(score);
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
