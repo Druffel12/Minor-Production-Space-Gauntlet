@@ -11,6 +11,8 @@ public class HP : MonoBehaviour, IDamageable
     public Text healthText;
     public PlayerStatsObj stats;
 
+    CameraController cameraController;
+
     //damage function for harming creatures
     public void Damage(float Amt)
     {
@@ -20,6 +22,7 @@ public class HP : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             Death();
+            cameraController.playerCount();
         }
     }
 
@@ -34,6 +37,8 @@ public class HP : MonoBehaviour, IDamageable
     //attempts damage to hit object by looking for idamageable 
 	void Start ()
     {
+        cameraController = Camera.main.GetComponent<CameraController>();
+
         health = stats.maxHealth;
         healthText.text = health.ToString();
         StartCoroutine("HealthTick");

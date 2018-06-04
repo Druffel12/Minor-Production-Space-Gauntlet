@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PlayerTopMask
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Body
+    m_Weight: 1
+  - m_Path: CharacterRig
+    m_Weight: 0
+  - m_Path: CharacterRig/Root
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Hips
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Hips/HipJoint.L
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Hips/HipJoint.L/Thigh.L
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Hips/HipJoint.L/Thigh.L/Shin.L
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Hips/HipJoint.R
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Hips/HipJoint.R/Thigh.R
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Hips/HipJoint.R/Thigh.R/Shin.R
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Neck
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Neck/Head
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Neck/Head/Tube6.001
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack/Tank
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack/Tube1
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack/Tube1/Tube2
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack/Tube1/Tube2/Tube3
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack/Tube1/Tube2/Tube3/Tube4
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack/Tube1/Tube2/Tube3/Tube4/Tube5
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Pack/Tube1/Tube2/Tube3/Tube4/Tube5/Tube6
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.L
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.L/ShoulderArmor.L
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.L/UpperArm.L
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.L/UpperArm.L/Forearm.L
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.L/UpperArm.L/Forearm.L/Hand.L
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.R
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.R/ShoulderArmor.R
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.R/UpperArm.R
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.R/UpperArm.R/Forearm.R
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.R/UpperArm.R/Forearm.R/Hand.R
+    m_Weight: 1
+  - m_Path: CharacterRig/Root/IkLeg.L
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/IkLeg.L/Foot.L
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/IkLeg.L/Foot.L/Toe.L
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/IkLeg.R
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/IkLeg.R/Foot.R
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/IkLeg.R/Foot.R/Toe.R
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/IkPoleLeg.L
+    m_Weight: 0
+  - m_Path: CharacterRig/Root/IkPoleLeg.R
+    m_Weight: 0

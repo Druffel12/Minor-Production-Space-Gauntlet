@@ -65,6 +65,11 @@ public class CameraController : MonoBehaviour
         StartCoroutine("CameraPosition");
     }
 
+    public void playerCount()
+    {
+        players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
+    }
+
     IEnumerator CameraPosition()
     {
         while (true)

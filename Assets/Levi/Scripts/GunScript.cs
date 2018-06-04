@@ -10,6 +10,7 @@ public class GunScript : MonoBehaviour
     float damage;
 
     Animator anim;
+   
 
     PlayerIndex playerIndex;
     GamePadState state;
@@ -32,17 +33,28 @@ public class GunScript : MonoBehaviour
         state = GamePad.GetState(playerIndex);
         timeBetweenShots += Time.deltaTime;
         // checks if the Triggers or the X button is pressed
+
+        if(state.Triggers.Right >= 0.4 || state.Buttons.X == ButtonState.Pressed)
+        {
+            anim.SetBool("isAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("isAttacking", false);
+        }
+
+
         if (state.Triggers.Right >= 0.4 && timeBetweenShots >= stats.timeBetweenShots ||
             state.Buttons.X == ButtonState.Pressed && timeBetweenShots >= stats.timeBetweenShots)
         {
             timeBetweenShots = 0;
             Shoot(transform.position,transform.forward,range);
             line.enabled = true;
-            anim.SetBool("isAttacking", true);
+            anim.SetTrigger("isFiring");
+           
         }
         else
         {
-            anim.SetBool("isAttacking", false);
             line.enabled = false;
         }
     }
