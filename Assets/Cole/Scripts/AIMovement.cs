@@ -56,7 +56,7 @@ public class AIMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    //going after said player while looking at them and attacking 
+    //going after said player while looking at them
     void Update()
     {
         thoughtTimer -= Time.deltaTime;
