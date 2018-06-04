@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         {
             if (SpawnCount > 0)
             {
-                GameObject SpawnedBug = ObjectPooler.SharedInstance.GetPooledObject();
+                GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
 
                 SpawnedBug.GetComponent<AIHP>().Spawner = this;
                 SpawnedBug.SetActive(true);

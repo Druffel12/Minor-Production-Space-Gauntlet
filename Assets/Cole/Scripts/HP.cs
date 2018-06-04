@@ -45,7 +45,7 @@ public class HP : MonoBehaviour, IDamageable
         {
             yield return new WaitForSeconds(1);
             healthText.text = health.ToString();
-            health--;
+            Damage(1);
         }
     }
 

@@ -4,11 +4,31 @@ using UnityEngine;
 
 public class PickUpExplosion : MonoBehaviour {
     public float Damage;
+    public GameObject ExplosionR;
+    Animator anim;
 
-    public void ExplosionDamage(Vector3 Center, float radius)
+    private void Awake()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(Center, radius);
-
+        ExplosionR.SetActive(false);
     }
 
+    public void EnableExplosionR()
+    {
+        ExplosionR.SetActive(true);
+    }
+
+    public void SExplosionDamage(Vector3 location, float radius, float damage)
+    {
+        Collider[] EnemysInRange = Physics.OverlapSphere(location, radius);
+        foreach (Collider col in EnemysInRange)
+        {
+            
+        }
+        
+    }
+
+    public void TExplosionDamage()
+    {
+        anim.SetTrigger("UseGrenade");
+    }
 }
