@@ -10,9 +10,8 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     public int SpawnCount;
     public float Spawner;
     public float SpawnerHP;
-    public float OffSetUp;
-    public float OffSetRight;
-    private float[] SpawnSides;
+    public float SpawnFB;
+    public float SpawnLR;
 
     // Use this for initialization
     //resets spawn timer

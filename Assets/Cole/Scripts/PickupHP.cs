@@ -14,7 +14,6 @@ public class PickupHP : MonoBehaviour, IDamageable {
         Debug.Log("This was the pickups version of Idamageable");
         if(health <= 0 && IsDead == false)
         {
-           
             IsDead = true;
             Death();
         }

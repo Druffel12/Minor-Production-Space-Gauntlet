@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ThrowableGrenade : MonoBehaviour {
 
-
+    
     PickUpExplosion explosion;
+
 	// Use this for initialization
 	void Start () {
         explosion = GetComponent<PickUpExplosion>();
@@ -17,6 +18,7 @@ public class ThrowableGrenade : MonoBehaviour {
         if(dummy != null)
         {
             explosion.EnableExplosion(transform.position);
+            
         }
     }
 
@@ -27,6 +29,7 @@ public class ThrowableGrenade : MonoBehaviour {
         if(dummy != null)
         {
             explosion.EnableExplosion(transform.position);
+
         }
     }
 }
