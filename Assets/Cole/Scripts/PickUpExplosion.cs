@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpExplosion : MonoBehaviour {
+public class PickUpExplosion : MonoBehaviour
+{
     public float Damage;
     public float explosionRadius;
     public LayerMask mask;
     public bool Test;
     public float Delay;
+    public GameObject EffectsCube;
+    private bool HasExploded;
 
 
     public void Update()
@@ -26,19 +29,26 @@ public class PickUpExplosion : MonoBehaviour {
 
     public void EnableExplosion(Vector3 location)
     {
-        Debug.Log("BOOOM");
-        //T needs some kind of sound effect for explosion
-        Collider[] EnemysInRange = Physics.OverlapSphere
-            (location, explosionRadius, mask.value);
-        foreach (Collider col in EnemysInRange)
+        if (HasExploded == false)
         {
-            IDamageable dummy = col.GetComponent<IDamageable>();
-            if (dummy != null)
+            Debug.Log("BOOOM");
+            //T needs some kind of sound effect for explosion
+            Collider[] EnemysInRange = Physics.OverlapSphere
+                (location, explosionRadius, mask.value);
+            HasExploded = true;
+            GameObject Effects = Instantiate(EffectsCube);
+            Effects.transform.position = transform.position;
+            foreach (Collider col in EnemysInRange)
             {
-                dummy.Damage(Damage);
+                IDamageable dummy = col.GetComponent<IDamageable>();
+                if (dummy != null)
+                {
+                    dummy.Damage(Damage);
+                    
+                }
             }
+            Destroy(gameObject);
         }
-       
     }
 
     IEnumerator delayExplode()
@@ -52,33 +62,17 @@ public class PickUpExplosion : MonoBehaviour {
         StartCoroutine(delayExplode());
     }
 
-    //private void OnCollisionEnter(Collision other)
-    //{
-    //    IDamageable dummy = other.collider.GetComponent<IDamageable>();
-    //    if(dummy != null)
-    //    {
-    //        EnableExplosion(transform.position);
-    //    }
-    //}
-
-
-
     //shot explosive 
     public void SExplosionDamage()
     {
-        
+        EnableExplosion(transform.position);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
-    }
-    //thrown explosion
-    //public void TExplosionDamage()
-    //{
-    //    
 
-    //    if()
-    //}
+    }
 }
+  
