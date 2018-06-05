@@ -24,7 +24,11 @@ public class PickupHP : MonoBehaviour, IDamageable {
     public void Death()
     {
         //T add sound clip for shooting HP pick up
+<<<<<<< HEAD
         GetComponent<PickUpExplosion>().EnableExplosion(transform.position);
+=======
+        //GetComponent<PickUpExplosion>().SExplosionDamage();
+>>>>>>> levi
         Destroy(gameObject);
 
     }
