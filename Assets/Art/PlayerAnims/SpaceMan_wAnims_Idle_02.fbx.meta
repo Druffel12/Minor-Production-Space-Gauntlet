@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c326d1d88a2790c4e91ab7789ca802c2
-timeCreated: 1527638835
+guid: edb9339cac2c1b647b52a7727282b98a
+timeCreated: 1528217390
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -128,7 +128,7 @@ ModelImporter:
     - serializedVersion: 16
       name: CharacterRig|CharacterRigAction.001
       takeName: CharacterRig|CharacterRigAction.001
-      firstFrame: 1
+      firstFrame: 2
       lastFrame: 140
       wrapMode: 0
       orientationOffsetY: 0

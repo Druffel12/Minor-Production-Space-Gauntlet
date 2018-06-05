@@ -57,6 +57,27 @@ public class PickUpScript : MonoBehaviour
                     }
                 }
             }
+
+            if(gameObject.tag == "Grenade")
+            {
+                PlayerController player = other.GetComponent<PlayerController>();
+                GrenadeManager grenade = other.GetComponent<GrenadeManager>();
+                if (player.grenadeCount < 3)
+                {
+                    player.grenadeCount++;
+                    if(pool != null)
+                    {
+                        grenade.GrenadeRunThrough(player);
+                        ReturnToPool();
+                    }
+                    else
+                    {
+                        grenade.GrenadeRunThrough(player);
+                        Destroy(gameObject);
+                    }
+                }
+                
+            }
         }
     }
 }

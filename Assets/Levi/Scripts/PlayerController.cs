@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public PlayerIndex playerIndex;
+    GrenadeManager grenadeManager;
+
     GamePadState state;
     GamePadState prevState;
 
@@ -13,6 +15,8 @@ public class PlayerController : MonoBehaviour
     float moveHorizontal;
     float speed;
     Vector3 movement;
+
+    public int grenadeCount;
 
     bool canMove;
 
@@ -28,6 +32,8 @@ public class PlayerController : MonoBehaviour
         speed = stats.speed;
         rb = GetComponent<Rigidbody>();
         canMove = true;
+
+        grenadeManager = GetComponent<GrenadeManager>();
     }
 
 
@@ -39,9 +45,6 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation,
                                                   Quaternion.LookRotation(movement.normalized),
                                                   9 * Time.deltaTime);
-            //transform.rotation = Quaternion.LookRotation(movement.normalized);
-            //Vector3 desiredLook = transform.position + movement;
-            //transform.LookAt(desiredLook);
         }
      
       //logs the analog sticks movement in a float
@@ -79,9 +82,17 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isCrouched", false);    
         }
         
+        if(prevState.Buttons.LeftShoulder == ButtonState.Released && state.Buttons.LeftShoulder == ButtonState.Pressed)
+        {
+            if(grenadeCount > 0)
+            {
+                grenadeCount--;
+                grenadeManager.GrenadeUsed(this);
+            }
+        }
+
         Move();
         float runValue = Mathf.Clamp(Mathf.Abs(rb.velocity.magnitude), 0, 1);
         anim.SetFloat("isRunning", rb.velocity.magnitude);
-       // Debug.Log(rb.velocity.magnitude);
 	}
 }

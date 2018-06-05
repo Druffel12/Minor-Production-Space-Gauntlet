@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - HealthPickUp
   - Treasure
+  - Fire
+  - Grenade
   layers:
   - Default
   - TransparentFX
