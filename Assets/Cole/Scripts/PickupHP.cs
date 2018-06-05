@@ -5,13 +5,17 @@ using UnityEngine;
 public class PickupHP : MonoBehaviour, IDamageable {
 
     public float health;
+    public bool IsDead;
+
     //Damage to pickupHP
     public void Damage(float Amnt)
     {
         health -= Amnt;
         Debug.Log("This was the pickups version of Idamageable");
-        if(health <= 0)
+        if(health <= 0 && IsDead == false)
         {
+           
+            IsDead = true;
             Death();
         }
     }
@@ -20,9 +24,9 @@ public class PickupHP : MonoBehaviour, IDamageable {
     public void Death()
     {
         //T add sound clip for shooting HP pick up
-        GetComponent<PickUpExplosion>().SExplosionDamage();
+        GetComponent<PickUpExplosion>().EnableExplosion(transform.position);
         Destroy(gameObject);
 
     }
-    
+   
 }
