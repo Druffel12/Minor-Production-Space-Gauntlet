@@ -7,6 +7,7 @@ public class TreasureDrop : MonoBehaviour
     
     ObjectPooler pool;
     public int dropRate = 20;
+    PickUpScript pickUp;
 
     private void Start()
     {
@@ -18,6 +19,8 @@ public class TreasureDrop : MonoBehaviour
         if(Random.Range(0,100) <= dropRate)
         {
             GameObject spawnedObject = pool.GetPooledObject();
+            pickUp = spawnedObject.GetComponent<PickUpScript>();
+            pickUp.pool = pool;
             spawnedObject.transform.position = transform.position;
 
             spawnedObject.transform.rotation = transform.rotation;
