@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ThrowableGrenade : MonoBehaviour {
 
-    
+    public Rigidbody rb;
     PickUpExplosion explosion;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         explosion = GetComponent<PickUpExplosion>();
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward, ForceMode.Impulse);
 	}
 
     private void OnCollisionEnter(Collision collision)

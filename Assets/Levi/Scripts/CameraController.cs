@@ -60,7 +60,6 @@ public class CameraController : MonoBehaviour
     void Start ()
     {
         //logs all the players currently playing
-        players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
         offset = minOffset;
         StartCoroutine("CameraPosition");
     }
@@ -74,6 +73,7 @@ public class CameraController : MonoBehaviour
     {
         while (true)
         {
+            players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
             //resets the values
             center = Vector3.zero;
             count = 0;
