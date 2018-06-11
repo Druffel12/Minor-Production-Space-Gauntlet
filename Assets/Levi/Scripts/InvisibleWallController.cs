@@ -24,7 +24,7 @@ public class InvisibleWallController : MonoBehaviour
 
         if (gameObject.name == "Top")
         {
-            transform.position = cam.ViewportToWorldPoint(new Vector3(0, 1, offset));
+            transform.position = cam.ViewportToWorldPoint(new Vector3(0, 0.9f, offset));
         }
 
         if (gameObject.name == "Bottom")

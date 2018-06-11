@@ -16,7 +16,6 @@ public class AIHP : MonoBehaviour, IDamageable
         MyPool = ObjectPooler.SharedInstance;
         MaxHP = EnemyHP;
         anim = GetComponent<Animator>();
-
         drop = GetComponent<TreasureDrop>();
     }
     public void Damage(float Amt)
