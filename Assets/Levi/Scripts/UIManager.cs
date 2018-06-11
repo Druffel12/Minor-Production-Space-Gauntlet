@@ -64,6 +64,5 @@ public class UIManager : MonoBehaviour
             uiElements[2].transform.position = new Vector3(Screen.width * 5/ 8,Screen.height/10, 0);
             uiElements[3].transform.position = new Vector3(Screen.width * 7/8, Screen.height / 10, 0);
         }
-        Debug.Log(counter.ToString());
     }
 }

@@ -17,22 +17,25 @@ public class HP : MonoBehaviour, IDamageable
     public void Damage(float Amt)
     {
         health -= Amt;
-        healthText.text = health.ToString();
+        updateHealth(health);
         //Debug.Log("This was the default health version of Idamageable");
         if (health <= 0)
         {
             Death();
-            cameraController.playerCount();
         }
     }
 
     public void Death()
     {
         //T need to add animation also possible UI element 
+        PlayerNumManager.instance.RemovePlayer(gameObject);
         Destroy(gameObject);
     }
 
-
+    string updateHealth(float value)
+    {
+        return "O2: " + value.ToString();
+    }
 	// Use this for initialization
     //attempts damage to hit object by looking for idamageable 
 	void Start ()
@@ -40,7 +43,7 @@ public class HP : MonoBehaviour, IDamageable
         cameraController = Camera.main.GetComponent<CameraController>();
 
         health = stats.maxHealth;
-        healthText.text = health.ToString();
+        healthText.text = "O2: " + health.ToString();
         StartCoroutine("HealthTick");
     }
 
@@ -49,7 +52,7 @@ public class HP : MonoBehaviour, IDamageable
         while (health > 0)
         {
             yield return new WaitForSeconds(1);
-            healthText.text = health.ToString();
+            healthText.text = "O2: " + health.ToString();
             Damage(1);
         }
     }

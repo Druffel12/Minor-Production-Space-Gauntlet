@@ -74,10 +74,24 @@ public class GunScript : MonoBehaviour
             {
                 //calls the damage function
                 IDamageable damageable = hit.transform.GetComponent<IDamageable>();
+
+                AIHP enemyHP = hit.transform.GetComponent<AIHP>();
+
+                ScoreCounter score = GetComponentInParent<ScoreCounter>(); 
+
                 if(damageable != null)
                 {
                     damageable.Damage(damage);
                 }
+
+                if(enemyHP != null)
+                {
+                    if (enemyHP.EnemyHP <= 0)
+                    {
+                        score.ScoreIncrease(20);
+                    }
+                }
+                
             }
         }
 

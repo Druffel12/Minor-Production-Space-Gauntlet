@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public List<GameObject> players;
+    public PlayerNumManager playerNum;
     public List<InvisibleWallController> walls;
 
     public float cameraSpeed;
@@ -60,37 +60,33 @@ public class CameraController : MonoBehaviour
     void Start ()
     {
         //logs all the players currently playing
+
+        playerNum = FindObjectOfType<PlayerNumManager>();
         offset = minOffset;
         StartCoroutine("CameraPosition");
-    }
-
-    public void playerCount()
-    {
-        players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
     }
 
     IEnumerator CameraPosition()
     {
         while (true)
         {
-            players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
             //resets the values
             center = Vector3.zero;
             count = 0;
             //finds the center between all the players
-            foreach (GameObject player in players)
+            foreach (GameObject player in playerNum.players)
             {
                 center += player.transform.position;
                 count++;
             }
 
-            centroid = center / players.Count;
+            centroid = center / playerNum.players.Count;
             Vector3 centerVector = new Vector3(centroid.x, cameraDistance, centroid.z - offset);
 
             //checks through all the players to see if the camera should zoom out
-           for(int i = 0; i < players.Count; i++)
+           for(int i = 0; i < playerNum.players.Count; i++)
             {
-                float distanceFromCenter = Vector3.Distance(players[i].transform.position, centroid);
+                float distanceFromCenter = Vector3.Distance(playerNum.players[i].transform.position, centroid);
                 if (distanceFromCenter >= maxDistance)
                 {
                     canZoomOut = true;
@@ -103,7 +99,7 @@ public class CameraController : MonoBehaviour
                 if(distanceFromCenter < maxDistance)
                 {
                     zoomCounter++;
-                    if(zoomCounter >= players.Count)
+                    if(zoomCounter >= playerNum.players.Count)
                     {
                         canZoomOut = false;
                     }
@@ -113,7 +109,7 @@ public class CameraController : MonoBehaviour
                     }
                 }
                 Color test = distanceFromCenter < maxDistance ? Color.red : Color.blue;
-                Debug.DrawLine(centroid, players[i].transform.position, test);
+                Debug.DrawLine(centroid, playerNum.players[i].transform.position, test);
             }
 
 

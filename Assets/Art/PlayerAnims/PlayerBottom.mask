@@ -35,9 +35,9 @@ AvatarMask:
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1
     m_Weight: 1
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Neck
     m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Neck/Head
@@ -81,11 +81,11 @@ AvatarMask:
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Shoulder.R/UpperArm.R/Forearm.R/Hand.R
     m_Weight: 0
   - m_Path: CharacterRig/Root/IkLeg.L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: CharacterRig/Root/IkLeg.L/Foot.L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: CharacterRig/Root/IkLeg.L/Foot.L/Toe.L
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: CharacterRig/Root/IkLeg.R
     m_Weight: 1
   - m_Path: CharacterRig/Root/IkLeg.R/Foot.R

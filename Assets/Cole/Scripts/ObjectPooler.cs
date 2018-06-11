@@ -27,7 +27,8 @@ public class ObjectPooler : MonoBehaviour
         {
             GameObject obj = Instantiate(ObjectToPool);
             obj.SetActive(false);
-            obj.GetComponent<PooledObject>().myPool = this;
+            PooledObject cache = obj.GetComponent<PooledObject>();
+            if(cache != null) { cache.myPool = this; }
             PooledObjects.Add(obj);
         }
         return GetPooledObject();
@@ -41,7 +42,8 @@ public class ObjectPooler : MonoBehaviour
         for (int i = 0; i < AmountToPool; i++)
         {
             GameObject obj = (GameObject)Instantiate(ObjectToPool);
-            obj.GetComponent<PooledObject>().myPool = this;
+            PooledObject cache = obj.GetComponent<PooledObject>();
+            if (cache != null) { cache.myPool = this; }
             obj.SetActive(false);
             PooledObjects.Add(obj);
         }
