@@ -6,14 +6,17 @@ public class ThrowableGrenade : MonoBehaviour {
 
     public Rigidbody rb;
     PickUpExplosion explosion;
+    public float strength;
+    
 
 	// Use this for initialization
 	void Start ()
     {
         explosion = GetComponent<PickUpExplosion>();
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward, ForceMode.Impulse);
-	}
+        rb.AddForce(transform.forward * strength, ForceMode.Impulse);
+        explosion.ExplodeWithDelay();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,7 +24,7 @@ public class ThrowableGrenade : MonoBehaviour {
         if(dummy != null)
         {
             explosion.EnableExplosion(transform.position);
-            
+           
         }
     }
 
@@ -32,7 +35,7 @@ public class ThrowableGrenade : MonoBehaviour {
         if(dummy != null)
         {
             explosion.EnableExplosion(transform.position);
-
+           
         }
     }
 }

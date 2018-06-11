@@ -12,6 +12,10 @@ public class PickUpExplosion : MonoBehaviour
     public GameObject EffectsCube;
     private bool HasExploded;
 
+    public void Start()
+    {
+        
+    }
 
     public void Update()
     {
@@ -21,11 +25,6 @@ public class PickUpExplosion : MonoBehaviour
             Test = false;
         }
     }
-
-    //private void Start()
-    //{
-    //    explodeWithDelay();
-    //}
 
     public void EnableExplosion(Vector3 location)
     {
@@ -44,22 +43,22 @@ public class PickUpExplosion : MonoBehaviour
                 if (dummy != null)
                 {
                     dummy.Damage(Damage);
-                    
+              
                 }
             }
             Destroy(gameObject);
         }
     }
 
-    IEnumerator delayExplode()
+    IEnumerator DelayExplode()
     {
         yield return new WaitForSeconds(Delay);
         EnableExplosion(transform.position);
     }
 
-    public void explodeWithDelay()
+    public void ExplodeWithDelay()
     {
-        StartCoroutine(delayExplode());
+        StartCoroutine(DelayExplode());
     }
 
     //shot explosive 
