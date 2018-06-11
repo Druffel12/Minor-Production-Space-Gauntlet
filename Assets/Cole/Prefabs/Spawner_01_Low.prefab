@@ -128,5 +128,5 @@ MonoBehaviour:
   SpawnCount: 5
   Spawner: 1
   SpawnerHP: 60
-  OffSetUp: 0
-  OffSetRight: 0
+  SpawnFB: 0
+  SpawnLR: 0

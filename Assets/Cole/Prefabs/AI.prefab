@@ -197,6 +197,7 @@ MonoBehaviour:
   thoughtDelay: 0.5
   AttackCube: {fileID: 1174440536287362}
   isAttacking: 0
+  isRunning: 0
 --- !u!114 &114512332802038860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,7 +225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeLifetime: 0.2
-  ourAI: {fileID: 114232144395124912}
   Damage: 20
 --- !u!136 &136243077461159046
 CapsuleCollider:
