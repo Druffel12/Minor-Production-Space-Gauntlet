@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     public int grenadeCount;
 
-    bool canMove;
+    public bool canMove;
 
     Rigidbody rb;
 

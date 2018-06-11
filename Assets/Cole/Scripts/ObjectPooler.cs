@@ -18,6 +18,12 @@ public class ObjectPooler : MonoBehaviour
     {
         for (int i = 0; i < PooledObjects.Count; i++)
         {
+            if(PooledObjects[i] == null)
+            {
+                PooledObjects.RemoveAt(i);
+                i--;
+                continue;
+            }
             if (!PooledObjects[i].activeInHierarchy)
             {
                 return PooledObjects[i];

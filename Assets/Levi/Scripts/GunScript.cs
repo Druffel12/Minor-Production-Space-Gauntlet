@@ -11,18 +11,21 @@ public class GunScript : MonoBehaviour
 
     Animator anim;
    
-
     PlayerIndex playerIndex;
     GamePadState state;
     GamePadState prevState;
 
     public LineRenderer line;
+
+    public GunEffects effects;
+
     public PlayerStatsObj stats;
 
     private void Start()
     {
         anim = GetComponentInParent<Animator>();
         playerIndex = GetComponentInParent<PlayerController>().playerIndex;
+
         range = stats.range;
         damage = stats.damage;
     }
@@ -42,22 +45,33 @@ public class GunScript : MonoBehaviour
         {
             anim.SetBool("isAttacking", false);
         }
-
+        //if(GetComponentInParent<PlayerController>().canMove == true)
+        //{
+        //    line.enabled = true;
+        //}
+        //else
+        //{
+        //    line.enabled = false;
+        //}
 
         if (state.Triggers.Right >= 0.4 && timeBetweenShots >= stats.timeBetweenShots ||
             state.Buttons.X == ButtonState.Pressed && timeBetweenShots >= stats.timeBetweenShots)
         {
             timeBetweenShots = 0;
             Shoot(transform.position,transform.forward,range);
-            line.enabled = true;
             anim.SetTrigger("isFiring");
-           
+            line.enabled = true;
+            effects.ActivateEffects();
         }
         else
         {
             line.enabled = false;
+            //effects.DisableEffects();
         }
+       
     }
+
+
 
     void Shoot(Vector3 targetPosition, Vector3 direction, float length)
     {
@@ -65,6 +79,7 @@ public class GunScript : MonoBehaviour
         RaycastHit hit;
         Vector3 endPosition = targetPosition + (length * direction);
 
+        
         if(Physics.Raycast(ray, out hit, range))
         {
             endPosition = hit.point;
@@ -77,27 +92,27 @@ public class GunScript : MonoBehaviour
 
                 AIHP enemyHP = hit.transform.GetComponent<AIHP>();
 
-                ScoreCounter score = GetComponentInParent<ScoreCounter>(); 
+                ScoreCounter score = GetComponentInParent<ScoreCounter>();
 
-                if(damageable != null)
+                if (damageable != null)
                 {
                     damageable.Damage(damage);
-                }
-
-                if(enemyHP != null)
-                {
-                    if (enemyHP.EnemyHP <= 0)
+                    if (enemyHP != null)
                     {
-                        score.ScoreIncrease(20);
+                        if (enemyHP.EnemyHP == enemyHP.MaxHP)
+                        {
+                            score.ScoreIncrease(20);
+                        }
                     }
                 }
+
                 
             }
         }
-
+        effects.StartDisable(stats.timeBetweenShots * 0.5f);
         
         //draws the line on the raycast
-        line.SetPosition(0, targetPosition);
+        line.SetPosition(0, effects.transform.position);
         line.SetPosition(1, endPosition);
     }
 }

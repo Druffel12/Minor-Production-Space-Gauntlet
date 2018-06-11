@@ -15,4 +15,4 @@ MonoBehaviour:
   maxHealth: 700
   damage: 15
   range: 20
-  timeBetweenShots: 0.5
+  timeBetweenShots: 0.42
