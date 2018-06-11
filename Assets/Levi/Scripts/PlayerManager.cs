@@ -7,44 +7,56 @@ public class PlayerManager : MonoBehaviour
     List<PlayerController> players;
     PlayerSelectManager playerManager;
     UIManager UI;
-
+    public int testPlayersActive;
     void Awake ()
     {
         playerManager = FindObjectOfType<PlayerSelectManager>();
         UI = FindObjectOfType<UIManager>();
-
         players = new List<PlayerController>(FindObjectsOfType<PlayerController>());
-       for (int i = 0; i < players.Count; i++)
+
+        if (playerManager == null)
         {
-            if (playerManager.p1Ready == false)
+            for(int i = testPlayersActive; i < players.Count; i++)
             {
-                if (players[i].name == "Player 1")
-                {
-                    players[i].gameObject.SetActive(false);
-                }
+                players[i].gameObject.SetActive(false);
             }
-            if (playerManager.p2Ready == false)
+        }
+        else
+        {
+            for (int i = 0; i < players.Count; i++)
             {
-                if(players[i].name == "Player 2")
+                if (playerManager.p1Ready == false)
                 {
-                    players[i].gameObject.SetActive(false);
+                    if (players[i].name == "Player 1")
+                    {
+                        players[i].gameObject.SetActive(false);
+                    }
                 }
-            }
-            if (playerManager.p3Ready == false)
-            {
-                if (players[i].name == "Player 3")
+                if (playerManager.p2Ready == false)
                 {
-                    players[i].gameObject.SetActive(false);
+                    if (players[i].name == "Player 2")
+                    {
+                        players[i].gameObject.SetActive(false);
+                    }
                 }
-            }
-            if(playerManager.p4Ready == false)
-            {
-                if(players[i].name == "Player 4")
+                if (playerManager.p3Ready == false)
                 {
-                    players[i].gameObject.SetActive(false);
+                    if (players[i].name == "Player 3")
+                    {
+                        players[i].gameObject.SetActive(false);
+                    }
                 }
+                if (playerManager.p4Ready == false)
+                {
+                    if (players[i].name == "Player 4")
+                    {
+                        players[i].gameObject.SetActive(false);
+                    }
+                }
+                UI.UIRunThrough();
             }
-            UI.UIRunThrough();
         }
     }
+        
+     
 }

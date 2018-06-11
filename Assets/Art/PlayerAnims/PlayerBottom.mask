@@ -35,9 +35,9 @@ AvatarMask:
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1
     m_Weight: 1
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Neck
     m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Spine1/Spine2/Chest/Neck/Head

@@ -22,13 +22,13 @@ public class HP : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             Death();
-            cameraController.playerCount();
         }
     }
 
     public void Death()
     {
         //T need to add animation also possible UI element 
+        PlayerNumManager.instance.RemovePlayer(gameObject);
         Destroy(gameObject);
     }
 
