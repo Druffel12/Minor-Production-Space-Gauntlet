@@ -92,6 +92,7 @@ public class AIMovement : MonoBehaviour
     //Seeking and Attacking function
     private void Attack()
     {
+        
         if(Vector3.Distance(transform.position, Player.position) < Range && !isAttacking)
         {
             anim.SetTrigger("isAttacking");

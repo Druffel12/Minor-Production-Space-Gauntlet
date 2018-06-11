@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
             {
                 grenadeCount--;
                 grenadeManager.GrenadeUsed(this);
+                Instantiate(gameObject);
             }
         }
 
