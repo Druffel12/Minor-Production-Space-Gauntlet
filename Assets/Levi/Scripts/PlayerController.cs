@@ -10,11 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gun;
     public GameObject forward;
-<<<<<<< HEAD
+
     public LayerMask mask;
-=======
-    public GameObject Grenade;
->>>>>>> cole
 
     GamePadState state;
     GamePadState prevState;
