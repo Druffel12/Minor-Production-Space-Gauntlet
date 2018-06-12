@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gun;
     public GameObject forward;
+    public LayerMask mask;
 
     GamePadState state;
     GamePadState prevState;
@@ -77,19 +78,34 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
+
+    void LaserSightActivator()
+    {
+        ray = new Ray(forward.transform.position, forward.transform.forward);
+        RaycastHit hit;
+        Vector3 endPosition = gun.transform.position + (stats.range * forward.transform.forward);
+
+        if(Physics.Raycast(ray, out hit, stats.range, mask.value))
+        {
+            endPosition = hit.point;
+        }
+
+        laserSight.SetPosition(0, gun.transform.position);
+        laserSight.SetPosition(1, endPosition);
+        laserSight.enabled = true;
+
+    } 
+
     
 	void Update ()
     {
         prevState = state;
         state = GamePad.GetState(playerIndex);
-        ray = new Ray(forward.transform.position, forward.transform.forward);
 
         if(state.Triggers.Left >= 0.4)
         {
             canMove = false;
-            laserSight.enabled = true;
-            laserSight.SetPosition(0, gun.transform.position);
-            laserSight.SetPosition(1, gun.transform.position + forward.transform.forward * stats.range);
+            LaserSightActivator();
             anim.SetBool("isCrouched", true);
         }
         else
