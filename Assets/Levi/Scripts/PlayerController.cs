@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public PlayerIndex playerIndex;
     GrenadeManager grenadeManager;
 
+    public GameObject gun;
+    public GameObject forward;
+
     GamePadState state;
     GamePadState prevState;
 
@@ -22,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
+    LineRenderer laserSight;
+    Ray ray;
+
     Animator anim;
 
     public PlayerStatsObj stats;
@@ -32,10 +38,16 @@ public class PlayerController : MonoBehaviour
         speed = stats.speed;
         rb = GetComponent<Rigidbody>();
         canMove = true;
-
+        laserSight = GetComponent<LineRenderer>();
         grenadeManager = GetComponent<GrenadeManager>();
     }
 
+
+    public void SetCrouchState()
+    {
+        Debug.Log("I am crouched");
+
+    }
 
     void Move()
     {
@@ -70,15 +82,20 @@ public class PlayerController : MonoBehaviour
     {
         prevState = state;
         state = GamePad.GetState(playerIndex);
+        ray = new Ray(forward.transform.position, forward.transform.forward);
 
         if(state.Triggers.Left >= 0.4)
         {
             canMove = false;
+            laserSight.enabled = true;
+            laserSight.SetPosition(0, gun.transform.position);
+            laserSight.SetPosition(1, gun.transform.position + forward.transform.forward * stats.range);
             anim.SetBool("isCrouched", true);
         }
         else
         {
             canMove = true;
+            laserSight.enabled = false;
             anim.SetBool("isCrouched", false);    
         }
         

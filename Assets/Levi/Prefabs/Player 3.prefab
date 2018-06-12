@@ -1694,6 +1694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb1395768342964397bdbad33e3a8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
   line: {fileID: 120799049157607888}
   effects: {fileID: 0}
   stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
@@ -1709,6 +1712,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 2
+  gun: {fileID: 1462870415378288}
+  forward: {fileID: 1812531062330806}
   grenadeCount: 0
   canMove: 0
   stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}

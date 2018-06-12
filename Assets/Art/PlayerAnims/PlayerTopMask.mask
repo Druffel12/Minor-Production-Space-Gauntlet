@@ -17,7 +17,7 @@ AvatarMask:
   - m_Path: CharacterRig/Root
     m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Hips
     m_Weight: 0
   - m_Path: CharacterRig/Root/HipsCtrl/Hips/HipJoint.L

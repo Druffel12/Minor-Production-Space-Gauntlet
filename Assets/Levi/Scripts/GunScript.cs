@@ -9,6 +9,8 @@ public class GunScript : MonoBehaviour
     float timeBetweenShots;
     float damage;
 
+    public LayerMask mask;
+
     Animator anim;
    
     PlayerIndex playerIndex;
@@ -80,7 +82,7 @@ public class GunScript : MonoBehaviour
         Vector3 endPosition = targetPosition + (length * direction);
 
         
-        if(Physics.Raycast(ray, out hit, range))
+        if(Physics.Raycast(ray, out hit, range, mask.value))
         {
             endPosition = hit.point;
 
@@ -104,9 +106,7 @@ public class GunScript : MonoBehaviour
                             score.ScoreIncrease(20);
                         }
                     }
-                }
-
-                
+                }                
             }
         }
         effects.StartDisable(stats.timeBetweenShots * 0.5f);
