@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gun;
     public GameObject forward;
+    public GameObject Grenade;
 
     GamePadState state;
     GamePadState prevState;
@@ -105,7 +106,7 @@ public class PlayerController : MonoBehaviour
             {
                 grenadeCount--;
                 grenadeManager.GrenadeUsed(this);
-                Instantiate(gameObject);
+                Instantiate(Grenade);
             }
         }
 

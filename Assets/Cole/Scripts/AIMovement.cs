@@ -5,18 +5,32 @@ using UnityEngine.AI;
 
 public class AIMovement : MonoBehaviour
 {
+    //Transforms
     private Transform Player;
     private Transform MyTransform;
+    private Transform Target;
+
+    //GameObjects
+    public GameObject AttackCube;
+
+    //Floats
     public float Range;
     public float searchRange;
-    Vector3 Dir;
     public float thoughtDelay;
     float thoughtTimer;
-    public GameObject AttackCube;
+    public float WanderRadius;
+    public float WanderTimer;
+    private float Timer;
+
+    //Bools
     public bool isAttacking;
     public bool isRunning;
+    private bool CanWander = true;
+
+    //Misc
     Animator anim;
     NavMeshAgent agent;
+    Vector3 Dir;
 
     //set transform
     private void Awake()
@@ -30,7 +44,11 @@ public class AIMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         agent.updateRotation = false;
-
+        if (CanWander == true)
+        {
+            Vector3 NewPos = RandomNavMesh(transform.position, WanderRadius, -1);
+            Timer = 0;
+        }
     }
 
     void OnDrawGizmos()
@@ -47,6 +65,7 @@ public class AIMovement : MonoBehaviour
         float min = Mathf.Infinity;
         foreach(Collider guy in neighbours)
         {
+            CanWander = false;
             float distance = Vector3.Distance(transform.position, guy.transform.position);
             if(distance <= min)
             {
@@ -60,6 +79,8 @@ public class AIMovement : MonoBehaviour
     //going after said player while looking at them
     void Update()
     {
+
+        Wander();
         if(agent.velocity.magnitude > 0)
         {
             transform.LookAt(transform.position + agent.velocity);
@@ -122,5 +143,31 @@ public class AIMovement : MonoBehaviour
         AttackCube.SetActive(false);
     }
    
+    private void Wander()
+    {
+        Timer += Time.deltaTime;
+        float dist = Vector3.Distance(Target.position, transform.position);
+
+        if(Timer >= WanderTimer)
+        {
+            agent.speed = 10;
+            Vector3 newPos = RandomNavMesh(transform.position, WanderRadius, -1);
+            agent.destination = newPos;
+            Timer = 0;
+        }
+    }
+
+    public Vector3 RandomNavMesh(Vector3 origin, float dist, int LayerMask)
+    {
+        Vector3 randDirection = Random.insideUnitSphere * dist;
+
+        randDirection += origin;
+        randDirection.y = transform.position.y;
+        NavMeshHit NavHit;
+
+        NavMesh.SamplePosition(randDirection, out NavHit, dist, LayerMask);
+
+        return NavHit.position;
+    }
 }
 
