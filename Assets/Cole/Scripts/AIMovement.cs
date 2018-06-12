@@ -29,6 +29,7 @@ public class AIMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        agent.updateRotation = false;
 
     }
 
@@ -59,6 +60,12 @@ public class AIMovement : MonoBehaviour
     //going after said player while looking at them
     void Update()
     {
+        if(agent.velocity.magnitude > 0)
+        {
+            transform.LookAt(transform.position + agent.velocity);
+        }
+
+
         thoughtTimer -= Time.deltaTime;
         if(thoughtTimer <= 0 )
         {
@@ -92,8 +99,11 @@ public class AIMovement : MonoBehaviour
     //Seeking and Attacking function
     private void Attack()
     {
-        
-        if(Vector3.Distance(transform.position, Player.position) < Range && !isAttacking)
+        //if (Vector3.Distance(transform.position, Player.position) <= Range)
+        //{
+        //    transform.position += Vector3.back;
+        //}
+        if(Vector3.Distance(transform.position, Player.position) < Range + agent.stoppingDistance  && !isAttacking)
         {
             anim.SetTrigger("isAttacking");
             isAttacking = true;
