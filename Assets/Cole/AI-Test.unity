@@ -293,7 +293,17 @@ Prefab:
     - target: {fileID: 114300147615126280, guid: 04c5161a08e3db243852ab022710d8fc,
         type: 2}
       propertyPath: Range
-      value: 2.3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195518083892575254, guid: 04c5161a08e3db243852ab022710d8fc,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 195518083892575254, guid: 04c5161a08e3db243852ab022710d8fc,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
