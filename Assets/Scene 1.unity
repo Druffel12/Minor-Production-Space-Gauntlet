@@ -78,18 +78,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 112000002, guid: d852f3d0f0c04394f91c6cc252be1383,
     type: 2}
   m_UseShadowmask: 1
@@ -112,8 +109,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: c5bfd6dd04225174cbff4240ada85078, type: 2}
 --- !u!1001 &4945379
 Prefab:
@@ -179,6 +174,16 @@ Prefab:
       propertyPath: grenades.Array.data[2]
       value: 
       objectReference: {fileID: 2067647587}
+    - target: {fileID: 114610816790127582, guid: 922a726541facc040a530bbd5ce1e328,
+        type: 2}
+      propertyPath: Grenade
+      value: 
+      objectReference: {fileID: 1150679070412636, guid: e15964606d6088d4e9ae15d740bfc273,
+        type: 2}
+    - target: {fileID: 1674891990559282, guid: 922a726541facc040a530bbd5ce1e328, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 922a726541facc040a530bbd5ce1e328, type: 2}
   m_IsPrefabParent: 0
@@ -195,9 +200,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 50aae66b1dcde6840b4373d23c611c50, type: 3}
 --- !u!1001 &23233529
@@ -865,6 +870,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1310,6 +1329,10 @@ Prefab:
       propertyPath: grenades.Array.data[2]
       value: 
       objectReference: {fileID: 766515847}
+    - target: {fileID: 1556623812992360, guid: 8b41afc5a60c67b47a13111ec17b4f64, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b41afc5a60c67b47a13111ec17b4f64, type: 2}
   m_IsPrefabParent: 0
@@ -2312,40 +2335,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 11.519211
       objectReference: {fileID: 0}
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.0000019073486
       objectReference: {fileID: 0}
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_LocalPosition.z
       value: 31.14
       objectReference: {fileID: 0}
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4596113379984096, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+    - target: {fileID: 4765119736023736, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1117082475326840, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
+      propertyPath: m_Name
+      value: Melee_AI 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 04c5161a08e3db243852ab022710d8fc, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 1dd814b995512e74492e0765e5e9cab9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1055896282
 GameObject:
@@ -2508,11 +2535,11 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &1057889802
 Transform:
   m_ObjectHideFlags: 0
@@ -2779,6 +2806,10 @@ Prefab:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 575063752}
+    - target: {fileID: 1871880769476750, guid: b4a5eb0ea865c0a4c9bd743ccb9f1a78, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4a5eb0ea865c0a4c9bd743ccb9f1a78, type: 2}
   m_IsPrefabParent: 0
@@ -3010,6 +3041,10 @@ Prefab:
       propertyPath: grenades.Array.data[2]
       value: 
       objectReference: {fileID: 395165375}
+    - target: {fileID: 1025493638320366, guid: cbf09e3483400db4381234b392503ab9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbf09e3483400db4381234b392503ab9, type: 2}
   m_IsPrefabParent: 0
