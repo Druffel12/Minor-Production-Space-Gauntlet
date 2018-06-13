@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gun;
     public GameObject forward;
+    public GameObject Grenade;
 
     public LayerMask mask;
 
