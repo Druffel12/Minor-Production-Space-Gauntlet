@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
             {
                 grenadeCount--;
                 grenadeManager.GrenadeUsed(this);
-                Instantiate(Grenade);
+                Instantiate(Grenade, transform.position + transform.forward * 2, transform.rotation);
             }
         }
 

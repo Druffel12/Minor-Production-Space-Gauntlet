@@ -141,13 +141,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec28e0a807baa94381207c456498804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1000
+  Damage: 200
   explosionRadius: 10
   mask:
     serializedVersion: 2
     m_Bits: 1536
   Test: 0
-  Delay: 5
+  Delay: 3
   EffectsCube: {fileID: 1149976430754102, guid: 90db31768d8cefa479973b99019bf9be,
     type: 2}
 --- !u!135 &135093680068273464

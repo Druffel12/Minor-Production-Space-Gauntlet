@@ -46,6 +46,7 @@ public class PickUpExplosion : MonoBehaviour
               
                 }
             }
+            Destroy(Effects,Delay + 3);
             Destroy(gameObject);
         }
     }

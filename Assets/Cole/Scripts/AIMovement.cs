@@ -21,6 +21,8 @@ public class AIMovement : MonoBehaviour
     public float WanderRadius;
     public float WanderTimer;
     private float Timer;
+    public float LowRange;
+    public float HighRange;
 
     //Bools
     public bool isAttacking;
@@ -41,13 +43,14 @@ public class AIMovement : MonoBehaviour
 
     private void Start()
     {
+        Timer = Random.Range(LowRange, HighRange);
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         agent.updateRotation = false;
         if (CanWander == true)
         {
             Vector3 NewPos = RandomNavMesh(transform.position, WanderRadius, -1);
-            Timer = 0;
+           
         }
     }
 
@@ -65,6 +68,7 @@ public class AIMovement : MonoBehaviour
         float min = Mathf.Infinity;
         foreach(Collider guy in neighbours)
         {
+            
             CanWander = false;
             float distance = Vector3.Distance(transform.position, guy.transform.position);
             if(distance <= min)
@@ -103,6 +107,7 @@ public class AIMovement : MonoBehaviour
             if (Player.gameObject.activeInHierarchy)
             {
                 agent.destination = Player.position;
+                anim.SetBool("isWalking", false);
                 anim.SetBool("isRunning", true);
 
                 Debug.DrawLine(transform.position, Player.transform.position);
@@ -142,18 +147,25 @@ public class AIMovement : MonoBehaviour
         isAttacking = false;
         AttackCube.SetActive(false);
     }
-   
+    Vector3 debugPos;
     private void Wander()
     {
         Timer += Time.deltaTime;
-        float dist = Vector3.Distance(Target.position, transform.position);
-
+        Debug.DrawLine(transform.position, debugPos);
         if(Timer >= WanderTimer)
         {
+            anim.SetBool("isWalking", true);
             agent.speed = 10;
             Vector3 newPos = RandomNavMesh(transform.position, WanderRadius, -1);
+            debugPos = newPos;
             agent.destination = newPos;
             Timer = 0;
+            WanderTimer = Random.Range(LowRange, HighRange);
+          
+        }
+        if (Vector3.Distance(transform.position, agent.destination) <= agent.stoppingDistance)
+        {
+            anim.SetBool("isWalking", false);
         }
     }
 
