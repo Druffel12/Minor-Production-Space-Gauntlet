@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gun;
     public GameObject forward;
+    public GameObject Grenade;
+
     public LayerMask mask;
 
     GamePadState state;
@@ -121,7 +123,7 @@ public class PlayerController : MonoBehaviour
             {
                 grenadeCount--;
                 grenadeManager.GrenadeUsed(this);
-                Instantiate(gameObject);
+                Instantiate(Grenade, transform.position + transform.forward * 2, transform.rotation);
             }
         }
 

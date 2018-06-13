@@ -18,6 +18,9 @@ public class ReadyUp : MonoBehaviour
     public Sprite deactivated;
     public Sprite activated;
 
+    public Animator cameraAnim;
+    public Animator lightsAnim;
+
     Image characterImage;
 
     public Image startButton;
@@ -46,18 +49,25 @@ public class ReadyUp : MonoBehaviour
         characterImage.sprite = deactivated;
     }
 
+    private void OnDisable()
+    {
+        lightsAnim.SetBool("LightsOn", false);
+        startButton.gameObject.SetActive(false);
+    }
+
     void WaitForInput()
     {
         //isReady to true or false
         if(isReady == true)
         {
             isReady = false;
-            characterImage.sprite = deactivated;
+            lightsAnim.SetBool("LightsOn", false);
         }
         else
         {
             isReady = true;
-            characterImage.sprite = activated;
+            Flicker();
+            lightsAnim.SetBool("LightsOn", true);
         }
 
         //Call update playerSelect
@@ -156,6 +166,13 @@ public class ReadyUp : MonoBehaviour
         
     }
 
+    void Flicker()
+    {
+        lightsAnim.SetTrigger("UnFlicker");
+        lightsAnim.SetTrigger("Flicker");
+    }
+
+
     void StopCountDown()
     {
         timerText.gameObject.SetActive(false);
@@ -188,14 +205,12 @@ public class ReadyUp : MonoBehaviour
             setStartButton();
         }
 
-
         if (prevState.Buttons.B == ButtonState.Released && state.Buttons.B == ButtonState.Pressed && pressedStart == false)
         {
+            cameraAnim.SetTrigger("MainMenu");
             mainMenu.gameObject.SetActive(true);
             playerSelect.gameObject.SetActive(false);
         }
-
-
 
         if (prevState.Buttons.Start == ButtonState.Released && state.Buttons.Start == ButtonState.Pressed && startButton.gameObject.activeInHierarchy == true)
         {

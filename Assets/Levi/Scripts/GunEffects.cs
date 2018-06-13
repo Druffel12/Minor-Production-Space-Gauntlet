@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunEffects : MonoBehaviour
 {
-    Light gunLight;
+    public Light gunLight;
     public GameObject gunParticles;
 
 	void Start ()
