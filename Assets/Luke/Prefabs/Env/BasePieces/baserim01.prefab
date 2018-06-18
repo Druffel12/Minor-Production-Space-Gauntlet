@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4972278228303532}
   - component: {fileID: 33177679154543038}
   - component: {fileID: 23831653851109838}
-  - component: {fileID: 65741949071321818}
-  - component: {fileID: 65328303647186950}
+  - component: {fileID: 65590338499140530}
+  - component: {fileID: 65275617888436976}
   m_Layer: 0
   m_Name: baserim01
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1294915989727338}
   m_Mesh: {fileID: 4300000, guid: a7d059d477abee342b530cb909bcda99, type: 3}
---- !u!65 &65328303647186950
+--- !u!65 &65275617888436976
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -94,9 +94,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.2646041, z: 2}
-  m_Center: {x: 0, y: 0.13230205, z: 0}
---- !u!65 &65741949071321818
+  m_Size: {x: 0.5127535, y: 4.5, z: 0.4972577}
+  m_Center: {x: -1.7436233, y: 2.25, z: -1.7513711}
+--- !u!65 &65590338499140530
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -106,5 +106,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25803995, y: 2.25, z: 0.26717883}
-  m_Center: {x: -0.87098, y: 1.125, z: -0.8664106}
+  m_Size: {x: 4, y: 0.50128937, z: 4}
+  m_Center: {x: 0, y: 0.25064468, z: 0}

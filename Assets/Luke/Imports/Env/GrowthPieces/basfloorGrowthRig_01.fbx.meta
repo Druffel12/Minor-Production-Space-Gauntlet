@@ -1,17 +1,31 @@
 fileFormatVersion: 2
-guid: a7d059d477abee342b530cb909bcda99
-timeCreated: 1528908059
+guid: 114cc2d379e40f545bcfa2e784080cd6
+timeCreated: 1529361149
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: baserim01_material
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: baserim01
+    100000: basfloorGrowthRig
+    100002: //RootNode
+    100004: Bone
+    100006: Bone.001
+    100008: Bone.002
+    100010: Bone.003
+    100012: Bone.004
+    100014: PM3D_Sphere3D1.001
+    400000: basfloorGrowthRig
+    400002: //RootNode
+    400004: Bone
+    400006: Bone.001
+    400008: Bone.002
+    400010: Bone.003
+    400012: Bone.004
+    400014: PM3D_Sphere3D1.001
+    2100000: PM3D_Sphere3D1.001
+    4300000: PM3D_Sphere3D1.001
+    7400000: basfloorGrowthRig|ArmatureAction.002
     9500000: //RootNode
+    13700000: PM3D_Sphere3D1.001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -38,7 +52,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: basfloorGrowthRig|ArmatureAction.002
+      takeName: basfloorGrowthRig|ArmatureAction.002
+      firstFrame: 1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
