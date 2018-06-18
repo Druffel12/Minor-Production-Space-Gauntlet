@@ -45,6 +45,7 @@ public class AIMovement : MonoBehaviour
     {
         Timer = Random.Range(LowRange, HighRange);
         agent = GetComponent<NavMeshAgent>();
+        Target = null;
         anim = GetComponent<Animator>();
         agent.updateRotation = false;
         if (CanWander == true)
@@ -64,9 +65,9 @@ public class AIMovement : MonoBehaviour
     Transform findNearestPlayer()
     {
         Transform retval = null;
-        Collider[] neighbours = Physics.OverlapSphere(transform.position, searchRange, 1 << 9);
+        Collider[] neighbors = Physics.OverlapSphere(transform.position, searchRange, 1 << 9);
         float min = Mathf.Infinity;
-        foreach(Collider guy in neighbours)
+        foreach(Collider guy in neighbors)
         {
             
             CanWander = false;
