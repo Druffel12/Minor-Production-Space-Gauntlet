@@ -26,9 +26,9 @@ GameObject:
   - component: {fileID: 114139539105823970}
   - component: {fileID: 114923471159946130}
   - component: {fileID: 114979002325972314}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pickup Grenade
-  m_TagString: Untagged
+  m_TagString: Grenade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
