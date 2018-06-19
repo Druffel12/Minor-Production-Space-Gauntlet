@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 59626dbb230eda94da5bbfbdd0f24954
 timeCreated: 1529366340
+=======
+guid: d61b9f0c7b7c6e647b78153f0f06df3a
+timeCreated: 1529366307
+>>>>>>> cole
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 2100000
