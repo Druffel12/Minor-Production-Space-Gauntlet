@@ -10,17 +10,19 @@ public class HP : MonoBehaviour, IDamageable
     //public GameObject test;
     public Text healthText;
     public PlayerStatsObj stats;
-
+    Animator anim;
     CameraController cameraController;
-
+    
     //damage function for harming creatures
     public void Damage(float Amt)
     {
         health -= Amt;
+        //anim.SetTrigger("isDamaged");
         updateHealth(health);
         //Debug.Log("This was the default health version of Idamageable");
         if (health <= 0)
         {
+            //anim.SetBool("isDead", true);
             Death();
         }
     }
@@ -28,7 +30,8 @@ public class HP : MonoBehaviour, IDamageable
     public void Death()
     {
         //T need to add animation also possible UI element 
-        PlayerNumManager.instance.RemovePlayer(gameObject);
+        
+        //PlayerNumManager.instance.RemovePlayer(gameObject);
         Destroy(gameObject);
     }
 
@@ -41,6 +44,7 @@ public class HP : MonoBehaviour, IDamageable
 	void Start ()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
+        anim = GetComponent<Animator>();
 
         health = stats.maxHealth;
         healthText.text = "O2: " + health.ToString();

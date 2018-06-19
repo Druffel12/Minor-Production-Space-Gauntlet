@@ -8,8 +8,7 @@ public class GunEffects : MonoBehaviour
     public GameObject gunParticles;
 
 	void Start ()
-    {
-        gunLight = GetComponent<Light>();
+    { 
         gunParticles.SetActive(false);
        // gunParticles = GetComponent<ParticleSystem>();
 	}
