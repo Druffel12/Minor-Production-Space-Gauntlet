@@ -15,4 +15,12 @@ public class SpikeShot : MonoBehaviour {
     {
 		//if(Collider)
 	}
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.LayerMask == "Player")
+        {
+
+        }
+    }
 }
