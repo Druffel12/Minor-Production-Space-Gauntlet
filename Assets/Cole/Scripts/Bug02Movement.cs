@@ -18,6 +18,7 @@ public class Bug02Movement : MonoBehaviour {
     private float Timer;
     public float LowRange;
     public float HighRange;
+    public float SpikeSpeed;
 
     //bools
     public bool isAttacking;
@@ -133,8 +134,12 @@ public class Bug02Movement : MonoBehaviour {
     {
         if (Player == true)
         {
-            Vector3 lookat = Player.position;
-            Instantiate(Spike, transform.position + transform.forward * 2, transform.rotation);
+            Vector3 lookat = Player.position;                        
+            GameObject spawnbaby = Instantiate(Spike);
+            spawnbaby.transform.position = transform.position + transform.forward * 2 + Vector3.up * 2;
+            Vector3 ShootDir = Player.transform.position - spawnbaby.transform.position;
+            spawnbaby.transform.LookAt(Player.transform); //spawnbaby.transform.position + ShootDir.normalized;
+            spawnbaby.GetComponent<Rigidbody>().velocity = ShootDir.normalized * SpikeSpeed;
             Debug.Log("Death to the infidels");
         }
     }
