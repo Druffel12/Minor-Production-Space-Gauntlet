@@ -53,9 +53,19 @@ public class Bug02Movement : MonoBehaviour {
         {
             if (Player.gameObject.activeInHierarchy)
             {
-                agent.destination = Player.position;
 
-                Debug.DrawLine(transform.position, Player.transform.position);
+                if (Vector3.Distance(transform.position, Player.position) < Range)
+                {
+                    Vector3 dir = (transform.position + Player.position).normalized;
+
+                    agent.destination = transform.position + dir * 5;
+
+                    Debug.DrawLine(transform.position, Player.transform.position);
+                }
+                else if (Vector3.Distance(transform.position, Player.position) > Range)
+                {
+                    //Attack();
+                }
             }
             else
             {
@@ -114,6 +124,14 @@ public class Bug02Movement : MonoBehaviour {
           if (agent.velocity.magnitude > 0)
         {
             transform.LookAt(transform.position + agent.velocity);
+        }
+    }
+
+    void Attack()
+    {
+        if (Target == true)
+        {
+
         }
     }
 }
