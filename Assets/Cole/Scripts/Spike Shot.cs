@@ -18,9 +18,9 @@ public class SpikeShot : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        if(col.LayerMask == "Player")
-        {
+        //if(col.LayerMask == "Player")
+        //{
 
-        }
+        //}
     }
 }
