@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644490a23d312e744a710496ef57bef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: MainGameScene
   timerText: {fileID: 2004186269}
   mainMenu: {fileID: 1664494489}
   playerSelect: {fileID: 859825558}
@@ -562,6 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644490a23d312e744a710496ef57bef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: MainGameScene
   timerText: {fileID: 2004186269}
   mainMenu: {fileID: 1664494489}
   playerSelect: {fileID: 859825558}
@@ -1079,6 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644490a23d312e744a710496ef57bef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: MainGameScene
   timerText: {fileID: 2004186269}
   mainMenu: {fileID: 1664494489}
   playerSelect: {fileID: 859825558}
@@ -1483,6 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644490a23d312e744a710496ef57bef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: MainGameScene
   timerText: {fileID: 2004186269}
   mainMenu: {fileID: 1664494489}
   playerSelect: {fileID: 859825558}
@@ -1532,39 +1536,6 @@ Prefab:
     - target: {fileID: 4427834631092342, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108186640144118280, guid: 1449878a4f555db4c953bcd52aba8ea6,
-        type: 2}
-      propertyPath: m_Intensity
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4189017551912780, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.32299992
-      objectReference: {fileID: 0}
-    - target: {fileID: 4189017551912780, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.000000029802322
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020306272193140, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.32299992
-      objectReference: {fileID: 0}
-    - target: {fileID: 4020306272193140, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.000000029802322
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691253884297324, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.323
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904005391192616, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.32299992
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904005391192616, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.000000029802322
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1449878a4f555db4c953bcd52aba8ea6, type: 2}

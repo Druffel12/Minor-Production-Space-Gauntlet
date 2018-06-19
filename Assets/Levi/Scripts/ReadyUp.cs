@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class ReadyUp : MonoBehaviour
 {
+    public string level;
+
     public Text timerText;
 
     public Canvas mainMenu;
@@ -51,8 +53,11 @@ public class ReadyUp : MonoBehaviour
 
     private void OnDisable()
     {
-        lightsAnim.SetBool("LightsOn", false);
-        startButton.gameObject.SetActive(false);
+        if (lightsAnim != null)
+        {
+            lightsAnim.SetBool("LightsOn", false);
+            startButton.gameObject.SetActive(false);
+        }
     }
 
     void WaitForInput()
@@ -227,7 +232,7 @@ public class ReadyUp : MonoBehaviour
 
             if(counter <= 0)
             {
-                SceneManager.LoadScene("Scene 1");
+                SceneManager.LoadScene(level);
             }
 
             if(prevState.Buttons.B == ButtonState.Released && state.Buttons.B == ButtonState.Pressed ||

@@ -96,9 +96,8 @@ public class PlayerController : MonoBehaviour
         laserSight.SetPosition(1, endPosition);
         laserSight.enabled = true;
 
-    } 
+    }
 
-    
 	void Update ()
     {
         prevState = state;
@@ -121,8 +120,11 @@ public class PlayerController : MonoBehaviour
         {
             if(grenadeCount > 0)
             {
+                
+                anim.SetTrigger("isGrenade");
                 grenadeCount--;
                 grenadeManager.GrenadeUsed(this);
+                
                 Instantiate(Grenade, transform.position + transform.forward * 2, transform.rotation);
             }
         }

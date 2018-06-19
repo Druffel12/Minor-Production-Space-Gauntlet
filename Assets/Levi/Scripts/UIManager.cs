@@ -8,8 +8,6 @@ public class UIManager : MonoBehaviour
 
     public List<RectTransform> uiElements;
 
-    public List<GameObject> grenadeElements;
-
     int counter = 0;
 
 	// Use this for initialization
@@ -40,22 +38,17 @@ public class UIManager : MonoBehaviour
         if (counter == 1)
         {
             uiElements[0].transform.position = new Vector3(Screen.width / 2, Screen.height / 10, 0);
-
-            grenadeElements[0].transform.position = new Vector3(Screen.width / 2, Screen.height* 17  /64, 0);
         }
         else if (counter == 2)
         {
             uiElements[0].transform.position = new Vector3(Screen.width / 4, Screen.height / 10, 0);
             uiElements[1].transform.position = new Vector3(Screen.width * .75f, Screen.height / 10, 0);
-
-            grenadeElements[0].transform.position = new Vector3(Screen.width / 4, Screen.height * 17 / 64, 0);
-            grenadeElements[0].transform.position = new Vector3(Screen.width * 3 / 4, Screen.height * 17 / 64, 0);
         }
         else if(counter == 3)
         {
             uiElements[0].transform.position = new Vector3(Screen.width / 6, Screen.height / 10, 0);
             uiElements[1].transform.position = new Vector3(Screen.width / 2, Screen.height / 10, 0);
-            uiElements[2].transform.position = new Vector3(Screen.width * (2 / 3), Screen.height / 10, 0);
+            uiElements[2].transform.position = new Vector3(Screen.width * 5 / 6, Screen.height / 10, 0);
         }
         else if(counter == 4)
         {
