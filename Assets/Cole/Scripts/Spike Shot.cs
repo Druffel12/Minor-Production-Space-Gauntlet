@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class SpikeShot : MonoBehaviour {
 
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		//if(Collider)
-	}
+    public float SpikeDamage;
 
-    private void OnCollisionEnter(Collision col)
+    private void OnTriggerEnter(Collider other)
     {
-        //if(col.LayerMask == "Player")
-        //{
-
-        //}
+        HP Temp = other.GetComponent<HP>();
+        if(Temp != null)
+        {
+            Temp.Damage(SpikeDamage);
+        }
+   
     }
 }
