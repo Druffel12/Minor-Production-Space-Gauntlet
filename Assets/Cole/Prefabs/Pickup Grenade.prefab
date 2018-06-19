@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733924516920180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 113.74141, y: -3.0357327, z: -22.51332}
+  m_LocalPosition: {x: 7.44, y: -0.023491424, z: 7.73}
   m_LocalScale: {x: 25.02255, y: 25.02255, z: 25.02255}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -71,7 +70,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -133,9 +131,10 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1536
-  Test: 1
+  Test: 0
   Delay: 0
-  EffectsCube: {fileID: 0}
+  EffectsCube: {fileID: 1149976430754102, guid: 90db31768d8cefa479973b99019bf9be,
+    type: 2}
 --- !u!114 &114979002325972314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,6 +158,6 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.03
-  m_Height: 0.15
+  m_Height: 0.36
   m_Direction: 1
   m_Center: {x: 0.0000000013969839, y: 0.021562278, z: 0.0056506386}
