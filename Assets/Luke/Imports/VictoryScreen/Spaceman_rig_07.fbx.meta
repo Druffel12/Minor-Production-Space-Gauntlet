@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: cb41897c41a27274c837385e427362bd
-timeCreated: 1528739076
-licenseType: Free
+guid: f6b5e98c7ef75244ea6595d256a696ba
+timeCreated: 1529436721
+licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Body
+    100000: character01_model
     100002: CharacterRig
     100004: Chest
     100006: Foot.L
@@ -49,7 +49,7 @@ ModelImporter:
     100082: Tube6.001
     100084: UpperArm.L
     100086: UpperArm.R
-    400000: Body
+    400000: character01_model
     400002: CharacterRig
     400004: Chest
     400006: Foot.L
@@ -93,11 +93,10 @@ ModelImporter:
     400082: Tube6.001
     400084: UpperArm.L
     400086: UpperArm.R
-    2100000: basic
-    4300000: Body
-    7400000: CharacterRig|CharacterRigAction.001
+    2100000: basic.002
+    4300000: character01_model
     9500000: //RootNode
-    13700000: Body
+    13700000: character01_model
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -124,39 +123,11 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: CharacterRig|CharacterRigAction.001
-      takeName: CharacterRig|CharacterRigAction.001
-      firstFrame: 1
-      lastFrame: 60
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.5
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -175,7 +146,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
