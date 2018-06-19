@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public PlayerIndex playerIndex;
     GrenadeManager grenadeManager;
 
+    PauseScript pause;
+
     public GameObject gun;
     public GameObject forward;
     public GameObject Grenade;
@@ -16,6 +18,11 @@ public class PlayerController : MonoBehaviour
 
     GamePadState state;
     GamePadState prevState;
+
+    float lookHorizontal;
+    float lookVertical;
+    float lookSpeed;
+    Vector3 lookDirection;
 
     float moveVertical;
     float moveHorizontal;
@@ -37,8 +44,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        pause = GetComponent<PauseScript>();
         anim = GetComponent<Animator>();
         speed = stats.speed;
+        lookSpeed = stats.speed;
         rb = GetComponent<Rigidbody>();
         canMove = true;
         laserSight = GetComponent<LineRenderer>();
@@ -55,13 +64,19 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         //rotates the player
-        if (moveHorizontal != 0 || moveVertical != 0)
+        if (lookHorizontal != 0 || lookVertical != 0)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,
-                                                  Quaternion.LookRotation(movement.normalized),
+                                                  Quaternion.LookRotation(lookDirection.normalized),
                                                   9 * Time.deltaTime);
         }
-     
+
+        lookHorizontal = state.ThumbSticks.Right.X;
+        lookVertical = state.ThumbSticks.Right.Y;
+
+        lookDirection = new Vector3(lookHorizontal, 0f, lookVertical);
+
+
       //logs the analog sticks movement in a float
         moveHorizontal = state.ThumbSticks.Left.X;
         moveVertical = state.ThumbSticks.Left.Y;
@@ -126,6 +141,18 @@ public class PlayerController : MonoBehaviour
                 grenadeManager.GrenadeUsed(this);
                 
                 Instantiate(Grenade, transform.position + transform.forward * 2, transform.rotation);
+            }
+        }
+
+        if( prevState.Buttons.Start == ButtonState.Released && state.Buttons.Start == ButtonState.Pressed)
+        {
+            if (Time.timeScale > 0)
+            {
+                pause.PauseGame();
+            }
+            else
+            {
+                pause.UnpauseGame();
             }
         }
 

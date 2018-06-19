@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    List<PlayerController> players;
+   public List<PlayerController> players;
     PlayerSelectManager playerManager;
     UIManager UI;
     public int testPlayersActive;
@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     {
         playerManager = FindObjectOfType<PlayerSelectManager>();
         UI = FindObjectOfType<UIManager>();
-        players = new List<PlayerController>(FindObjectsOfType<PlayerController>());
+        //players = new List<PlayerController>(FindObjectsOfType<PlayerController>());
 
         if (playerManager == null)
         {

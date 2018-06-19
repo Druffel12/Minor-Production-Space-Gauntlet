@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class ReadyUp : MonoBehaviour
 {
-    public string level;
+   
 
-    public Text timerText;
+    
 
     public Canvas mainMenu;
     public Canvas playerSelect;
@@ -25,12 +25,12 @@ public class ReadyUp : MonoBehaviour
 
     Image characterImage;
 
-    public Image startButton;
-    public Image backButton;
     PlayerSelectManager playerManager;
 
     public PlayerIndex pIndex;
     public bool isReady;
+
+    public ReadyUpCountDown ready;
 
 	void Start ()
     {
@@ -56,7 +56,7 @@ public class ReadyUp : MonoBehaviour
         if (lightsAnim != null)
         {
             lightsAnim.SetBool("LightsOn", false);
-            startButton.gameObject.SetActive(false);
+            ready.startButton.gameObject.SetActive(false);
         }
     }
 
@@ -80,96 +80,9 @@ public class ReadyUp : MonoBehaviour
        
     }
 
-    void setStartButton()
-    {
-        if (playerManager.p4Ready == true)
-        {
-            if (playerManager.p3Ready == true)
-            {
-                if (playerManager.p2Ready == true)
-                {
-                    if (playerManager.p1Ready == true)
-                    {
-                        startButton.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        startButton.gameObject.SetActive(false);
-                    }
-                }
-                else
-                {
-                    startButton.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                startButton.gameObject.SetActive(false);
-            }
 
-        }
-        else
-        {
-            if (playerManager.p3Ready == true)
-            {
-                if (playerManager.p2Ready == true)
-                {
-                    if (playerManager.p1Ready == true)
-                    {
-                        startButton.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        startButton.gameObject.SetActive(false);
-                    }
-                }
-                else
-                {
-                    startButton.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                if (playerManager.p2Ready == true)
-                {
-                    if (playerManager.p1Ready == true)
-                    {
-                        startButton.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        startButton.gameObject.SetActive(false);
-                    }
-                }
-                else
-                {
-                    if (playerManager.p1Ready == true)
-                    {
-                        startButton.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        startButton.gameObject.SetActive(false);
-                    }
-                }
-            }
-        }
-    }
-
-    bool pressedStart = false;
     float counter;
 
-
-    void StartCountdown()
-    {
-        counter = 5;
-        timerText.gameObject.SetActive(true);
-        startButton.gameObject.SetActive(false);
-        backButton.gameObject.SetActive(false);
-
-        pressedStart = true;
-        
-    }
 
     void Flicker()
     {
@@ -177,15 +90,6 @@ public class ReadyUp : MonoBehaviour
         lightsAnim.SetTrigger("Flicker");
     }
 
-
-    void StopCountDown()
-    {
-        timerText.gameObject.SetActive(false);
-        startButton.gameObject.SetActive(true);
-        backButton.gameObject.SetActive(true);
-
-        pressedStart = false;
-    }
 
     bool canPress;
 
@@ -207,38 +111,27 @@ public class ReadyUp : MonoBehaviour
         if (prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed && canPress == true)
         {
             WaitForInput();
-            setStartButton();
+            ready.setStartButton();
         }
 
-        if (prevState.Buttons.B == ButtonState.Released && state.Buttons.B == ButtonState.Pressed && pressedStart == false)
+        if (prevState.Buttons.B == ButtonState.Released && state.Buttons.B == ButtonState.Pressed && ready.pressedStart == false)
         {
             cameraAnim.SetTrigger("MainMenu");
             mainMenu.gameObject.SetActive(true);
             playerSelect.gameObject.SetActive(false);
         }
 
-        if (prevState.Buttons.Start == ButtonState.Released && state.Buttons.Start == ButtonState.Pressed && startButton.gameObject.activeInHierarchy == true)
+        if (prevState.Buttons.Start == ButtonState.Released && state.Buttons.Start == ButtonState.Pressed && ready.startButton.gameObject.activeInHierarchy == true)
         {
-            StartCountdown();          
+            ready.StartCountdown();
         }
 
-        if (pressedStart == true)
+        if (ready.pressedStart == true)
         {
-            counter -= Time.deltaTime;
-
-            float seconds = Mathf.RoundToInt(counter);
-
-            timerText.text = seconds.ToString();
-
-            if(counter <= 0)
-            {
-                SceneManager.LoadScene(level);
-            }
-
             if(prevState.Buttons.B == ButtonState.Released && state.Buttons.B == ButtonState.Pressed ||
                prevState.Buttons.A == ButtonState.Released && state.Buttons.A == ButtonState.Pressed)
             {
-                StopCountDown();
+                ready.StopCountDown();
             }
         }
     }

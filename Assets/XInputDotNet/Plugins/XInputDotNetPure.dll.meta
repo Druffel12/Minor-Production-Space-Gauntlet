@@ -14,12 +14,21 @@ PluginImporter:
       enabled: 0
       settings:
         Exclude Editor: 0
+<<<<<<< HEAD
         Exclude Linux: 0
         Exclude Linux64: 0
         Exclude LinuxUniversal: 0
         Exclude OSXUniversal: 0
         Exclude Win: 0
         Exclude Win64: 0
+=======
+        Exclude Linux: 1
+        Exclude Linux64: 1
+        Exclude LinuxUniversal: 1
+        Exclude OSXUniversal: 1
+        Exclude Win: 1
+        Exclude Win64: 1
+>>>>>>> levi
   - first:
       '': data
     second:
@@ -48,12 +57,17 @@ PluginImporter:
   - first:
       Standalone: Linux
     second:
+<<<<<<< HEAD
       enabled: 1
+=======
+      enabled: 0
+>>>>>>> levi
       settings:
         CPU: x86
   - first:
       Standalone: Linux64
     second:
+<<<<<<< HEAD
       enabled: 1
       settings:
         CPU: x86_64
@@ -67,18 +81,35 @@ PluginImporter:
       Standalone: OSXUniversal
     second:
       enabled: 1
+=======
+      enabled: 0
+      settings:
+        CPU: x86_64
+  - first:
+      Standalone: OSXUniversal
+    second:
+      enabled: 0
+>>>>>>> levi
       settings:
         CPU: AnyCPU
   - first:
       Standalone: Win
     second:
+<<<<<<< HEAD
       enabled: 1
+=======
+      enabled: 0
+>>>>>>> levi
       settings:
         CPU: AnyCPU
   - first:
       Standalone: Win64
     second:
+<<<<<<< HEAD
       enabled: 1
+=======
+      enabled: 0
+>>>>>>> levi
       settings:
         CPU: AnyCPU
   - first:
