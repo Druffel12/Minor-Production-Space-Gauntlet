@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ReadyUp : MonoBehaviour
 {
-   
-
-    
+    public GameObject joinText;
 
     public Canvas mainMenu;
     public Canvas playerSelect;
@@ -66,11 +64,13 @@ public class ReadyUp : MonoBehaviour
         if(isReady == true)
         {
             isReady = false;
+            joinText.SetActive(true);
             lightsAnim.SetBool("LightsOn", false);
         }
         else
         {
             isReady = true;
+            joinText.SetActive(false);
             Flicker();
             lightsAnim.SetBool("LightsOn", true);
         }
