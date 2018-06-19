@@ -133,7 +133,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1536
-  Test: 1
+  Test: 0
   Delay: 0
   EffectsCube: {fileID: 0}
 --- !u!114 &114979002325972314
