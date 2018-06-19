@@ -27,6 +27,7 @@ public class Bug02Movement : MonoBehaviour {
     NavMeshAgent agent;
     Vector3 Dir;
     Animator  Anim;
+    public GameObject Spike;
 
     private void Awake()
     {
@@ -35,9 +36,9 @@ public class Bug02Movement : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        Target = null;
+        //Target = null;
         agent = GetComponent<NavMeshAgent>();
-        Anim.GetComponent<Animator>();
+        //Anim.GetComponent<Animator>();
 		//agent 
 	}
 
@@ -54,7 +55,7 @@ public class Bug02Movement : MonoBehaviour {
             if (Player.gameObject.activeInHierarchy)
             {
 
-                if (Vector3.Distance(transform.position, Player.position) < Range)
+                if (Vector3.Distance(transform.position, Player.position) < Range - 2)
                 {
                     Vector3 dir = (transform.position + Player.position).normalized;
 
@@ -62,9 +63,9 @@ public class Bug02Movement : MonoBehaviour {
 
                     Debug.DrawLine(transform.position, Player.transform.position);
                 }
-                else if (Vector3.Distance(transform.position, Player.position) > Range)
+                else if (Vector3.Distance(transform.position, Player.position) < Range)
                 {
-                    //Attack();
+                    Attack();
                 }
             }
             else
@@ -87,6 +88,7 @@ public class Bug02Movement : MonoBehaviour {
         float min = Mathf.Infinity;
         foreach(Collider guy in Neighbors)
         {
+           
             CanWander = false;
             float distance = Vector3.Distance(transform.position, guy.transform.position);
             if(distance <= min)
@@ -129,9 +131,11 @@ public class Bug02Movement : MonoBehaviour {
 
     void Attack()
     {
-        if (Target == true)
+        if (Player == true)
         {
-
+            Vector3 lookat = Player.position;
+            Instantiate(Spike, transform.position + transform.forward * 2, transform.rotation);
+            Debug.Log("Death to the infidels");
         }
     }
 }
