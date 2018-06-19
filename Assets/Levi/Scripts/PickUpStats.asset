@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d837fcb7e3b25fb4684946121357f61c, type: 3}
   m_Name: PickUpStats
   m_EditorClassIdentifier: 
-  healthIncrease: 20
+  healthIncrease: 100
   scoreIncrease: 100
