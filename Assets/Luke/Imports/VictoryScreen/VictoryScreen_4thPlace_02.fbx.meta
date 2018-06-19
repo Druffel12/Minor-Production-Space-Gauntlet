@@ -1,0 +1,219 @@
+fileFormatVersion: 2
+guid: 2e68888cb3bd03f45bd40aa838209645
+timeCreated: 1529443177
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: ArmCL.L
+    100002: ArmCL.R
+    100004: character01_model
+    100006: CharacterRig
+    100008: Chest
+    100010: Foot.L
+    100012: Foot.R
+    100014: Forearm.L
+    100016: Forearm.R
+    100018: Hand.L
+    100020: Hand.R
+    100022: Head
+    100024: HipJoint.L
+    100026: HipJoint.R
+    100028: Hips
+    100030: HipsCtrl
+    100032: IkArm.L
+    100034: IkArm.R
+    100036: IkLeg.L
+    100038: IkLeg.R
+    100040: IkPoleLeg.L
+    100042: IkPoleLeg.R
+    100044: Neck
+    100046: Pack
+    100048: Root
+    100050: Shin.L
+    100052: Shin.R
+    100054: Shoulder.L
+    100056: Shoulder.R
+    100058: ShoulderArmor.L
+    100060: ShoulderArmor.R
+    100062: Spine1
+    100064: Spine2
+    100066: Tank
+    100068: Thigh.L
+    100070: Thigh.R
+    100072: Toe.L
+    100074: Toe.R
+    100076: Tube1
+    100078: Tube2
+    100080: Tube3
+    100082: Tube4
+    100084: Tube5
+    100086: Tube6
+    100088: Tube6.001
+    100090: UpperArm.L
+    100092: UpperArm.R
+    100094: //RootNode
+    400000: ArmCL.L
+    400002: ArmCL.R
+    400004: character01_model
+    400006: CharacterRig
+    400008: Chest
+    400010: Foot.L
+    400012: Foot.R
+    400014: Forearm.L
+    400016: Forearm.R
+    400018: Hand.L
+    400020: Hand.R
+    400022: Head
+    400024: HipJoint.L
+    400026: HipJoint.R
+    400028: Hips
+    400030: HipsCtrl
+    400032: IkArm.L
+    400034: IkArm.R
+    400036: IkLeg.L
+    400038: IkLeg.R
+    400040: IkPoleLeg.L
+    400042: IkPoleLeg.R
+    400044: Neck
+    400046: Pack
+    400048: Root
+    400050: Shin.L
+    400052: Shin.R
+    400054: Shoulder.L
+    400056: Shoulder.R
+    400058: ShoulderArmor.L
+    400060: ShoulderArmor.R
+    400062: Spine1
+    400064: Spine2
+    400066: Tank
+    400068: Thigh.L
+    400070: Thigh.R
+    400072: Toe.L
+    400074: Toe.R
+    400076: Tube1
+    400078: Tube2
+    400080: Tube3
+    400082: Tube4
+    400084: Tube5
+    400086: Tube6
+    400088: Tube6.001
+    400090: UpperArm.L
+    400092: UpperArm.R
+    400094: //RootNode
+    2100000: SoldierBlue
+    2100002: GlowBlue
+    4300000: character01_model
+    7400000: CharacterRig|Bug2Rig|Bug2Rig|Bug2RigAction|Bug2Rig|Bug2RigAction
+    7400002: CharacterRig|CameraAction
+    7400004: CharacterRig|CharacterRig.001Action
+    9500000: //RootNode
+    13700000: character01_model
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CharacterRig|CharacterRig.001Action
+      takeName: CharacterRig|CharacterRig.001Action
+      firstFrame: 2
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
