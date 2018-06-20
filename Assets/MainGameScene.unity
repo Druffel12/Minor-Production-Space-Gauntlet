@@ -154,6 +154,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114119286080530996, guid: 922a726541facc040a530bbd5ce1e328,
+        type: 2}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 2067647590}
     - target: {fileID: 114110223559988628, guid: 922a726541facc040a530bbd5ce1e328,
         type: 2}
       propertyPath: grenades.Array.data[0]
@@ -174,15 +179,11 @@ Prefab:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 2067647591}
-    - target: {fileID: 114119286080530996, guid: 922a726541facc040a530bbd5ce1e328,
+    - target: {fileID: 114195286013598360, guid: 922a726541facc040a530bbd5ce1e328,
         type: 2}
-      propertyPath: scoreText
+      propertyPath: pauseCanvas
       value: 
-      objectReference: {fileID: 2067647590}
-    - target: {fileID: 1674891990559282, guid: 922a726541facc040a530bbd5ce1e328, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 300248566}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 922a726541facc040a530bbd5ce1e328, type: 2}
   m_IsPrefabParent: 0
@@ -1349,29 +1350,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c23ca46521690d6449416f84c8eccd3a, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &402927728 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1674891990559282, guid: 922a726541facc040a530bbd5ce1e328,
-    type: 2}
-  m_PrefabInternal: {fileID: 4945379}
 --- !u!114 &402927731 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114610816790127582, guid: 922a726541facc040a530bbd5ce1e328,
     type: 2}
   m_PrefabInternal: {fileID: 4945379}
   m_Script: {fileID: 11500000, guid: 2b89b74840ac99842960992237e0047b, type: 3}
---- !u!114 &402927738
+--- !u!114 &402927738 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 402927728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 114195286013598360, guid: 922a726541facc040a530bbd5ce1e328,
+    type: 2}
+  m_PrefabInternal: {fileID: 4945379}
   m_Script: {fileID: 11500000, guid: 886730ebfbdfc3d4489f7225f0b0e891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 300248566}
 --- !u!4 &422988760 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4399743961134452, guid: c23ca46521690d6449416f84c8eccd3a,

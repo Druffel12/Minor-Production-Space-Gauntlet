@@ -440,6 +440,7 @@ GameObject:
   - component: {fileID: 114610816790127582}
   - component: {fileID: 114110223559988628}
   - component: {fileID: 120104996561162266}
+  - component: {fileID: 114195286013598360}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -1714,6 +1715,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunLight: {fileID: 108346928556868634}
   gunParticles: {fileID: 1136281116200142}
+--- !u!114 &114195286013598360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1674891990559282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886730ebfbdfc3d4489f7225f0b0e891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 0}
 --- !u!114 &114610816790127582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1725,6 +1738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b89b74840ac99842960992237e0047b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasKey: 0
   playerIndex: 0
   gun: {fileID: 1911703155519570}
   forward: {fileID: 1142623050415250}
