@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23723660869648906}
   - component: {fileID: 95126359415877488}
   - component: {fileID: 54502927403998094}
+  - component: {fileID: 114615324269567350}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -114,3 +115,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114615324269567350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507288165746314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c3620479dd3074eb474eb269a4d5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpikeDamage: 0
+  SpikeLife: 0
+  MyPool: {fileID: 0}
+  Spawner: {fileID: 0}

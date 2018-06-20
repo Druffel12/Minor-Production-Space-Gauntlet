@@ -121,6 +121,7 @@ public class AIMovement : MonoBehaviour
                 agent.isStopped = true;
                 anim.SetTrigger("isIdle");
             }
+            Target = null;
         }
     }
     //Seeking and Attacking function

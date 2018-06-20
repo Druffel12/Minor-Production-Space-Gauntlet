@@ -149,6 +149,7 @@ public class Bug02Movement : MonoBehaviour {
             Vector3 ShootDir = Player.transform.position - spawnbaby.transform.position;
             spawnbaby.transform.LookAt(Player.transform); //spawnbaby.transform.position + ShootDir.normalized;
             spawnbaby.GetComponent<Rigidbody>().velocity = ShootDir.normalized * SpikeSpeed;
+            LookAtPlayer();
             Debug.Log("Death to the infidels");
         }
     }
