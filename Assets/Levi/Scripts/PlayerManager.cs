@@ -55,6 +55,7 @@ public class PlayerManager : MonoBehaviour
                 }
                 UI.UIRunThrough();
             }
+            Destroy(playerManager.gameObject);
         }
     }
         
