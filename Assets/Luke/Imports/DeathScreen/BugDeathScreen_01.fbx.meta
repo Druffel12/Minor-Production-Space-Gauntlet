@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 0726660d63d745e4bb39b60d7607c4af
+timeCreated: 1529454727
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Abdomen1
+    100002: Abdomen2
+    100004: Abdomen3
+    100006: Abdomen4
+    100008: Arm.L
+    100010: Arm.R
+    100012: Bug1
+    100014: Bug1_Rig
+    100016: //RootNode
+    100018: Claw.L
+    100020: Claw.R
+    100022: Digileg.L
+    100024: Digileg.R
+    100026: Foot.L
+    100028: Foot.R
+    100030: FootCL.L
+    100032: FootCL.R
+    100034: FootIK.L
+    100036: FootIK.R
+    100038: Head
+    100040: Helmet
+    100042: Helmet 1
+    100044: HelmetRig
+    100046: Hip.L
+    100048: Hip.R
+    100050: Hips
+    100052: Mandible.L
+    100054: Mandible.R
+    100056: Root
+    100058: Root 1
+    100060: Shin.L
+    100062: Shin.R
+    100064: Shoulder.L
+    100066: Shoulder.R
+    100068: Spine
+    100070: Thigh.L
+    100072: Thigh.R
+    400000: Abdomen1
+    400002: Abdomen2
+    400004: Abdomen3
+    400006: Abdomen4
+    400008: Arm.L
+    400010: Arm.R
+    400012: Bug1
+    400014: Bug1_Rig
+    400016: //RootNode
+    400018: Claw.L
+    400020: Claw.R
+    400022: Digileg.L
+    400024: Digileg.R
+    400026: Foot.L
+    400028: Foot.R
+    400030: FootCL.L
+    400032: FootCL.R
+    400034: FootIK.L
+    400036: FootIK.R
+    400038: Head
+    400040: Helmet
+    400042: Helmet 1
+    400044: HelmetRig
+    400046: Hip.L
+    400048: Hip.R
+    400050: Hips
+    400052: Mandible.L
+    400054: Mandible.R
+    400056: Root
+    400058: Root 1
+    400060: Shin.L
+    400062: Shin.R
+    400064: Shoulder.L
+    400066: Shoulder.R
+    400068: Spine
+    400070: Thigh.L
+    400072: Thigh.R
+    2100000: Material.003
+    2100002: basic.001
+    4300000: Bug1
+    4300002: Helmet
+    7400000: Bug1_Rig|Armature|Armature|ArmatureAction|Armature|ArmatureAction
+    7400002: Bug1_Rig|Armature|Armature|PlaneAction|Armature|PlaneAction
+    7400004: Bug1_Rig|Bug1_RigAction
+    7400006: Bug1_Rig|Bug1_RigAction.001
+    7400008: Bug1_Rig|CameraAction
+    7400010: Bug1_Rig|CharacterRigAction
+    7400012: Bug1_Rig|HelmetRigAction
+    7400014: HelmetRig|Bug1_RigAction
+    7400016: HelmetRig|CameraAction
+    7400018: HelmetRig|CharacterRigAction
+    7400020: HelmetRig|HelmetRigAction
+    7400022: HelmetRig|HelmetRigAction.001
+    9500000: //RootNode
+    13700000: Bug1
+    13700002: Helmet
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Bug1_Rig|CameraAction
+      takeName: Bug1_Rig|CameraAction
+      firstFrame: 0
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
