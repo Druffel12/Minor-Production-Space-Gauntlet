@@ -30,7 +30,7 @@ public class HP : MonoBehaviour, IDamageable
     public void Death()
     {
         //T need to add animation also possible UI element 
-        
+        healthText.text = "DEAD";
         //PlayerNumManager.instance.RemovePlayer(gameObject);
         Destroy(gameObject);
     }

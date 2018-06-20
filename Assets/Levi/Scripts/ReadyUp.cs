@@ -32,6 +32,7 @@ public class ReadyUp : MonoBehaviour
 
 	void Start ()
     {
+        Time.timeScale = 1;
         isReady = false;
         characterImage = GetComponent<Image>();
         playerManager = FindObjectOfType<PlayerSelectManager>();

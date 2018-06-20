@@ -66,6 +66,11 @@ public class CameraController : MonoBehaviour
         StartCoroutine("CameraPosition");
     }
 
+    private void LateUpdate()
+    {
+        transform.position = centerVector;
+    }
+    Vector3 centerVector;
     IEnumerator CameraPosition()
     {
         while (true)
@@ -81,7 +86,7 @@ public class CameraController : MonoBehaviour
             }
 
             centroid = center / playerNum.players.Count;
-            Vector3 centerVector = new Vector3(centroid.x, cameraDistance, centroid.z - offset);
+            centerVector = new Vector3(centroid.x, cameraDistance, centroid.z - offset);
 
             //checks through all the players to see if the camera should zoom out
            for(int i = 0; i < playerNum.players.Count; i++)
@@ -114,7 +119,7 @@ public class CameraController : MonoBehaviour
 
 
             // moves the camera to the center between the players
-            transform.position = centerVector;
+            
 
             yield return null;
         }

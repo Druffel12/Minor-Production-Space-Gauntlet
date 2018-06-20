@@ -9,6 +9,7 @@ public class Bug02Movement : MonoBehaviour {
     private Transform Player;
     private Transform MyTransform;
     private Transform Target;
+    
 
     //floats
     public float Range;
@@ -16,9 +17,12 @@ public class Bug02Movement : MonoBehaviour {
     public float WanderRadius;
     public float WanderTimer;
     private float Timer;
+    private float AttackTimer;
+    public float AttackDelay;
     public float LowRange;
     public float HighRange;
     public float SpikeSpeed;
+    public float ShotDelay;
 
     //bools
     public bool isAttacking;
@@ -39,6 +43,8 @@ public class Bug02Movement : MonoBehaviour {
     {
         //Target = null;
         agent = GetComponent<NavMeshAgent>();
+
+        agent.updateRotation = false;
         //Anim.GetComponent<Animator>();
 		//agent 
 	}
@@ -46,16 +52,16 @@ public class Bug02Movement : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-
-       // LookAtPlayer();
+        AttackTimer -= Time.deltaTime;
+        // LookAtPlayer();
 
         Player = FindNearestPlayer();
-
-		if (Player != null)
+       
+        if (Player != null)
         {
             if (Player.gameObject.activeInHierarchy)
             {
-
+                
                 if (Vector3.Distance(transform.position, Player.position) < Range - 2)
                 {
                     Vector3 dir = (transform.position + Player.position).normalized;
@@ -66,7 +72,13 @@ public class Bug02Movement : MonoBehaviour {
                 }
                 else if (Vector3.Distance(transform.position, Player.position) < Range)
                 {
-                    Attack();
+                    LookAtPlayer();
+                    if (AttackTimer <= 0.0f)
+                    {
+                        Attack();
+                        AttackTimer = AttackDelay;
+                    }
+                   
                 }
             }
             else
@@ -123,18 +135,15 @@ public class Bug02Movement : MonoBehaviour {
     }
 
     void LookAtPlayer()
-    {
-          if (agent.velocity.magnitude > 0)
-        {
-            transform.LookAt(transform.position + agent.velocity);
-        }
+    {    
+      transform.LookAt(Player.transform.position);  
     }
 
     void Attack()
     {
         if (Player == true)
         {
-            Vector3 lookat = Player.position;                        
+                                
             GameObject spawnbaby = Instantiate(Spike);
             spawnbaby.transform.position = transform.position + transform.forward * 2 + Vector3.up * 2;
             Vector3 ShootDir = Player.transform.position - spawnbaby.transform.position;

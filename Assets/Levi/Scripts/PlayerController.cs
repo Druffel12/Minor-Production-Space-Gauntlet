@@ -5,6 +5,8 @@ using XInputDotNetPure;
 using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
+    public bool hasKey;
+
     public PlayerIndex playerIndex;
     GrenadeManager grenadeManager;
 
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        hasKey = false;
         pause = GetComponent<PauseScript>();
         anim = GetComponent<Animator>();
         speed = stats.speed;
