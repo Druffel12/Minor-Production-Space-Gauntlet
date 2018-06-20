@@ -7,8 +7,13 @@ public class PlayerNumManager : MonoBehaviour {
 
     public static PlayerNumManager instance;
     public List<GameObject> players;
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start ()
     {
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
 	}

@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 114570560033314076}
   - component: {fileID: 114060340663306972}
   - component: {fileID: 120483371908030566}
+  - component: {fileID: 114809890685069330}
   m_Layer: 9
   m_Name: Player 3
   m_TagString: Player
@@ -1394,7 +1395,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871880769476750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.73, y: 0.04, z: 4.222364}
+  m_LocalPosition: {x: 0.74, y: 0.5370954, z: 8.903562}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4981071720665766}
@@ -1765,9 +1766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967039
   line: {fileID: 120799049157607888}
-  effects: {fileID: 0}
+  effects: {fileID: 114916074590018202}
   stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
 --- !u!114 &114570560033314076
 MonoBehaviour:
@@ -1780,16 +1781,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b89b74840ac99842960992237e0047b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasKey: 0
   playerIndex: 2
   gun: {fileID: 1462870415378288}
   forward: {fileID: 1812531062330806}
-  Grenade: {fileID: 0}
+  Grenade: {fileID: 1150679070412636, guid: e15964606d6088d4e9ae15d740bfc273, type: 2}
   mask:
     serializedVersion: 2
     m_Bits: 4294967039
   grenadeCount: 0
   canMove: 0
   stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
+--- !u!114 &114809890685069330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871880769476750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886730ebfbdfc3d4489f7225f0b0e891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseCanvas: {fileID: 0}
 --- !u!114 &114916074590018202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1801,7 +1815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8c5ecbb6bd0c349b0254513dd5df04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunLight: {fileID: 0}
+  gunLight: {fileID: 108281832796255122}
   gunParticles: {fileID: 1446395177362446}
 --- !u!120 &120483371908030566
 LineRenderer:

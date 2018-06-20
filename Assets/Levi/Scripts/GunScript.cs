@@ -73,8 +73,6 @@ public class GunScript : MonoBehaviour
        
     }
 
-
-
     void Shoot(Vector3 targetPosition, Vector3 direction, float length)
     {
         Ray ray = new Ray(targetPosition, direction);
