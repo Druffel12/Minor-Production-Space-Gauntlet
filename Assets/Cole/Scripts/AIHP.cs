@@ -8,7 +8,7 @@ public class AIHP : MonoBehaviour, IDamageable
     public ObjectPooler MyPool;
     public float MaxHP;
     public EnemySpawner Spawner;
-
+    public AIMovement AIMove;
     public GameObject damageEffect;
 
     Animator anim;
@@ -27,6 +27,7 @@ public class AIHP : MonoBehaviour, IDamageable
         MaxHP = EnemyHP;
         anim = GetComponent<Animator>();
         drop = GetComponent<TreasureDrop>();
+        AIMove = GetComponent<AIMovement>();
         damageEffect.SetActive(false);
     }
 
@@ -44,6 +45,12 @@ public class AIHP : MonoBehaviour, IDamageable
             Death();
         }
     
+        if(AIMove.Player == null)
+        {
+
+            AIMove.findNearestPlayer(5);
+        }
+
     }
 
 
