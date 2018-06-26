@@ -127,6 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpikeDamage: 0
-  SpikeLife: 0
+  SpikeLife: 2
   MyPool: {fileID: 0}
   Spawner: {fileID: 0}

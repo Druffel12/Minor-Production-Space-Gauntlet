@@ -9,6 +9,7 @@ public class AIMovement : MonoBehaviour
     private Transform Player;
     private Transform MyTransform;
     private Transform Target;
+    private Transform LastSpot;
 
     //GameObjects
     public GameObject AttackCube;
@@ -39,6 +40,7 @@ public class AIMovement : MonoBehaviour
     {
         MyTransform = transform;
         AttackCube.SetActive(false);
+        WanderTimer = 0;
     }
 
     private void Start()
@@ -85,12 +87,16 @@ public class AIMovement : MonoBehaviour
     void Update()
     {
 
-        Wander();
+        if (Player == null)
+        {
+            Wander();
+        }
         if(agent.velocity.magnitude > 0)
         {
             transform.LookAt(transform.position + agent.velocity);
         }
 
+        
 
         thoughtTimer -= Time.deltaTime;
         if(thoughtTimer <= 0 )
@@ -99,30 +105,42 @@ public class AIMovement : MonoBehaviour
             if(Player != null)
             {
                 agent.isStopped = false;
+                
             }
             thoughtTimer = thoughtDelay;
         }
         
         if (Player != null)
         {
+            
+
             if (Player.gameObject.activeInHierarchy)
             {
                 agent.destination = Player.position;
+              
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isRunning", true);
 
                 Debug.DrawLine(transform.position, Player.transform.position);
                 Attack();
+                
             }
+            
+
             else
             {
                 Player = null;
-                anim.SetBool("isRunning", false);
                 agent.isStopped = true;
+                anim.SetBool("isRunning", false);
                 anim.SetTrigger("isIdle");
+                
             }
+           
             Target = null;
         }
+        
+       
+
     }
     //Seeking and Attacking function
     private void Attack()
@@ -139,16 +157,20 @@ public class AIMovement : MonoBehaviour
         }
     }
 
+    //enables attack cube function
     public void enableCube()
     {
         AttackCube.SetActive(true);
     }
 
+    //disables attack cube
     public void disableCube()
     {
         isAttacking = false;
         AttackCube.SetActive(false);
     }
+
+    //wander script
     Vector3 debugPos;
     private void Wander()
     {
@@ -163,14 +185,17 @@ public class AIMovement : MonoBehaviour
             agent.destination = newPos;
             Timer = 0;
             WanderTimer = Random.Range(LowRange, HighRange);
-          
+            anim.SetBool("isRunning", false);
         }
+        
+
         if (Vector3.Distance(transform.position, agent.destination) <= agent.stoppingDistance)
         {
             anim.SetBool("isWalking", false);
         }
     }
 
+    //random nav mesh for wander
     public Vector3 RandomNavMesh(Vector3 origin, float dist, int LayerMask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
