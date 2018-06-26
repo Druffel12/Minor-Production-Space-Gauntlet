@@ -9,6 +9,7 @@ public class SpikeShot : MonoBehaviour {
     public ObjectPooler MyPool;
     public EnemySpawner Spawner;
 
+    //checks collision
     private void OnTriggerEnter(Collider other)
     {
         HP Temp = other.GetComponent<HP>();
@@ -19,19 +20,23 @@ public class SpikeShot : MonoBehaviour {
    
     }
 
+    //pool connecting
     private void Start()
     {
         MyPool = ObjectPooler.SharedInstance;
     }
 
+    //life of spike
     private void Update()
     {
+        SpikeLife -= Time.deltaTime; 
         if (SpikeLife <= 0.0f)
         {
             ReturnToPool();
         }
     }
 
+    //return to pool
     void ReturnToPool()
     {
         MyPool.PooledObjects.Add(gameObject);

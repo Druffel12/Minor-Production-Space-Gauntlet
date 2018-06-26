@@ -10,13 +10,14 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     public int SpawnCount;
     public float Spawner;
     public float SpawnerHP;
-    public float SpawnFB;
-    public float SpawnLR;
+    private float SpawnerStartHP;
+
 
     // Use this for initialization
     //resets spawn timer
     void Start()
     {
+        SpawnerStartHP = SpawnerHP;
         ResetTimer();
     }
 
@@ -41,7 +42,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
                 ResetTimer();
             }
         }
-        
+
     }
 
     //resets enemy spawn timer funcion
@@ -50,6 +51,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         SpawnTime = Spawner;
     }
 
+    //calls death function
     public void Damage(float Amt)
     {
         SpawnerHP -= Amt;
@@ -58,8 +60,30 @@ public class EnemySpawner : MonoBehaviour, IDamageable
             Death();
         }
     }
+
+    //Death Function
     public void Death()
     {
         Destroy(gameObject);
     }
+
+    //T ask Kobey more efficient way to switch spawner states
+    void SpawnerHpLVL()
+    {
+        if(SpawnerHP <= SpawnerStartHP && SpawnerHP >= (SpawnerStartHP/3 * 2))
+        {
+            //nothing really this if statement isactually redundant
+        }
+
+        else if(SpawnerHP <= (SpawnerHP/3 * 2) && SpawnerHP >= (SpawnerHP/3))
+        {
+            transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
+        }
+
+        else
+        {
+            transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+        }
+    }
+
 }
