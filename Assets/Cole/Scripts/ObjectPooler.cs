@@ -29,6 +29,8 @@ public class ObjectPooler : MonoBehaviour
                 return PooledObjects[i];
             }
         }
+
+        //pooling logic
         for (int i = 0; i < AmountToPool; i++)
         {
             GameObject obj = Instantiate(ObjectToPool);
@@ -40,7 +42,7 @@ public class ObjectPooler : MonoBehaviour
         return GetPooledObject();
 
     }
-    //used for sharing code use
+    //used for sharing code
     void Awake()
     {
         SharedInstance = this;

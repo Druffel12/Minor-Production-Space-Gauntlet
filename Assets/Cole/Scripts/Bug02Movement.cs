@@ -32,7 +32,7 @@ public class Bug02Movement : MonoBehaviour {
     NavMeshAgent agent;
     Vector3 Dir;
     Animator  Anim;
-    public GameObject Spike;
+    public ObjectPooler MyPool;
 
     private void Awake()
     {
@@ -43,25 +43,24 @@ public class Bug02Movement : MonoBehaviour {
     {
         //Target = null;
         agent = GetComponent<NavMeshAgent>();
-
+        MyPool = GetComponentInChildren<ObjectPooler>();
         agent.updateRotation = false;
         //Anim.GetComponent<Animator>();
 		//agent 
 	}
 
-    // Update is called once per frame
     void Update ()
     {
         AttackTimer -= Time.deltaTime;
-        // LookAtPlayer();
 
         Player = FindNearestPlayer();
        
+        //check for target
         if (Player != null)
         {
             if (Player.gameObject.activeInHierarchy)
             {
-                
+                //moving away from player
                 if (Vector3.Distance(transform.position, Player.position) < Range - 2)
                 {
                     Vector3 dir = (transform.position + Player.position).normalized;
@@ -70,6 +69,8 @@ public class Bug02Movement : MonoBehaviour {
 
                     Debug.DrawLine(transform.position, Player.transform.position);
                 }
+
+                //attacking player if far enough away
                 else if (Vector3.Distance(transform.position, Player.position) < Range)
                 {
                     LookAtPlayer();
@@ -88,12 +89,14 @@ public class Bug02Movement : MonoBehaviour {
         }
 	}
 
+    //Gizmo
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, SearchRange);
     }
 
+    //Looking for nearest player
     Transform FindNearestPlayer()
     {
         Transform retval = null;
@@ -112,15 +115,17 @@ public class Bug02Movement : MonoBehaviour {
         return retval;
     }
 
+    //Shooting function
     private void shoot()
     {
         if (Vector3.Distance(transform.position, Player.position) < Range + agent.stoppingDistance && !isAttacking)
         {
             Anim.SetTrigger("isAttacking");
-            isAttacking = true;
+            isAttacking = true;  
         }
     }
 
+    //Random nav mesh for wander
     public Vector3 RandomNavMesh(Vector3 origin, float dist, int LayerMask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
@@ -134,21 +139,25 @@ public class Bug02Movement : MonoBehaviour {
         return NavHit.position;
     }
 
+    //looking at/player
     void LookAtPlayer()
     {    
       transform.LookAt(Player.transform.position);  
     }
 
+    //Attacking function
     void Attack()
     {
         if (Player == true)
         {
-                                
-            GameObject spawnbaby = Instantiate(Spike);
-            spawnbaby.transform.position = transform.position + transform.forward * 2 + Vector3.up * 2;
-            Vector3 ShootDir = Player.transform.position - spawnbaby.transform.position;
-            spawnbaby.transform.LookAt(Player.transform); //spawnbaby.transform.position + ShootDir.normalized;
-            spawnbaby.GetComponent<Rigidbody>().velocity = ShootDir.normalized * SpikeSpeed;
+            
+            GameObject SpikyBoi = MyPool.GetPooledObject();
+            SpikyBoi.SetActive(true);
+            SpikyBoi.transform.position = transform.position + transform.forward * 2 + Vector3.up * 2;
+            Vector3 ShootDir = Player.transform.position - SpikyBoi.transform.position;
+            SpikyBoi.transform.LookAt(Player.transform); //spawnbaby.transform.position + ShootDir.normalized;
+            SpikyBoi.GetComponent<Rigidbody>().velocity = ShootDir.normalized * SpikeSpeed;
+            LookAtPlayer();
             Debug.Log("Death to the infidels");
         }
     }
