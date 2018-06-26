@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AIMovement : MonoBehaviour
 {
     //Transforms
-    private Transform Player;
+    public Transform Player;
     private Transform MyTransform;
     private Transform Target;
     private Transform LastSpot;
@@ -64,7 +64,7 @@ public class AIMovement : MonoBehaviour
     }
 
     //trigger zone for finding player tags
-    Transform findNearestPlayer()
+    public Transform findNearestPlayer()
     {
         Transform retval = null;
         Collider[] neighbors = Physics.OverlapSphere(transform.position, searchRange, 1 << 9);
@@ -75,6 +75,23 @@ public class AIMovement : MonoBehaviour
             CanWander = false;
             float distance = Vector3.Distance(transform.position, guy.transform.position);
             if(distance <= min)
+            {
+                retval = guy.transform;
+            }
+        }
+        return retval;
+    }
+    public Transform findNearestPlayer(float alertBonus)
+    {
+        Transform retval = null;
+        Collider[] neighbors = Physics.OverlapSphere(transform.position, searchRange + alertBonus, 1 << 9);
+        float min = Mathf.Infinity;
+        foreach (Collider guy in neighbors)
+        {
+
+            CanWander = false;
+            float distance = Vector3.Distance(transform.position, guy.transform.position);
+            if (distance <= min)
             {
                 retval = guy.transform;
             }
