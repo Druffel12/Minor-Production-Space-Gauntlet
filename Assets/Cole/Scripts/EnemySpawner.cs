@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     //enemy spawning loop 
     void Update()
     {
+      
         SpawnTime -= Time.deltaTime;
         if (SpawnTime <= 0.0f)
         {
@@ -58,7 +59,9 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         if (SpawnerHP <= 0)
         {
             Death();
-        }
+        }  
+        SpawnerHpLVL();
+        
     }
 
     //Death Function
@@ -67,22 +70,19 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    //T ask Kobey more efficient way to switch spawner states
+    //changes size of spawner dependent on health
     void SpawnerHpLVL()
     {
-        if(SpawnerHP <= SpawnerStartHP && SpawnerHP >= (SpawnerStartHP/3 * 2))
+
+        if (SpawnerHP <= (SpawnerStartHP / 3 * 2) && SpawnerHP >= (SpawnerStartHP / 3))
         {
-            //nothing really this if statement isactually redundant
+            transform.localScale -= new Vector3(50, 50, 50);
+            //SpawnCount - 2; 
         }
 
-        else if(SpawnerHP <= (SpawnerHP/3 * 2) && SpawnerHP >= (SpawnerHP/3))
+        else if(SpawnerHP <= (SpawnerStartHP / 3) && SpawnerHP >= 1)
         {
-            transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-        }
-
-        else
-        {
-            transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+            transform.localScale -= new Vector3(100, 100, 100);
         }
     }
 

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114139539105823970}
   - component: {fileID: 114923471159946130}
   - component: {fileID: 114979002325972314}
+  - component: {fileID: 114893296660189140}
   m_Layer: 10
   m_Name: Pickup Grenade
   m_TagString: Grenade
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733924516920180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.44, y: -0.023491424, z: 7.73}
+  m_LocalPosition: {x: -8.753442, y: -1.9372958e-16, z: 22.724804}
   m_LocalScale: {x: 25.02255, y: 25.02255, z: 25.02255}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,6 +116,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ae460ebbd80eaab4c82841a6ae777ac5, type: 2}
   pool: {fileID: 0}
+--- !u!114 &114893296660189140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733924516920180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77eefd1d896253c49948d528088c0fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XSpeed: 5
+  YSpeed: 150
+  ZSpeed: -20
 --- !u!114 &114923471159946130
 MonoBehaviour:
   m_ObjectHideFlags: 1

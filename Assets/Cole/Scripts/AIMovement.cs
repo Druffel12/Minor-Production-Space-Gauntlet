@@ -34,6 +34,7 @@ public class AIMovement : MonoBehaviour
     Animator anim;
     NavMeshAgent agent;
     Vector3 Dir;
+    Vector3 LookAtPlayer;
 
     //set transform
     private void Awake()
@@ -91,10 +92,33 @@ public class AIMovement : MonoBehaviour
         {
             Wander();
         }
-        if(agent.velocity.magnitude > 0)
+        
+
+        if(Player != null) // attackng state look at
         {
-            transform.LookAt(transform.position + agent.velocity);
+            if(Vector3.Distance(transform.position,Player.transform.position) < Range)
+            {
+                LookAtPlayer = Player.transform.position;
+                LookAtPlayer.y = gameObject.transform.position.y;
+                transform.LookAt(LookAtPlayer);
+            }
+            else if (agent.velocity.magnitude > 0)
+            {
+                transform.LookAt(transform.position + agent.velocity);
+            }
+            //else if (Player != null)
+            //{
+            //    transform.LookAt(Player.transform);
+            //}
         }
+        else // wander state look at
+        {
+            if (agent.velocity.magnitude > 0)
+            {
+                transform.LookAt(transform.position + agent.velocity);
+            }
+        }
+        
 
         
 
@@ -151,6 +175,7 @@ public class AIMovement : MonoBehaviour
         //}
         if(Vector3.Distance(transform.position, Player.position) < Range + agent.stoppingDistance  && !isAttacking)
         {
+            
             anim.SetTrigger("isAttacking");
             isAttacking = true;
             Debug.Log("Attack Cube on");
