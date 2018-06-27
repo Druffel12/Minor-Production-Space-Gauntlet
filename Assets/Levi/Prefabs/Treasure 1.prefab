@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 95875296345658236}
   - component: {fileID: 65528795056062844}
   - component: {fileID: 114224379814216252}
+  - component: {fileID: 114421768793419490}
   m_Layer: 0
   m_Name: Treasure 1
   m_TagString: Treasure
@@ -37,13 +38,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033788835188224}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.278694, y: -1.5364299, z: -197.23936}
+  m_LocalRotation: {x: -0, y: -0, z: 0.099073514, w: 0.9950801}
+  m_LocalPosition: {x: -34.975674, y: -1.5062594, z: -197.23936}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.372001}
 --- !u!23 &23091957719932512
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -127,3 +128,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ae460ebbd80eaab4c82841a6ae777ac5, type: 2}
   pool: {fileID: 0}
+--- !u!114 &114421768793419490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1033788835188224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77eefd1d896253c49948d528088c0fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XSpeed: 0
+  YSpeed: 35
+  ZSpeed: 7
