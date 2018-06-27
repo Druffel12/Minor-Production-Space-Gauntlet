@@ -44,6 +44,7 @@ public class AIHP : MonoBehaviour, IDamageable
 
     public void Damage(float Amt)
     {
+       
        EnemyHP -= Amt;
         if(BugDmg.isPlaying == false)
         {
@@ -53,7 +54,11 @@ public class AIHP : MonoBehaviour, IDamageable
         {
             Death();
         }
-    
+        
+        else
+        {
+            anim.SetTrigger("isShot");
+        }
         if(AIMove.Player == null)
         {
 
