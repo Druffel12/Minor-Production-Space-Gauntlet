@@ -108,13 +108,25 @@ public class AIMovement : MonoBehaviour
         {
             Wander();
         }
-        if(agent.velocity.magnitude > 0)
+
+        else
         {
-            transform.LookAt(transform.position + agent.velocity);
+            if (Vector3.Distance(transform.position, Player.position) < Range + agent.stoppingDistance && !isAttacking)
+            {
+                transform.LookAt(Player);
+            }
+
+            else if (agent.velocity.magnitude > 0)
+            {
+                transform.LookAt(transform.position + agent.velocity);
+            }
+
+            else
+            {
+                transform.LookAt(Player);
+            }
         }
-
-        
-
+    
         thoughtTimer -= Time.deltaTime;
         if(thoughtTimer <= 0 )
         {
@@ -130,7 +142,6 @@ public class AIMovement : MonoBehaviour
         if (Player != null)
         {
             
-
             if (Player.gameObject.activeInHierarchy)
             {
                 agent.destination = Player.position;
@@ -138,11 +149,10 @@ public class AIMovement : MonoBehaviour
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isRunning", true);
 
-                Debug.DrawLine(transform.position, Player.transform.position);
+               
                 Attack();
                 
             }
-            
 
             else
             {
@@ -155,8 +165,6 @@ public class AIMovement : MonoBehaviour
            
             Target = null;
         }
-        
-       
 
     }
     //Seeking and Attacking function
@@ -193,7 +201,14 @@ public class AIMovement : MonoBehaviour
     {
         Timer += Time.deltaTime;
         Debug.DrawLine(transform.position, debugPos);
-        if(Timer >= WanderTimer)
+
+        if (agent.velocity.magnitude > 0)
+        {
+            transform.LookAt(transform.position + agent.velocity);
+        }
+
+
+        if (Timer >= WanderTimer)
         {
             anim.SetBool("isWalking", true);
             agent.speed = 10;

@@ -9,8 +9,10 @@ public class AIHP : MonoBehaviour, IDamageable
     public float MaxHP;
     public EnemySpawner Spawner;
     public AIMovement AIMove;
-    public GameObject damageEffect;
+    private GameObject damageEffect;
+    public bool DamageTest;
 
+    public ParticleSystem BugDmg;
     Animator anim;
     TreasureDrop drop;
 
@@ -31,20 +33,32 @@ public class AIHP : MonoBehaviour, IDamageable
         damageEffect.SetActive(false);
     }
 
+    void Update()
+    {
+        if(DamageTest == true)
+        {
+            DamageTest = false;
+            Damage(0);
+        }
+    }
 
     public void Damage(float Amt)
     {
+       
        EnemyHP -= Amt;
-        if(gameObject.activeInHierarchy)
+        if(BugDmg.isPlaying == false)
         {
-            damageEffect.SetActive(true);
-            StartCoroutine(disable(0.17f));
+            BugDmg.Play();
         }
         if(EnemyHP <= 0)
         {
             Death();
         }
-    
+        
+        else
+        {
+            anim.SetTrigger("isShot");
+        }
         if(AIMove.Player == null)
         {
 
