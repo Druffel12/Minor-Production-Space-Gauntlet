@@ -474,7 +474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1813824717839510
 GameObject:
   m_ObjectHideFlags: 1
@@ -681,13 +681,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804202296092258}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.737, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.927, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4765119736023736}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4379937153485458
 Transform:
   m_ObjectHideFlags: 1
@@ -1182,7 +1182,8 @@ MonoBehaviour:
   MaxHP: 0
   Spawner: {fileID: 0}
   AIMove: {fileID: 0}
-  damageEffect: {fileID: 1804202296092258}
+  DamageTest: 0
+  BugDmg: {fileID: 198648234426941494}
 --- !u!136 &136192953163900312
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1299,8 +1300,8 @@ ParticleSystem:
   m_GameObject: {fileID: 1804202296092258}
   serializedVersion: 5
   lengthInSec: 1.02
-  simulationSpeed: 4.96
-  looping: 1
+  simulationSpeed: 10
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -1350,7 +1351,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2004202581
+  randomSeed: 840272945
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4579,7 +4580,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89

@@ -295,7 +295,8 @@ MonoBehaviour:
   MaxHP: 20
   Spawner: {fileID: 114512281657245012, guid: c23ca46521690d6449416f84c8eccd3a, type: 2}
   AIMove: {fileID: 0}
-  damageEffect: {fileID: 0}
+  DamageTest: 0
+  BugDmg: {fileID: 0}
 --- !u!114 &137527890
 MonoBehaviour:
   m_ObjectHideFlags: 0
