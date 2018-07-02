@@ -6,5 +6,7 @@ using UnityEngine;
 public class PickUpStatsObj : ScriptableObject
 {
     public float healthIncrease;
-    public int scoreIncrease;
+    public int scoreIncrease1;
+    public int scoreIncrease2;
+    public int scoreIncrease3;
 }

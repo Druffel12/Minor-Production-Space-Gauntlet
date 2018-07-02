@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Name: PickUpStats
   m_EditorClassIdentifier: 
   healthIncrease: 100
-  scoreIncrease: 100
+  scoreIncrease1: 25
+  scoreIncrease2: 50
+  scoreIncrease3: 100

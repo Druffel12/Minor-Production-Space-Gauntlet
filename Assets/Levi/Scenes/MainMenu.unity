@@ -1148,7 +1148,7 @@ MonoBehaviour:
   startButton: {fileID: 838890635}
   backButton: {fileID: 573798681}
   timerText: {fileID: 2004186269}
-  level: level01
+  level: level02
   pressedStart: 0
 --- !u!1 &1192745035
 GameObject:

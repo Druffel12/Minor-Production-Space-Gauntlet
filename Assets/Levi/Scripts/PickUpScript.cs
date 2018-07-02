@@ -6,14 +6,18 @@ using XInputDotNetPure;
 public class PickUpScript : MonoBehaviour
 {
     float healthIncrease;
-    int score;
+    int score1;
+    int score2;
+    int score3;
     public PickUpStatsObj stats;
     public ObjectPooler pool;
 
     private void Start()
     {
         healthIncrease = stats.healthIncrease;
-        score = stats.scoreIncrease;
+        score1 = stats.scoreIncrease1;
+        score2 = stats.scoreIncrease2;
+        score3 = stats.scoreIncrease3;
         pool = GetComponent<ObjectPooler>();
     }
 
@@ -47,18 +51,54 @@ public class PickUpScript : MonoBehaviour
                 {
                     if (pool != null)
                     {
-                        playerScore.ScoreIncrease(score);
+                        playerScore.ScoreIncrease(score1);
                         ReturnToPool();
                     }
                     else
                     {
-                        playerScore.ScoreIncrease(score);
+                        playerScore.ScoreIncrease(score1);
                         Destroy(gameObject);
                     }
                 }
             }
 
-            if(gameObject.tag == "Grenade")
+            if (gameObject.tag == "Treasure2")
+            {
+                ScoreCounter playerScore = other.GetComponent<ScoreCounter>();
+                if (playerScore != null)
+                {
+                    if (pool != null)
+                    {
+                        playerScore.ScoreIncrease(score2);
+                        ReturnToPool();
+                    }
+                    else
+                    {
+                        playerScore.ScoreIncrease(score2);
+                        Destroy(gameObject);
+                    }
+                }
+            }
+
+            if (gameObject.tag == "Treasure3")
+            {
+                ScoreCounter playerScore = other.GetComponent<ScoreCounter>();
+                if (playerScore != null)
+                {
+                    if (pool != null)
+                    {
+                        playerScore.ScoreIncrease(score3);
+                        ReturnToPool();
+                    }
+                    else
+                    {
+                        playerScore.ScoreIncrease(score3);
+                        Destroy(gameObject);
+                    }
+                }
+            }
+
+            if (gameObject.tag == "Grenade")
             {
                 PlayerController player = other.GetComponent<PlayerController>();
                 GrenadeManager grenade = other.GetComponent<GrenadeManager>();

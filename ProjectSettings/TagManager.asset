@@ -9,6 +9,8 @@ TagManager:
   - Treasure
   - Fire
   - Grenade
+  - Treasure2
+  - Treasure3
   layers:
   - Default
   - TransparentFX

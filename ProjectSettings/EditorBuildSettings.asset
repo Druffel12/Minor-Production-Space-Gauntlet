@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Levi/Scenes/MainMenu.unity
     guid: 86dcc841d14046e4fb224cb6d63a49d6
   - enabled: 0
@@ -15,8 +15,17 @@ EditorBuildSettings:
     path: Assets/MainGameScene.unity
     guid: 3dae4acad4d97944cb7efe90dc250ecc
   - enabled: 0
-    path: 
+    path: Assets/__DELETED_GUID_Trash/00cea500ac181e840ac7a5a916415daf
     guid: 00cea500ac181e840ac7a5a916415daf
+  - enabled: 1
+    path: Assets/Jesse/level01 duplicate.unity
+    guid: 26ac40da5c0303b46beba8985662daa3
   - enabled: 1
     path: Assets/Jesse/level02.unity
     guid: c5115a1098d9dc8428c97248e46d4913
+  - enabled: 1
+    path: Assets/Levi/Scenes/WinScene.unity
+    guid: c13f26da710118b4fb90b37f078099e1
+  - enabled: 1
+    path: Assets/Levi/Scenes/LoseScene.unity
+    guid: fcd8126630e81b44dbcb53f374266fc2
