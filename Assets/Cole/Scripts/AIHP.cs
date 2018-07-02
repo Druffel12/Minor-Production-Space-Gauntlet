@@ -30,7 +30,7 @@ public class AIHP : MonoBehaviour, IDamageable
         anim = GetComponent<Animator>();
         drop = GetComponent<TreasureDrop>();
         AIMove = GetComponent<AIMovement>();
-        damageEffect.SetActive(false);
+        //damageEffect.SetActive(false);
     }
 
     void Update()
@@ -73,7 +73,7 @@ public class AIHP : MonoBehaviour, IDamageable
         ReturnToPool();
         drop.SpawnTreasure();
         StopCoroutine(disable(0.17f));
-        damageEffect.SetActive(false);
+        //damageEffect.SetActive(false);
         anim.SetBool("isDead", true);
         EnemyHP = MaxHP;
     }

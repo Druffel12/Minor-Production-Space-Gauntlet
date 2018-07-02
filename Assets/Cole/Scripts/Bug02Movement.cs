@@ -63,6 +63,9 @@ public class Bug02Movement : MonoBehaviour {
                 //moving away from player
                 if (Vector3.Distance(transform.position, Player.position) < Range - 2)
                 {
+
+                    //Anim.SetBool("isRunning", true);
+
                     Vector3 dir = (transform.position + Player.position).normalized;
 
                     agent.destination = transform.position + dir * 5;
@@ -73,6 +76,7 @@ public class Bug02Movement : MonoBehaviour {
                 //attacking player if far enough away
                 else if (Vector3.Distance(transform.position, Player.position) < Range)
                 {
+                    
                     LookAtPlayer();
                     if (AttackTimer <= 0.0f)
                     {
@@ -84,6 +88,8 @@ public class Bug02Movement : MonoBehaviour {
             }
             else
             {
+                Anim.SetBool("isRunning", false);
+
                 Player = null;
             }
         }

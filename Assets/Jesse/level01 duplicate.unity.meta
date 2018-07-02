@@ -1,9 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 26ac40da5c0303b46beba8985662daa3
 timeCreated: 1529367798
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
+=======
+guid: d00a6def13dba8b4bb68fbfca30e89de
+timeCreated: 1530561657
+licenseType: Free
+DefaultImporter:
+>>>>>>> cole
   userData: 
   assetBundleName: 
   assetBundleVariant: 
