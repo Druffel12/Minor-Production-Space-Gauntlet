@@ -17,7 +17,7 @@ public class HP : MonoBehaviour, IDamageable
     public void Damage(float Amt)
     {
         health -= Amt;
-        //anim.SetTrigger("isDamaged");
+        anim.SetTrigger("isDamaged");
         updateHealth(health);
         //Debug.Log("This was the default health version of Idamageable");
         if (health <= 0)
@@ -56,8 +56,9 @@ public class HP : MonoBehaviour, IDamageable
         while (health > 0)
         {
             yield return new WaitForSeconds(1);
+            health -= 1;
             healthText.text = "O2: " + health.ToString();
-            Damage(1);
+            //Damage(1);
         }
     }
 
