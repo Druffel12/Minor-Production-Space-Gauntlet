@@ -5,6 +5,7 @@ using UnityEngine;
 public class ServiceLocator : MonoBehaviour {
 
     public ObjectPooler enemyPool;
+    public ObjectPooler enemyPool2;
     public ObjectPooler treasurePool;
     public static ServiceLocator instance;
     // Use this for initialization

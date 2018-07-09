@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     public float Spawner;
     public float SpawnerHP;
     private float SpawnerStartHP;
+    public Transform Mesh;
 
 
     // Use this for initialization
@@ -30,10 +31,15 @@ public class EnemySpawner : MonoBehaviour, IDamageable
             if (SpawnCount > 0)
             {
                 GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
+                GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
 
                 SpawnedBug.GetComponent<AIHP>().Spawner = this;
                 SpawnedBug.SetActive(true);
                 SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
+
+                SpawnedBug2.GetComponent<AIHP>().Spawner = this;
+                SpawnedBug2.SetActive(true);
+                SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
 
                 if (SpawnCount > 0)
                 {
@@ -77,12 +83,12 @@ public class EnemySpawner : MonoBehaviour, IDamageable
 
         else if(SpawnerHP <= (SpawnerHP/3 * 2) && SpawnerHP >= (SpawnerHP/3))
         {
-            transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
+            Mesh.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
         }
 
         else
         {
-            transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+            Mesh.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
         }
     }
 
