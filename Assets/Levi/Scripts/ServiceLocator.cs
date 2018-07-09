@@ -6,7 +6,9 @@ public class ServiceLocator : MonoBehaviour {
 
     public ObjectPooler enemyPool;
     public ObjectPooler enemyPool2;
-    public ObjectPooler treasurePool;
+    public ObjectPooler treasurePool1;
+    public ObjectPooler treasurePool2;
+    public ObjectPooler treasurePool3;
     public static ServiceLocator instance;
     // Use this for initialization
 
@@ -18,14 +20,4 @@ public class ServiceLocator : MonoBehaviour {
         }
         else { Destroy(this); }
     }
-
-    void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

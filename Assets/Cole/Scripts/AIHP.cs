@@ -12,6 +12,8 @@ public class AIHP : MonoBehaviour, IDamageable
     private GameObject damageEffect;
     public bool DamageTest;
 
+    AudioSource damagedSound;
+
     public ParticleSystem BugDmg;
     Animator anim;
     TreasureDrop drop;
@@ -25,6 +27,7 @@ public class AIHP : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        damagedSound = GetComponent<AudioSource>();
         MyPool = ObjectPooler.SharedInstance;
         MaxHP = EnemyHP;
         anim = GetComponent<Animator>();
@@ -44,7 +47,7 @@ public class AIHP : MonoBehaviour, IDamageable
 
     public void Damage(float Amt)
     {
-       
+        damagedSound.Play();  
        EnemyHP -= Amt;
         if(BugDmg.isPlaying == false)
         {
