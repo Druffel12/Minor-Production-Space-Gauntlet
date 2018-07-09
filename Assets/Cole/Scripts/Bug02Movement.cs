@@ -167,4 +167,23 @@ public class Bug02Movement : MonoBehaviour {
             Debug.Log("Death to the infidels");
         }
     }
+
+    //wander
+    Vector3 debugPos;
+    private void Wander()
+    {
+        Timer += Time.deltaTime;
+        Debug.DrawLine(transform.position, debugPos);
+
+        if(agent.velocity.magnitude > 0)
+        {
+            transform.LookAt(transform.position + agent.velocity);
+        }
+
+        if(Timer >= WanderTimer)
+        {
+           // Anim.SetBool
+        }
+    }
 }
+
