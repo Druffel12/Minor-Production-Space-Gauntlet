@@ -37,6 +37,7 @@ public class Bug02Movement : MonoBehaviour {
     private void Awake()
     {
         MyTransform = transform;
+        WanderTimer = 0;
     }
     // Use this for initialization
     void Start ()
@@ -47,6 +48,10 @@ public class Bug02Movement : MonoBehaviour {
         agent.updateRotation = false;
         //Anim.GetComponent<Animator>();
 		//agent 
+        if(CanWander == true)
+        {
+            Vector3 NewPos = RandomNavMesh(transform.position, WanderRadius, -1);
+        }
 	}
 
     void Update ()
@@ -182,8 +187,15 @@ public class Bug02Movement : MonoBehaviour {
 
         if(Timer >= WanderTimer)
         {
-           // Anim.SetBool
+            agent.speed = 12;
+            Vector3 newPos = RandomNavMesh(transform.position, WanderRadius, -1);
+            debugPos = newPos;
+            agent.destination = newPos;
+            Timer = 0;
+            WanderTimer = Random.Range(LowRange, HighRange);
         }
+
     }
+
 }
 
