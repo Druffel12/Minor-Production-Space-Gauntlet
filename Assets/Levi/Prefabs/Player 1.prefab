@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 65771954405257816}
   - component: {fileID: 23393777688867730}
   - component: {fileID: 114151379939477842}
+  - component: {fileID: 82420110701392418}
   m_Layer: 9
   m_Name: Effects
   m_TagString: Untagged
@@ -1087,7 +1088,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1674891990559282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.34, y: 0.04, z: 4.222364}
+  m_LocalPosition: {x: 3.91, y: 0.5, z: 11.13}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4212183928287996}
@@ -1620,6 +1621,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82420110701392418
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911703155519570}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7c7b048c7bd558f40a036dafd4ec15af, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95258281872225688
 Animator:
   serializedVersion: 3
@@ -1702,6 +1783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  score: 0
 --- !u!114 &114151379939477842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1763,6 +1845,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1591
+  gunShot: {fileID: 82420110701392418}
   line: {fileID: 120307996423357228}
   effects: {fileID: 114151379939477842}
   stats: {fileID: 11400000, guid: ac641f3e5d8d5dc4e8cf060f5f1501f0, type: 2}
@@ -1819,7 +1902,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.27
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1834,33 +1917,33 @@ LineRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.80689657, b: 0, a: 1}
+      key1: {r: 1, g: 0.77301055, b: 0, a: 0.98901963}
+      key2: {r: 1, g: 0, b: 0, a: 0.46666667}
+      key3: {r: 1, g: 0.94819105, b: 0.94819105, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
+      ctime0: 6361
+      ctime1: 12143
+      ctime2: 31033
+      ctime3: 65535
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime1: 33153
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumColorKeys: 4
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -1907,15 +1990,21 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.27
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0.45282936
-        inSlope: 0
-        outSlope: 0
+        value: 0
+        inSlope: 2.0642357
+        outSlope: 2.0642357
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5150328
+        value: 0.7142868
+        inSlope: 1.144681
+        outSlope: 1.144681
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

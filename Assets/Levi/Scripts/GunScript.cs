@@ -17,6 +17,8 @@ public class GunScript : MonoBehaviour
     GamePadState state;
     GamePadState prevState;
 
+    public AudioSource gunShot;
+
     public LineRenderer line;
 
     public GunEffects effects;
@@ -112,5 +114,9 @@ public class GunScript : MonoBehaviour
         //draws the line on the raycast
         line.SetPosition(0, effects.transform.position);
         line.SetPosition(1, endPosition);
+
+        //plays gunshot sound       
+        gunShot.Play();
+        
     }
 }

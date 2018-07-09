@@ -32,12 +32,12 @@ public class HP : MonoBehaviour, IDamageable
         //T need to add animation also possible UI element 
         healthText.text = "DEAD";
         PlayerNumManager.instance.RemovePlayer(gameObject);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     string updateHealth(float value)
     {
-        return "O2: " + value.ToString();
+        return "Oxygen: " + value.ToString();
     }
 	// Use this for initialization
     //attempts damage to hit object by looking for idamageable 
@@ -47,7 +47,7 @@ public class HP : MonoBehaviour, IDamageable
         anim = GetComponent<Animator>();
 
         health = stats.maxHealth;
-        healthText.text = "O2: " + health.ToString();
+        healthText.text = "Oxygen: " + health.ToString();
         StartCoroutine("HealthTick");
     }
 
@@ -57,8 +57,7 @@ public class HP : MonoBehaviour, IDamageable
         {
             yield return new WaitForSeconds(1);
             health -= 1;
-            healthText.text = "O2: " + health.ToString();
-            //Damage(1);
+            healthText.text = "Oxygen: " + health.ToString();
         }
     }
 

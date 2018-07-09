@@ -37,10 +37,10 @@ public class CameraController : MonoBehaviour
             offset -= Time.deltaTime * cameraSpeed / 2;
         }
         //tells the walls to spread out
-        foreach (InvisibleWallController wall in walls)
-        {
-            wall.offset -= Time.deltaTime * cameraSpeed;
-        }
+        //foreach (InvisibleWallController wall in walls)
+        //{
+        //    wall.offset -= Time.deltaTime * cameraSpeed;
+        //}
     }
 
     void CameraZoomOut()
@@ -51,10 +51,10 @@ public class CameraController : MonoBehaviour
             offset += Time.deltaTime * cameraSpeed/2;
         }
         //tells the wells to come closer to the players
-        foreach(InvisibleWallController wall in walls)
-        {
-            wall.offset += Time.deltaTime * cameraSpeed;
-        }
+        //foreach(InvisibleWallController wall in walls)
+        //{
+        //    wall.offset += Time.deltaTime * cameraSpeed;
+        //}
     }
 
     void Start ()
