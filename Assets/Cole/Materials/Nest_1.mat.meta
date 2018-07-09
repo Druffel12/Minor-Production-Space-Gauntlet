@@ -1,8 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 79338a1cc52b695479e5078f714e38c7
 timeCreated: 1531170468
 licenseType: Free
 NativeFormatImporter:
+=======
+guid: 1e186bcbab43e2045a32114de606cd12
+timeCreated: 1531170085
+licenseType: Free
+NativeFormatImporter:
+  externalObjects: {}
+>>>>>>> levi
   mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
