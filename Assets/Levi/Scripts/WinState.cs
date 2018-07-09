@@ -13,6 +13,8 @@ public class WinState : MonoBehaviour
     bool startCounter = false;
     float startingCounter;
 
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
