@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[System.Serializable]
+public struct SpawnProfle
+{
+    public int flyerCount;// new SpawnCount
+    public int meleeCount;// new SpawnCount
+}
+
+
 public class EnemySpawner : MonoBehaviour, IDamageable
 {
 
@@ -12,8 +20,8 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     public float SpawnerHP;
     private float SpawnerStartHP;
     public Transform Mesh;
-    Animator anim;
-
+    public Animator anim;
+    public SpawnProfle profile;
 
     // Use this for initialization
     //resets spawn timer
@@ -29,6 +37,42 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         SpawnTime -= Time.deltaTime;
         if (SpawnTime <= 0.0f)
         {
+            //int meleeCount = 6;
+
+            //int randomDecision = 60;
+
+            //if(Random.Range(0,100) <= randomDecision)
+            //{
+            //    //then do melee spawn
+            //}
+            //else
+            //{
+            //    //do flyer spawn
+            //}
+
+            //if (meleeCount > 0)
+            //{
+            //    anim.SetTrigger("isSpawning");
+
+            //    GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
+            //   // GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
+
+            //    SpawnedBug.GetComponent<AIHP>().Spawner = this;
+            //    SpawnedBug.SetActive(true);
+            //    SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
+
+            //    //SpawnedBug2.GetComponent<AIHP>().Spawner = this;
+            //    //SpawnedBug2.SetActive(true);
+            //    //SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
+
+            //    if (meleeCount > 0)
+            //    {
+            //        meleeCount--;
+            //    }
+            //    ResetTimer();
+            //}
+
+
             if (SpawnCount > 0)
             {
                 anim.SetTrigger("isSpawning");
