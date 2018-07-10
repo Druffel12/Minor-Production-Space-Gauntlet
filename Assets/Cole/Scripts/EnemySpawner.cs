@@ -34,15 +34,15 @@ public class EnemySpawner : MonoBehaviour, IDamageable
                 anim.SetTrigger("isSpawning");
 
                 GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
-                //GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
+                GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
 
                 SpawnedBug.GetComponent<AIHP>().Spawner = this;
                 SpawnedBug.SetActive(true);
                 SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
 
-                //SpawnedBug2.GetComponent<AIHP>().Spawner = this;
-                //SpawnedBug2.SetActive(true);
-                //SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
+                SpawnedBug2.GetComponent<AIHP>().Spawner = this;
+                SpawnedBug2.SetActive(true);
+                SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
 
                 if (SpawnCount > 0)
                 {
