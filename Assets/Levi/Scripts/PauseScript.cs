@@ -18,7 +18,6 @@ public class PauseScript : MonoBehaviour
         pauseCanvas.gameObject.SetActive(false);
     }
 
-	// Update is called once per frame
 	void Update ()
     {
 		if(Time.timeScale > 0)

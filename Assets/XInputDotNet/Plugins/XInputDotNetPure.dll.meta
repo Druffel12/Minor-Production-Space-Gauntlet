@@ -1,17 +1,33 @@
 fileFormatVersion: 2
 guid: b36a7f6d28503d045b758e8fb3c40d0f
-timeCreated: 1530037633
-licenseType: Pro
 PluginImporter:
+<<<<<<< HEAD
   externalObjects: {}
+=======
+<<<<<<< HEAD
+  externalObjects: {}
+=======
+>>>>>>> cole
+>>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
   serializedVersion: 2
   iconMap: {}
   executionOrder: {}
   isPreloaded: 0
   isOverridable: 0
   platformData:
+<<<<<<< HEAD
   - first:
       '': Any
+=======
+<<<<<<< HEAD
+  - first:
+      Any: 
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+      Editor: Editor
+>>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
     second:
       enabled: 0
       settings:
@@ -34,13 +50,19 @@ PluginImporter:
       settings:
         CPU: AnyCPU
         DefaultValueInitialized: true
+<<<<<<< HEAD
         OS: AnyOS
   - first:
       Facebook: Win
+=======
+  - first:
+      Windows Store Apps: WindowsStoreApps
+>>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
     second:
       enabled: 0
       settings:
         CPU: AnyCPU
+<<<<<<< HEAD
   - first:
       Facebook: Win64
     second:
@@ -83,6 +105,30 @@ PluginImporter:
       enabled: 0
       settings:
         CPU: AnyCPU
+=======
+=======
+    data:
+      first:
+        Any: 
+      second:
+        enabled: 1
+        settings: {}
+    data:
+      first:
+        Editor: Editor
+      second:
+        enabled: 0
+        settings:
+          DefaultValueInitialized: true
+    data:
+      first:
+        Windows Store Apps: WindowsStoreApps
+      second:
+        enabled: 0
+        settings:
+          CPU: AnyCPU
+>>>>>>> cole
+>>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
   userData: 
   assetBundleName: 
   assetBundleVariant: 

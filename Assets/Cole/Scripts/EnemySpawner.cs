@@ -7,13 +7,18 @@ public class EnemySpawner : MonoBehaviour, IDamageable
 {
 
     private float SpawnTime;
-    public int SpawnCount;
     public float Spawner;
     public float SpawnerHP;
     private float SpawnerStartHP;
     public Transform Mesh;
-    Animator anim;
-
+    public Animator anim;
+    public int meleeActive = 0;
+    public int flyerActive = 0;
+    public int meleeCount;
+    public int flyerCount;
+    [Range(0,100)]
+    public int meleeChance = 60;
+    private bool melee;
 
     // Use this for initialization
     //resets spawn timer
@@ -29,27 +34,62 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         SpawnTime -= Time.deltaTime;
         if (SpawnTime <= 0.0f)
         {
-            if (SpawnCount > 0)
+
+
+            
+
+            if (Random.Range(0, 100) <= meleeChance)
             {
-                anim.SetTrigger("isSpawning");
-
-                GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
-                //GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
-
-                SpawnedBug.GetComponent<AIHP>().Spawner = this;
-                SpawnedBug.SetActive(true);
-                SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
-
-                //SpawnedBug2.GetComponent<AIHP>().Spawner = this;
-                //SpawnedBug2.SetActive(true);
-                //SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
-
-                if (SpawnCount > 0)
+                if (meleeCount > meleeActive)
                 {
-                    SpawnCount--;
+                    anim.SetTrigger("isSpawning");
+                    GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
+
+                    SpawnedBug.GetComponent<AIHP>().Spawner = this;
+                    SpawnedBug.SetActive(true);
+                    SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
+                    meleeActive++;
+
                 }
-                ResetTimer();
             }
+
+            else
+            {
+                if (flyerCount > flyerActive)
+                {
+                    anim.SetTrigger("isSpawning");
+                    GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
+
+                    SpawnedBug2.GetComponent<AIHP>().Spawner = this;
+                    SpawnedBug2.SetActive(true);
+                    SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
+                    flyerActive++;
+                }
+            }
+            ResetTimer();
+
+
+            //if (SpawnCount > 0)
+            //{
+            //    anim.SetTrigger("isSpawning");
+
+            //    GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
+            //    GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
+
+            //    SpawnedBug.GetComponent<AIHP>().Spawner = this;
+            //    SpawnedBug.SetActive(true);
+            //    SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
+
+            //    SpawnedBug2.GetComponent<AIHP>().Spawner = this;
+            //    SpawnedBug2.SetActive(true);
+            //    SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
+
+            //    if (SpawnCount > 0)
+            //    {
+            //        SpawnCount--;
+            //    }
+            //    ResetTimer();
+            //}
         }
 
     }

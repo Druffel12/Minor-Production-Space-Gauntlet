@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 114132041634714098}
   - component: {fileID: 114502869973591632}
   m_Layer: 10
-  m_Name: Bug02
+  m_Name: Bug03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,6 +822,7 @@ MonoBehaviour:
   Spawner: {fileID: 114512281657245012, guid: c23ca46521690d6449416f84c8eccd3a, type: 2}
   AIMove: {fileID: 0}
   DamageTest: 0
+  melee: 0
   BugDmg: {fileID: 198312768940545528, guid: 8c64022dff9ee3040a93b3384752c242, type: 2}
 --- !u!114 &114502869973591632
 MonoBehaviour:
@@ -834,8 +835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7c8fa79c49c2f4886acf0d3e497de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 14
-  SearchRange: 17
+  Range: 20
+  SearchRange: 15
   WanderRadius: 10
   WanderTimer: 7
   AttackDelay: 2

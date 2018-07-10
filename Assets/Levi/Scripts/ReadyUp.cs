@@ -30,12 +30,16 @@ public class ReadyUp : MonoBehaviour
 
     public ReadyUpCountDown ready;
 
+    AudioSource joinSound;
+
+
 	void Start ()
     {
         Time.timeScale = 1;
         isReady = false;
         characterImage = GetComponent<Image>();
         playerManager = FindObjectOfType<PlayerSelectManager>();
+        joinSound = GetComponent<AudioSource>();
 	}
 
     
@@ -74,6 +78,7 @@ public class ReadyUp : MonoBehaviour
             joinText.SetActive(false);
             Flicker();
             lightsAnim.SetBool("LightsOn", true);
+            joinSound.Play();
         }
 
         //Call update playerSelect

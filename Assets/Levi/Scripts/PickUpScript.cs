@@ -11,11 +11,11 @@ public class PickUpScript : MonoBehaviour
     int score3;
     public PickUpStatsObj stats;
     public ObjectPooler pool;
-    AudioSource soundEffect;
-
+    public AudioClip soundEffect;
+    public GameObject PlayAudio;
     private void Start()
     {
-        soundEffect = GetComponent<AudioSource>();
+        //soundEffect = GetComponent<AudioSource>();
         healthIncrease = stats.healthIncrease;
         score1 = stats.scoreIncrease1;
         score2 = stats.scoreIncrease2;
@@ -30,6 +30,15 @@ public class PickUpScript : MonoBehaviour
     }
 
 
+    void PLAYSOUND()
+    {
+        GameObject spawnedAudio = Instantiate(PlayAudio);
+        AudioSource s = spawnedAudio.GetComponent<AudioSource>();
+        s.clip = soundEffect;
+        s.Play();
+        Destroy(s, 5);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
      if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -42,7 +51,7 @@ public class PickUpScript : MonoBehaviour
                 {
                     playerHP.health += healthIncrease;
                     playerHP.healthText.text = playerHP.health.ToString();
-                    soundEffect.Play();
+                    PLAYSOUND();
                     Destroy(gameObject);
                 }
             }
@@ -55,13 +64,13 @@ public class PickUpScript : MonoBehaviour
                     if (pool != null)
                     {
                         playerScore.ScoreIncrease(score1);
-                        soundEffect.Play();
+                        PLAYSOUND();
                         ReturnToPool();
                     }
                     else
                     {
                         playerScore.ScoreIncrease(score1);
-                        soundEffect.Play();
+                        PLAYSOUND();
                         Destroy(gameObject);
                     }
                 }
@@ -75,13 +84,13 @@ public class PickUpScript : MonoBehaviour
                     if (pool != null)
                     {
                         playerScore.ScoreIncrease(score2);
-                        soundEffect.Play();
+                        PLAYSOUND();
                         ReturnToPool();
                     }
                     else
                     {
                         playerScore.ScoreIncrease(score2);
-                        soundEffect.Play();
+                        PLAYSOUND();
                         Destroy(gameObject);
                     }
                 }
@@ -95,13 +104,13 @@ public class PickUpScript : MonoBehaviour
                     if (pool != null)
                     {
                         playerScore.ScoreIncrease(score3);
-                        soundEffect.Play();
+                        PLAYSOUND();
                         ReturnToPool();
                     }
                     else
                     {
                         playerScore.ScoreIncrease(score3);
-                        soundEffect.Play();
+                        PLAYSOUND();
                         Destroy(gameObject);
                     }
                 }
@@ -119,13 +128,13 @@ public class PickUpScript : MonoBehaviour
                         if (pool != null)
                         {
                             grenade.GrenadeRunThrough(player);
-                            soundEffect.Play();
+                            PLAYSOUND();
                             ReturnToPool();
                         }
                         else
                         {
                             grenade.GrenadeRunThrough(player);
-                            soundEffect.Play();
+                            PLAYSOUND();
                             Destroy(gameObject);
                         }
                     }

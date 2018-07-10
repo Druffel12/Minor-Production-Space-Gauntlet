@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 114806295984959348}
   - component: {fileID: 114012431299132934}
   - component: {fileID: 65415983922289884}
-  - component: {fileID: 82605676168573300}
   m_Layer: 0
   m_Name: Treasure_3
   m_TagString: Treasure3
@@ -99,86 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01279493, y: 0.0138861835, z: 0.013421715}
   m_Center: {x: -0.00097643974, y: 0.0069430918, z: -0.00021741515}
---- !u!82 &82605676168573300
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1901874704415372}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1a7fbfca03e2db641ab9ffac3cc0ae7b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!95 &95569595132091158
 Animator:
   serializedVersion: 3
@@ -209,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ae460ebbd80eaab4c82841a6ae777ac5, type: 2}
   pool: {fileID: 0}
+  soundEffect: {fileID: 8300000, guid: 1a7fbfca03e2db641ab9ffac3cc0ae7b, type: 3}
+  PlayAudio: {fileID: 1842403905754668, guid: e6035b2b68253424594ac84044cd07fc, type: 2}
 --- !u!114 &114806295984959348
 MonoBehaviour:
   m_ObjectHideFlags: 1
