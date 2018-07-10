@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 114132041634714098}
   - component: {fileID: 114502869973591632}
   - component: {fileID: 82633407533721876}
+  - component: {fileID: 114087896842500394}
   m_Layer: 10
   m_Name: Bug02
   m_TagString: Untagged
@@ -783,7 +784,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7a99a4fc74ef72748a4f6638d1334c14, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -886,6 +887,19 @@ MonoBehaviour:
   ObjectToPool: {fileID: 1507288165746314, guid: 56c0ec0a6c50b454683a336e410677b6,
     type: 2}
   AmountToPool: 3
+--- !u!114 &114087896842500394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630079064710016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181578a455b1c42bd50fc18ff30d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropRate: 20
+  treasures: []
 --- !u!114 &114132041634714098
 MonoBehaviour:
   m_ObjectHideFlags: 1

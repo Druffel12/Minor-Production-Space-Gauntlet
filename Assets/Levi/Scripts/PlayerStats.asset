@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   maxHealth: 700
-  damage: 15
+  damage: 6.5
   range: 50
-  timeBetweenShots: 0.12
+  timeBetweenShots: 0.06

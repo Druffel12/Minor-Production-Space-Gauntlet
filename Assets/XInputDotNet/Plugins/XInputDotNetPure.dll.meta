@@ -1,37 +1,13 @@
 fileFormatVersion: 2
 guid: b36a7f6d28503d045b758e8fb3c40d0f
 PluginImporter:
-<<<<<<< HEAD
   externalObjects: {}
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  externalObjects: {}
-=======
-<<<<<<< HEAD
-  externalObjects: {}
-=======
->>>>>>> cole
->>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
->>>>>>> art
->>>>>>> d024a1067e8b9083a32545031e22d228b05bfa47
   serializedVersion: 2
   iconMap: {}
   executionOrder: {}
   isPreloaded: 0
   isOverridable: 0
   platformData:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  - first:
-      '': Any
-=======
-<<<<<<< HEAD
->>>>>>> d024a1067e8b9083a32545031e22d228b05bfa47
   - first:
       Any: 
     second:
@@ -39,115 +15,16 @@ PluginImporter:
       settings: {}
   - first:
       Editor: Editor
->>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
     second:
       enabled: 0
       settings:
-        Exclude Editor: 0
-        Exclude Linux: 1
-        Exclude Linux64: 1
-        Exclude LinuxUniversal: 1
-        Exclude OSXUniversal: 1
-        Exclude Win: 1
-        Exclude Win64: 1
-  - first:
-      '': data
-    second:
-      enabled: 0
-      settings: {}
-  - first:
-      Editor: Editor
-    second:
-      enabled: 1
-      settings:
-        CPU: AnyCPU
         DefaultValueInitialized: true
-<<<<<<< HEAD
-        OS: AnyOS
-  - first:
-      Facebook: Win
-=======
-  - first:
-      Windows Store Apps: WindowsStoreApps
->>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-<<<<<<< HEAD
-  - first:
-      Facebook: Win64
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-  - first:
-      Standalone: Linux
-    second:
-      enabled: 0
-      settings:
-        CPU: x86
-  - first:
-      Standalone: Linux64
-    second:
-      enabled: 0
-      settings:
-        CPU: x86_64
-  - first:
-      Standalone: OSXUniversal
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-  - first:
-      Standalone: Win
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-  - first:
-      Standalone: Win64
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
   - first:
       Windows Store Apps: WindowsStoreApps
     second:
       enabled: 0
       settings:
         CPU: AnyCPU
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> art
-    data:
-      first:
-        Any: 
-      second:
-        enabled: 1
-        settings: {}
-    data:
-      first:
-        Editor: Editor
-      second:
-        enabled: 0
-        settings:
-          DefaultValueInitialized: true
-    data:
-      first:
-        Windows Store Apps: WindowsStoreApps
-      second:
-        enabled: 0
-        settings:
-          CPU: AnyCPU
-<<<<<<< HEAD
-=======
->>>>>>> cole
->>>>>>> ec03388e173cf4e12ee061fe062b5ec62cad204d
->>>>>>> art
->>>>>>> d024a1067e8b9083a32545031e22d228b05bfa47
   userData: 
   assetBundleName: 
   assetBundleVariant: 

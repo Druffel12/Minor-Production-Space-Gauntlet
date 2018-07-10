@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65528795056062844}
   - component: {fileID: 114224379814216252}
   - component: {fileID: 114421768793419490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Treasure 1
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033788835188224}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 129.573, y: 8.191386, z: -49.490936}
+  m_LocalPosition: {x: 14.642944, y: 0.5026021, z: 66.44339}
   m_LocalScale: {x: 139.85991, y: 139.85992, z: 139.85992}
   m_Children: []
   m_Father: {fileID: 0}

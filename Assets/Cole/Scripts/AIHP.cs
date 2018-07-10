@@ -63,11 +63,15 @@ public class AIHP : MonoBehaviour, IDamageable
         {
             anim.SetTrigger("isShot");
         }
-        if(AIMove.Player == null)
+        if(AIMove != null)
         {
+            if (AIMove.Player == null)
+            {
 
-            AIMove.findNearestPlayer(5);
+                AIMove.findNearestPlayer(5);
+            }
         }
+        
 
     }
 

@@ -123,8 +123,11 @@ public class GunScript : MonoBehaviour
         line.SetPosition(0, effects.transform.position);
         line.SetPosition(1, endPosition);
 
-        //plays gunshot sound       
-        gunShot.Play();
+        //plays gunshot sound 
+        if(gunShot.isPlaying == false)
+        {
+            gunShot.Play();
+        }
         
     }
 }
