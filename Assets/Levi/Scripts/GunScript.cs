@@ -25,6 +25,8 @@ public class GunScript : MonoBehaviour
 
     public PlayerStatsObj stats;
 
+    public AudioSource missedSound;
+
     private void Start()
     {
         anim = GetComponentInParent<Animator>();
@@ -107,6 +109,10 @@ public class GunScript : MonoBehaviour
                         }
                     }
                 }                
+            }
+            else
+            {
+                missedSound.Play();
             }
         }
         effects.StartDisable(stats.timeBetweenShots * 0.5f);

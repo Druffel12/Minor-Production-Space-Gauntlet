@@ -11,10 +11,11 @@ public class PickUpExplosion : MonoBehaviour
     public float Delay;
     public GameObject EffectsCube;
     private bool HasExploded;
+    public AudioSource explosionSound;
 
     public void Start()
     {
-        
+        explosionSound = Camera.main.GetComponentInChildren<AudioSource>();
     }
 
     public void Update()
@@ -30,7 +31,7 @@ public class PickUpExplosion : MonoBehaviour
     {
         if (HasExploded == false)
         {
-            Debug.Log("BOOOM");
+            //Debug.Log("BOOOM");
             //T needs some kind of sound effect for explosion
             Collider[] EnemysInRange = Physics.OverlapSphere
                 (location, explosionRadius, mask.value);
@@ -46,6 +47,7 @@ public class PickUpExplosion : MonoBehaviour
               
                 }
             }
+            explosionSound.Play();
             Destroy(Effects,Delay + 3);
             Destroy(gameObject);
         }

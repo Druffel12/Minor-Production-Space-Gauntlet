@@ -15,9 +15,21 @@ public class LossState : MonoBehaviour
         playerNum = GetComponent<PlayerNumManager>();   
     }
 
+    bool PlayersAlive()
+    {
+       for(int i = 0; i < playerNum.players.Count; i++)
+        {
+            if (playerNum.players[i].activeInHierarchy == true)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     void Update ()
     {
-		if(playerNum.players.Count <= 0)
+		if(PlayersAlive())
         {
             counter -= Time.deltaTime;
             if (counter <= 0)

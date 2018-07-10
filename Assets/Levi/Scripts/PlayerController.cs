@@ -57,17 +57,6 @@ public class PlayerController : MonoBehaviour
         grenadeManager = GetComponent<GrenadeManager>();
     }
 
-    Vector3 clampToScreen()
-    {
-        Vector3 retval = Vector3.zero;
-        retval = Camera.main.WorldToViewportPoint(transform.position);
-        retval.x = Mathf.Clamp(retval.x, 0.05f, 0.95f);
-        retval.y = Mathf.Clamp(retval.y, 0.05f, 0.95f);
-        retval = Camera.main.ViewportToWorldPoint(retval);
-        return retval;
-    }
-
-
     public void SetCrouchState()
     {
         Debug.Log("I am crouched");
@@ -172,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
         Move();
 
-        transform.position = clampToScreen();
+        //transform.position = clampToScreen();
 
         float runValue = Mathf.Clamp(Mathf.Abs(rb.velocity.magnitude), 0, 1);
         anim.SetFloat("isRunning", rb.velocity.magnitude);
