@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
 
     public void LoadLevel(string wool)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(wool);
     }
 }

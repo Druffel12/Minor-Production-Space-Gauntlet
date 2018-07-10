@@ -25,12 +25,14 @@ public class GunScript : MonoBehaviour
 
     public PlayerStatsObj stats;
 
-    public AudioSource missedSound;
+    AudioSource missedSound;
 
     private void Start()
     {
         anim = GetComponentInParent<Animator>();
         playerIndex = GetComponentInParent<PlayerController>().playerIndex;
+
+        missedSound = GetComponent<AudioSource>();
 
         range = stats.range;
         damage = stats.damage;

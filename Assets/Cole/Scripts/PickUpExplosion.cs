@@ -11,11 +11,11 @@ public class PickUpExplosion : MonoBehaviour
     public float Delay;
     public GameObject EffectsCube;
     private bool HasExploded;
-    public AudioSource explosionSound;
+    //public AudioSource explosionSound;
 
     public void Start()
     {
-        explosionSound = Camera.main.GetComponentInChildren<AudioSource>();
+      //  explosionSound = Camera.main.GetComponentInChildren<AudioSource>();
     }
 
     public void Update()
@@ -47,7 +47,8 @@ public class PickUpExplosion : MonoBehaviour
               
                 }
             }
-            //explosionSound.Play();
+            AudioSource sound = Effects.GetComponent<AudioSource>();
+            sound.Play();
             Destroy(Effects,Delay + 3);
             Destroy(gameObject);
         }
