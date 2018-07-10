@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/MainGameScene.unity
     guid: 3dae4acad4d97944cb7efe90dc250ecc
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/00cea500ac181e840ac7a5a916415daf
-    guid: 00cea500ac181e840ac7a5a916415daf
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Jesse/level01 duplicate.unity
     guid: 26ac40da5c0303b46beba8985662daa3
   - enabled: 1

@@ -1261,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5139d709961a9d645899438bb1a0005a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHP: 100
+  EnemyHP: 40
   MyPool: {fileID: 0}
   MaxHP: 0
   Spawner: {fileID: 0}

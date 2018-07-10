@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224257784129612750}
   - component: {fileID: 114633339608094510}
   - component: {fileID: 114948496209432758}
+  - component: {fileID: 114539525503180814}
   m_Layer: 5
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -28,6 +29,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114539525503180814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318501047784728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf325c4e420d1f34c8cf876579f7c648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lossScene: LoseScene
+  counter: 1
 --- !u!114 &114633339608094510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -44,7 +58,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  testPlayersActive: 1
+  testPlayersActive: 2
 --- !u!114 &114948496209432758
 MonoBehaviour:
   m_ObjectHideFlags: 1
