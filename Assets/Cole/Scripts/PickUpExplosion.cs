@@ -47,7 +47,7 @@ public class PickUpExplosion : MonoBehaviour
               
                 }
             }
-            explosionSound.Play();
+            //explosionSound.Play();
             Destroy(Effects,Delay + 3);
             Destroy(gameObject);
         }
