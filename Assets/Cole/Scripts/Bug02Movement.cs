@@ -66,7 +66,7 @@ public class Bug02Movement : MonoBehaviour {
             if (Player.gameObject.activeInHierarchy)
             {
                 //moving away from player
-                if (Vector3.Distance(transform.position, Player.position) < Range - 2)
+                if (Vector3.Distance(transform.position, Player.position) < SearchRange - 2)
                 {
 
                     //Anim.SetBool("isRunning", true);

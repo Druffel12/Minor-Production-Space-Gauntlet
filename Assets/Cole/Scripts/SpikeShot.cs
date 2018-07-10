@@ -41,9 +41,5 @@ public class SpikeShot : MonoBehaviour {
     {
         MyPool.PooledObjects.Add(gameObject);
         gameObject.SetActive(false);
-        if(Spawner != null)
-        {
-            Spawner.SpawnCount++;
-        }
     }
 }

@@ -11,6 +11,7 @@ public class AIHP : MonoBehaviour, IDamageable
     public AIMovement AIMove;
     private GameObject damageEffect;
     public bool DamageTest;
+    public bool melee;
 
     AudioSource damagedSound;
 
@@ -41,7 +42,7 @@ public class AIHP : MonoBehaviour, IDamageable
         if(DamageTest == true)
         {
             DamageTest = false;
-            Damage(0);
+            Damage(10);
         }
     }
 
@@ -76,7 +77,6 @@ public class AIHP : MonoBehaviour, IDamageable
         ReturnToPool();
         drop.SpawnTreasure();
         StopCoroutine(disable(0.17f));
-        //damageEffect.SetActive(false);
         anim.SetBool("isDead", true);
         EnemyHP = MaxHP;
     }
@@ -88,7 +88,16 @@ public class AIHP : MonoBehaviour, IDamageable
         gameObject.SetActive(false);
         if(Spawner != null)
         {
-            Spawner.SpawnCount++;
+            if (melee == true)
+            {
+                Spawner.meleeActive--;
+            }
+
+            else
+            {
+                Spawner.flyerActive--;
+            }
+            
         }
     }
 }

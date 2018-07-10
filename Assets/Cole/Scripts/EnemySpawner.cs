@@ -3,25 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[System.Serializable]
-public struct SpawnProfle
-{
-    public int flyerCount;// new SpawnCount
-    public int meleeCount;// new SpawnCount
-}
-
-
 public class EnemySpawner : MonoBehaviour, IDamageable
 {
 
     private float SpawnTime;
-    public int SpawnCount;
     public float Spawner;
     public float SpawnerHP;
     private float SpawnerStartHP;
     public Transform Mesh;
     public Animator anim;
-    public SpawnProfle profile;
+    public int meleeActive = 0;
+    public int flyerActive = 0;
+    public int meleeCount;
+    public int flyerCount;
+    [Range(0,100)]
+    public int meleeChance = 60;
+    private bool melee;
 
     // Use this for initialization
     //resets spawn timer
@@ -37,63 +34,62 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         SpawnTime -= Time.deltaTime;
         if (SpawnTime <= 0.0f)
         {
-            //int meleeCount = 6;
 
-            //int randomDecision = 60;
 
-            //if(Random.Range(0,100) <= randomDecision)
-            //{
-            //    //then do melee spawn
-            //}
-            //else
-            //{
-            //    //do flyer spawn
-            //}
+            
 
-            //if (meleeCount > 0)
+            if (Random.Range(0, 100) <= meleeChance)
+            {
+                if (meleeCount > meleeActive)
+                {
+                    anim.SetTrigger("isSpawning");
+                    GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
+
+                    SpawnedBug.GetComponent<AIHP>().Spawner = this;
+                    SpawnedBug.SetActive(true);
+                    SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
+                    meleeActive++;
+
+                }
+            }
+
+            else
+            {
+                if (flyerCount > flyerActive)
+                {
+                    anim.SetTrigger("isSpawning");
+                    GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
+
+                    SpawnedBug2.GetComponent<AIHP>().Spawner = this;
+                    SpawnedBug2.SetActive(true);
+                    SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
+                    flyerActive++;
+                }
+            }
+            ResetTimer();
+
+
+            //if (SpawnCount > 0)
             //{
             //    anim.SetTrigger("isSpawning");
 
             //    GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
-            //   // GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
+            //    GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
 
             //    SpawnedBug.GetComponent<AIHP>().Spawner = this;
             //    SpawnedBug.SetActive(true);
             //    SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
 
-            //    //SpawnedBug2.GetComponent<AIHP>().Spawner = this;
-            //    //SpawnedBug2.SetActive(true);
-            //    //SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
+            //    SpawnedBug2.GetComponent<AIHP>().Spawner = this;
+            //    SpawnedBug2.SetActive(true);
+            //    SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
 
-            //    if (meleeCount > 0)
+            //    if (SpawnCount > 0)
             //    {
-            //        meleeCount--;
+            //        SpawnCount--;
             //    }
             //    ResetTimer();
             //}
-
-
-            if (SpawnCount > 0)
-            {
-                anim.SetTrigger("isSpawning");
-
-                GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
-                GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
-
-                SpawnedBug.GetComponent<AIHP>().Spawner = this;
-                SpawnedBug.SetActive(true);
-                SpawnedBug.GetComponent<NavMeshAgent>().Warp(transform.position);
-
-                SpawnedBug2.GetComponent<AIHP>().Spawner = this;
-                SpawnedBug2.SetActive(true);
-                SpawnedBug2.GetComponent<NavMeshAgent>().Warp(transform.position);
-
-                if (SpawnCount > 0)
-                {
-                    SpawnCount--;
-                }
-                ResetTimer();
-            }
         }
 
     }
