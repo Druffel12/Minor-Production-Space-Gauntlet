@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     public float SpawnerHP;
     private float SpawnerStartHP;
     public Transform Mesh;
+    Animator anim;
 
 
     // Use this for initialization
@@ -30,6 +31,8 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         {
             if (SpawnCount > 0)
             {
+                anim.SetTrigger("isSpawning");
+
                 GameObject SpawnedBug = ServiceLocator.instance.enemyPool.GetPooledObject();
                 //GameObject SpawnedBug2 = ServiceLocator.instance.enemyPool2.GetPooledObject();
 
@@ -60,6 +63,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     //calls death function
     public void Damage(float Amt)
     {
+        anim.SetTrigger("isDamaged");
         SpawnerHP -= Amt;
         if (SpawnerHP <= 0)
         {
@@ -73,15 +77,16 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    //T ask Kobey more efficient way to switch spawner states
+    //switches spawner states
     void SpawnerHpLVL()
     {
-        if(SpawnerHP <= SpawnerStartHP && SpawnerHP >= (SpawnerStartHP/3 * 2))
+        if (SpawnerHP <= SpawnerStartHP && SpawnerHP >= (SpawnerStartHP / 3 * 2))
         {
-            //nothing really this if statement isactually redundant
+            //pretty redundant if statement in all honesty 
+            //but i mean i like having all 3 so whatever
         }
 
-        else if(SpawnerHP <= (SpawnerHP/3 * 2) && SpawnerHP >= (SpawnerHP/3))
+        else if (SpawnerHP <= (SpawnerHP / 3 * 2) && SpawnerHP >= (SpawnerHP / 3))
         {
             Mesh.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
         }
