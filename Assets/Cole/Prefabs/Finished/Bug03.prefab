@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 114132041634714098}
   - component: {fileID: 114502869973591632}
   m_Layer: 10
-  m_Name: Bug02
+  m_Name: Bug03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
