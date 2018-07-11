@@ -58,6 +58,10 @@ public class HP : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(1);
             health -= 1;
             healthText.text = "Oxygen: " + health.ToString();
+            if(health <= 0)
+            {
+                Death();
+            }
         }
     }
 

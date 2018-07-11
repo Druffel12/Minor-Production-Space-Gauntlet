@@ -48,7 +48,7 @@ public class AIHP : MonoBehaviour, IDamageable
 
     public void Damage(float Amt)
     {
-        damagedSound.Play();  
+       //damagedSound.Play();  
        EnemyHP -= Amt;
         if(BugDmg.isPlaying == false)
         {
