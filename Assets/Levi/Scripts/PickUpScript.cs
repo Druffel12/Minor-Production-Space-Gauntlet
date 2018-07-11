@@ -50,7 +50,7 @@ public class PickUpScript : MonoBehaviour
                 if (playerHP != null)
                 {
                     playerHP.health += healthIncrease;
-                    playerHP.healthText.text = playerHP.health.ToString();
+                    playerHP.healthText.text = "Oxygen: " + playerHP.health.ToString();
                     PLAYSOUND();
                     Destroy(gameObject);
                 }

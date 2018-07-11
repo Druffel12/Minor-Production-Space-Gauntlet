@@ -982,15 +982,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbd87b12f0f7c7478dd2f2f3dd1bfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawner: 1
+  Spawner: 1.5
   SpawnerHP: 60
   Mesh: {fileID: 4518645523492966}
   anim: {fileID: 95579885516200028}
   meleeActive: 0
   flyerActive: 0
   meleeCount: 6
-  flyerCount: 3
-  meleeChance: 65
+  flyerCount: 4
+  meleeChance: 55
 --- !u!137 &137482274266240026
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1000,6 +1000,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1015,6 +1016,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

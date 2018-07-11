@@ -114,6 +114,7 @@ public class GunScript : MonoBehaviour
             }
             else
             {
+                missedSound.pitch = Random.Range(.9f, 1.3f);
                 missedSound.Play();
             }
         }
@@ -126,6 +127,7 @@ public class GunScript : MonoBehaviour
         //plays gunshot sound 
         if(gunShot.isPlaying == false)
         {
+            gunShot.pitch = Random.Range(.8f, 1.3f);
             gunShot.Play();
         }
         
